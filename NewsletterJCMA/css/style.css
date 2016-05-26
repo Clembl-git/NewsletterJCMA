@@ -1,0 +1,32 @@
+body {
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+  overflow: hidden;
+	font-family: 'Poiret One', cursive;
+	background: 				url(../img/bg.jpg);
+	background-size: 		100% auto;
+	background-repeat: 	no-repeat;
+	background-color: 	#31343B;
+}
+
+h1,h2,h3 {
+font-weight: bold;
+}
+.homeTitle {
+	color: #31343B;
+	font-size: 60px;
+  padding-top: 20px;
+  margin-bottom: -50px;
+}
+
+h2 {
+	color: #fff;
+	font-size: 40px;
+	background-color: rgba(49, 52, 59, 0.74);
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}

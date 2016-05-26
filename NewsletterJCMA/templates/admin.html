@@ -1,0 +1,33 @@
+  <h1 class="text-center" ng-view="admin">JCMA's Newsletter</h1>
+  <div class="container" ng-controller="adminCtrl">
+    <div class="row vertical-offset-100">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title text-center">Welcome ! Please register to use our newsletter app.</h2>
+          </div>
+          <div class="panel-body">
+            <input class="btn btn-lg btn-block btn-primary" type="submit" value="Register" ng-click="Register()">
+            <br/>
+              <div class="panel-heading">
+            <h2 class="panel-title text-center">Log-in if you're already one of us !</h2>
+          </div>
+            <form accept-charset="UTF-8" role="form">
+              <fieldset>
+                <div class="form-group">
+                  <input class="form-control" placeholder="E-mail" name="email" type="text">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                </div>
+                  <input class="btn btn-lg btn-block  btn-success " type="submit" value="Login" ng-click="Login()">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h2>Create your snippet's HTML, CSS and Javascript in the editor tabs</h2>
+    </div>
+  </div>

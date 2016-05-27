@@ -14,6 +14,9 @@ newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location)
     .when('/register', {
         templateUrl: 'templates/register.html'
     })
+    .when('/createList', {
+        templateUrl: 'templates/createList.html'
+    })
     .otherwise({redirectTo: '/login'});
 }]); 
 newsLettapp.controller('loginCtrl', ['$scope','$location',

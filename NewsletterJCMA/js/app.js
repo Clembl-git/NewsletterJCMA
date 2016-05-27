@@ -14,8 +14,6 @@ newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location)
     .otherwise({redirectTo: '/login'});
 }]);
 
-
-}]);
 newsLettapp.controller('loginCtrl', ['$scope','$location',
   function($scope, $location, $http) {
       console.log("login");
@@ -40,6 +38,6 @@ newsLettapp.controller('adminCtrl', ['$scope',
             $location.path('/admin');
           };
 
-          
+
     }
 ]);

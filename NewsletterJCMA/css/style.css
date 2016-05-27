@@ -17,12 +17,16 @@ font-weight: bold;
 h1 a{
     text-indent: -9999px;
     background: url("../img/logo.png") center no-repeat;
+    display: block;
+    width: 250px;
+    height: 255px;
+    margin: 0 auto;
 }
 .homeTitle {
 	color: #31343B;
 	font-size: 60px;
-  padding-top: 20px;
-  margin-bottom: -50px;
+ /* padding-top: 20px;
+  margin-bottom: -50px;*/
 }
 
 h2 {
@@ -32,5 +36,13 @@ h2 {
 }
 
 .vertical-offset-100{
-    padding-top:100px;
+    /*padding-top:100px;*/
 }
+
+label
+{
+	display: block;
+	width: 150px;
+	float: left;
+}
+

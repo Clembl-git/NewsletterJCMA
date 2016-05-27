@@ -1,13 +1,40 @@
  <!-- INFOS USER -->
  <div class="container" ng-controller="registerCtrl">
-                <legend>About you</legend>
-                <div class="form-group"> <label for="firstname">First name</label> <input type="text" name="fname" tabindex="1" autofocus="autofocus" class=" av-text" value="" id="fname"> </div>
-                <div class="field-wrapper"> <label for="lastname">Last name</label> <input type="text" name="lname" tabindex="2" class=" av-text" value="" id="lname"> </div> 
-                <div class="field-wrapper"> <label for="email" class="">Email address</label> <input type="email" name="email" tabindex="3" class=" av-email" value="" id="email"> <div class="field-help always-show"> Your email address will remain private. <a href="http://www.mailchimp.com/page/privacy/" target="_blank">Our privacy policy</a> </div> </div>
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title text-center">About you</h3>
+        </div>
+        <div class="panel-body">
+            <div class="panel-heading">
+        </div>
+          <form accept-charset="UTF-8" role="form">
+            <fieldset>
+              <div class="form-group"> <label for="firstname">First name</label> <input type="text" name="fname" tabindex="1" autofocus="autofocus" class="av-text" value="" ng-model="nom"> 
+               </div>
+               <div class="form-group"> <label for="lastname">Last name</label> <input type="text" name="lname" tabindex="2" class="av-text" value="" id="lname"  ng-model="prenom">
+               </div>
+               <div class="form-group"> <label for="email" class="">Email address</label> <input type="email" name="email" tabindex="3" class="av-email" value="" id="email" ng-model="email">  
+               </div> 
+              <div class="form-group"><label for="password" class="">Password</label>
+                <input name="password" type="password" id="password" value="" ng-model="password">
+              </div>
+              
+              
+            <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <input class="btn col-md-2  btn-primary" type="submit" value="Register" ng-click="register()">
+            </div>
+            <div class="btn-group">
+                <input class="btn col-md-2  btn-primary " type="submit" value="Login" ng-click="login()">
+              </div>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
 
-                <!-- INFOS ENTREPRISE -->
-                <fieldset id="url-industry-fieldset"> <div class="lastUnit size1of1"> <legend>Organization Information</legend> <p>Answering these questions will help us improve your MailChimp experience.</p> </div>  <div class="line"> <div class="unit size1of2"> <div id="org-size-group" class="field-wrapper"> <label for="company_size" class="">About how many people <br class="hide-phone">are in your organization?</label> <select class="select-small " name="company_size" tabindex="4" id="company_size"> <option value="">Select</option> <option value="1-5" selected="selected">1-5</option><option value="6-10">6-10</option><option value="11-20">11-20</option><option value="21-50">21-50</option><option value="51-100">51-100</option><option value="101-150">101-150</option><option value="150-300">150-300</option><option value="301-500">301-500</option><option value="501-1000">501-1000</option><option value="1000+">1000+</option> </select> </div> </div> <div class="lastUnit size1of2"> <div id="org-age-group" class="field-wrapper"> <label for="company_age" class="">About how old <br class="hide-phone">is your organization?</label> <select class="select-small " name="company_age" tabindex="5" id="company_age"> <option value="" selected="selected">Select</option> <option value="<1">&lt; 1 year</option><option value="1-2">1-2 years</option><option value="3-5">3-5 years</option><option value="6-10">6-10 years</option><option value="11+">11+ years</option> </select> </div> </div> </div> <div class="line section"> <div class="unit size1of2"> <div id="org-haslist-group" class="field-wrapper"> <label for="has_import_lists" class="">Do you have a list of emails <br class="hide-phone">to import into MailChimp?</label> <select class="select-small " name="has_import_lists" tabindex="6" id="has_import_lists"> <option value="">Select</option> <option value="Y">Yes</option> <option value="N" selected="selected">No</option> </select> </div> </div> <div class="lastUnit size1of2"> <div id="org-isclient-group" class="field-wrapper"> <label for="is_agency" class="">Are you setting this up <br class="hide-phone">for a client?</label> <select class="select-small " name="is_agency" tabindex="7" id="is_agency"> <option value="">Select</option> <option value="Y" selected="selected">Yes</option> <option value="N">No</option> </select> </div> </div> </div>  <div class="lastUnit size1of1"> <p>The following information will help us automatically build your email footers to comply with the <a href="https://www.ftc.gov/tips-advice/business-center/guidance/can-spam-act-compliance-guide-business" target="_blank">CAN-SPAM Act</a> and <a href="http://kb.mailchimp.com/accounts/compliance-tips/terms-of-use-and-anti-spam-requirements-for-campaigns?" target="_blank" data-kb-article="/accounts/compliance-tips/terms-of-use-and-anti-spam-requirements-for-campaigns">International spam law</a>.</p> </div>  <div class="lastUnit size1of1"> <div class="field-wrapper"> <label for="company" class="">Company / organization</label> <input type="text" name="company" tabindex="8" class=" av-text" value="" id="company"> </div> </div>   <div class="lastUnit size1of1"> <div class="field-wrapper"> <label for="url" class="">Website URL</label> <input type="url" name="url" tabindex="9" class=" av-url" value="" id="url"> <div class="field-help always-show"> <a href="http://kb.mailchimp.com/accounts/account-setup/if-you-dont-have-a-website?" target="_blank" data-kb-article="/accounts/account-setup/if-you-dont-have-a-website">No website?</a> </div> </div> </div>   <div class="lastUnit size1of1"> <div class="field-wrapper"> </div> </div>   <div class="lastUnit size1of1"> <div class="field-wrapper"> <label for="address2" class="">Addresse</label> <input type="text" name="address2" tabindex="11" class=" av-text" value="" id="address2"> </div> </div>   <div class="line"> <div class="unit size1of2"> <div class="field-wrapper"> <label for="city" class="">Ville</label> <input type="text" name="city" tabindex="12" class=" av-text" value="" id="city"> </div> </div> <div class="lastUnit size1of2"> <div id="state-group" class="field-wrapper" style="display: none;"> <label for="state">State / Province / Region</label> <input type="text" name="state" id="state-select" tabindex="13" class=" av-text" value=""> </div> </div> </div>   <div class="line"> <div class="unit size1of2"> <div id="zip-group" class="field-wrapper"> <label for="zip" class="">Zip / Postal code</label> <input type="text" name="zip" tabindex="14" class=" av-text" value="" id="zip">
-
-                </div>
+</div>
 
                 

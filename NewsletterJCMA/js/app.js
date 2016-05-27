@@ -11,11 +11,13 @@ newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location)
     .when('/admin', {
         templateUrl: 'templates/admin.html'
     })
+    .when('/register', {
+        templateUrl: 'templates/register.html'
+    })
     .otherwise({redirectTo: '/login'});
 }]);
 
 
-}]);
 newsLettapp.controller('loginCtrl', ['$scope','$location',
   function($scope, $location, $http) {
       console.log("login");
@@ -39,6 +41,15 @@ newsLettapp.controller('adminCtrl', ['$scope',
           $scope.login = function(){
             $location.path('/admin');
           };
+
+          
+    }
+]);
+
+newsLettapp.controller('registerCtrl', ['$scope',
+    function($scope) {
+
+
 
           
     }

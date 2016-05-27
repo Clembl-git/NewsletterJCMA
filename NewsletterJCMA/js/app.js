@@ -5,19 +5,18 @@ var newsLettapp = angular.module('NewsLettApp', ['ngRoute']);
 
 newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location) {
 
-    $routeProvider.otherwise({redirectTo: '/login'});
 
 
     $routeProvider.when('/login', {
-        templateUrl: 'templates/login.html',
-        controller: 'loginCtrl'
-    });
-    $routeProvider.when('/contact', {
-        templateUrl: 'contact.html'
-    });
+        templateUrl: 'templates/login.html'
+    }); 
     $routeProvider.when('/admin', {
         templateUrl: 'templates/admin.html'
     });
+    $routeProvider.when('/register', {
+        templateUrl: 'templates/register.html'
+    });
+      $routeProvider.otherwise({redirectTo: '/login'});
 
 }]);
 newsLettapp.controller('loginCtrl', ['$scope','$location',
@@ -27,9 +26,12 @@ newsLettapp.controller('loginCtrl', ['$scope','$location',
     $scope.login = function(){
       $location.path('/admin');
     };
+      console.log($location.path());
     $scope.register = function(){
-      $location.path('/admin');
+      console.log($location.path());
+      $location.path('/register');
     }
+
 
     }
 ]);
@@ -40,8 +42,7 @@ newsLettapp.controller('adminCtrl', ['$scope',
           $scope.login = function(){
             $location.path('/admin');
           };
-          $scope.register = function(){
-            $location.path('/admin');
-          }
+
+          
     }
 ]);

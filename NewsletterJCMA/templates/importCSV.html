@@ -1,0 +1,42 @@
+<div class="container importView" ng-controller="importCtrl" class="fade">
+    <h1 >ADMIN</h1>
+    <center>
+      <div class="checkbox ">
+        <label class="lead"><input type="checkbox" ng-model="boolHeader">Header inclus dans le fichier</label>
+      </div>
+      <div class="importBtn">
+        <ng-csv-import ng-if="!csv.result" content="csv.content"
+          header="boolHeader"
+          separator="csv.separator"
+          result="csv.result"
+          accept="csv.accept">
+        </ng-csv-import>
+      </div>
+
+    <div ng-if="listHeader.length > 0">
+        <div class="info">Associé les colonnes de votre fichier à celle de notre base d'utilisateurs :</div>
+        <h4>{{header}} :</h4>
+
+        <select class="selectpicker" data-style="btn-primary" id="selectNom">
+            <option selected disabled>Nom</option>
+            <option ng-repeat="header in listHeader" value="{{header}}">{{header}}</option>
+        </select>
+        <select class="selectpicker" data-style="btn-primary" id="selectPrenom">
+            <option selected disabled>Prenom</option>
+            <option ng-repeat="header in listHeader" value="{{header}}">{{header}}</option>
+        </select>
+        <select class="selectpicker" data-style="btn-primary" id="selectMail">
+            <option selected disabled>Mail</option>
+            <option ng-repeat="header in listHeader" value="{{header}}">{{header}}</option>
+        </select>
+    </div>
+    <div class="csvPreview" ng-if="csv.result" ng-bind="btnCsvToJSON(csv.result)">
+        <h3>Aperçu de l'import :</h3>
+        <div class="content" ng-model="csv.stringifyCsv">
+        </div>
+    </div>
+    <br/>
+    <button ng-click="sendCsvDataToDB()" ng-if="csv.result" type="button" name="button" class="btn btn-lg  btn-primary">Save data</button>
+
+  </center>
+</div>

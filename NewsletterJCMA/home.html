@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html lang="fr"
-<head>
-  <meta charset="utf-8">
-  <title>Newsletter JCMA</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" charset="utf-8">
-  <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
-  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="favicon.ico" />
-  <script type="text/javascript" src="lib/jquery.min.js"></script>
-  <script type="text/javascript" src="lib/angular.min.js"></script>
-  <script type="text/javascript" src="lib/angular-route.min.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/controller.js"></script>
-</head>
-<body ng-app="NewsLettApp">
-  <h1 class="text-center homeTitle"><a href="home.html">JCMA's Newsletter</a></h1>
-  <div ng-view></div>
+<html lang="fr">
 
-  <div class="row">
-    <h2>Simply the best way to diffuse your ideas over the world.</h2>
-  </div>
+<head>
+    <meta charset="utf-8">
+    <title>Newsletter JCMA</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/animation.css" media="screen" charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="favicon.ico" />
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/angular-csv-import.min.js"></script>
+    <script type="text/javascript" src="lib/angular-animate.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="js/factory.js"></script>
+</head>
+
+<body ng-app="NewsLettApp">
+    <h1 class="text-center homeTitle"><a href="home.html">JCMA's Newsletter</a></h1>
+
+    <div ng-view ng-class="fade"></div>
+
+    <div class="row">
+        <h2>Simply the best way to diffuse your ideas over the world.</h2>
+    </div>
 
 </body>
+
 </html>

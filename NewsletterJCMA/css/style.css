@@ -1,3 +1,4 @@
+
 body {
 	padding: 0;
 	height: 100%;
@@ -9,6 +10,7 @@ body {
 	background-size: 		100% auto;
 	background-repeat: 	no-repeat;
 	background-color: 	#31343B;
+	font-weight: bold;
 }
 
 h1,h2,h3 {
@@ -25,8 +27,6 @@ h1 a{
 .homeTitle {
 	color: #31343B;
 	font-size: 60px;
- /* padding-top: 20px;
-  margin-bottom: -50px;*/
 }
 
 h2 {
@@ -55,6 +55,90 @@ label {
     height:50px;
 }
 
+.importView{
+	background-color: rgba(255,255,255,0.7);
+	height: 600px;
+}
+.importBtn{
+  width: 100%;
+  height: 46px;
+}
+.info {
+    text-align: center;
+		padding: 0;
+    width: 100%;
+    margin: 0;
+		font-size: 24px;
+    position: relative;
+    font-weight: bold;
+}
+/* Pas trouvé mieux xD */
+.importBtn div div {
+	width: 300px;
+	height: 300px;
+}
+.selectpicker{
+    width: 198px;
+    height: 35px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 11px;
+    letter-spacing: 1px;
+    padding-left: 24px;
+}
+div>input[type=file]{
+    background-color: #337ab7;
+    position: absolute;
+    width: 160px;
+    border-radius: 19px;
+    overflow: hidden;
+    left: 50%;
+    padding: 0;
+    margin: 0;
+    margin-left: -80px;
+    right: 50%;
+    margin-top: 46px;
+}
+div>input[type=file]::before {
+    content: 'Select your CSV';
+    display: inline-block;
+    color: #fff;
+    background-color: #337ab7;
+    padding: 14px 13px;
+    outline: 0;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 18px;
+ }
+ div>input[type=file]::-webkit-file-upload-button {
+     visibility: hidden;
+ }
+ .csvPreview {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 200px;
+    background-color: #fff;
+    letter-spacing: 1px;
+    font-family: SourceCode;
+    text-align: initial;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+ }
+ @font-face {
+    font-family: SourceCode;
+    src: url(../font/SourceCode-Regular.ttf);
+ }
+.form-group {
+	font-weight: 800;
+}
+.panel-title{
+	font-size: 23px;
+}
+
 .mc-content {
     margin: 0 auto;
     width: 1300px;
@@ -65,6 +149,9 @@ label {
 }
 .mc-content ul li{
     border-top: 1px dotted #e0e0e0;
+}
+.media:hover{
+	cursor: pointer;
 }
 .media-image {
     float: left;

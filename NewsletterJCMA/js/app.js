@@ -1,7 +1,8 @@
 'use strict';
 
-// Declare app level module which depends on views, and components
-var newsLettapp = angular.module('NewsLettApp', ['controllers','ngRoute']);
+// Declare app level module which depends on views, and components/dependency
+var newsLettapp = angular.module('NewsLettApp', ['controllers','factory','ngRoute','ngCsvImport','ngAnimate']
+);
 
 newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location) {
 
@@ -14,40 +15,11 @@ newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location)
     .when('/register', {
         templateUrl: 'templates/register.html'
     })
+    .when('/importCSV', {
+        templateUrl: 'templates/importCSV.html'
+    })
     .when('/createList', {
         templateUrl: 'templates/createList.html'
     })
     .otherwise({redirectTo: '/login'});
-}]); 
-newsLettapp.controller('loginCtrl', ['$scope','$location',
-  function($scope, $location, $http) {
-    $scope.login = function(){
-      $location.path('/admin');
-    };
-    $scope.register = function(){
-      $location.path('/register');
-    }
-
-
-    }
-]);
-
-newsLettapp.controller('adminCtrl', ['$scope',
-    function($scope) {
-
-          $scope.login = function(){
-            $location.path('/admin');
-          };
-
-
-    }
-]); 
-
-newsLettapp.controller('registerCtrl', ['$scope',
-    function($scope) {
-
-
-
-          
-    }
-]); 
+}]);

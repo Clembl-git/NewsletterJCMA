@@ -1,57 +1,99 @@
-  <div class="container" ng-controller="adminCtrl">
+<div class="container" ng-controller="adminCtrl" class="fade">
     <h1 style="color:#fff">ADMIN</h1>
-       
-       <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand miniLogo" href="#">Project name</a>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand miniLogo" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Campagne</a></li>
+                    <li><a href="#about">Templates</a></li>
+                    <li><a href="#contact">List</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../navbar/">Default</a></li>
+                    <li><a href="../navbar-static-top/">Static top</a></li>
+                    <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Campagne</a></li>
-            <li><a href="#about">Templates</a></li>
-            <li><a href="#contact">List</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
-            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
-          </ul>
-        </div>
-      </div>
     </nav>
-    
+
     <div id="main-content" class="mc-content">
         <h1>Dashboard</h1>
-        <div class="size1of1 lastUnit"> <h3>Get started</h3> 
-        <ul class="media-list rows sub-section">    <li> <div class="media"> <div class="media-image"> <div class="onboarding create-campaigns"> </div> </div> <div class="media-body"> <div class="line"> <div class="unit size3of4 below12"> <h4>Create and send a campaign </h4> <p>Campaigns are emails sent to subscribers in a list. Try your hand at email design by creating and sending a test campaign. </p>   </div> <div class="size1of4 lastUnit nopadding alignr"> <a class="button nomargin full-width-mobile ttn" href="/campaigns/create?type=regular" role="button">Create a Campaign</a> </div>  </div> </div> </div> </li>  
-            
-        <li> <div class="media"> <div class="media-image"> <div class="onboarding create-lists"> </div> </div> <div class="media-body"> <div class="line"> <div class="unit size3of4 below12"> <h4>Create a list <span class="freddicon tick-circle-color mar-lv1 mar-tb0"></span></h4> <p>Lists are where you store your contacts (we call them subscribers). Create one master list, then use segments and groups to email select people. </p> </div> <div class="size1of4 lastUnit nopadding alignr link-underline"> <a href="/lists" onclick="ga('send', 'event', 'dashboard', 'onboarding study', '/lists');">View lists</a> </div> </div> </div> </div> </li>  
-        
-      </ul>
-             
-    </div>
+        <div class="size1of1 lastUnit">
+            <h3>Get started</h3>
+            <ul class="media-list rows sub-section">
+                <li>
+                    <div class="media">
+                        <div class="media-image">
+                            <div class="onboarding create-campaigns"> </div>
+                        </div>
+                        <div class="media-body">
+                            <div class="line">
+                                <div class="unit size3of4 below12">
+                                    <h4>Create and send a campaign </h4>
+                                    <p>Campaigns are emails sent to subscribers in a list. Try your hand at email design by creating and sending a test campaign. </p>
+                                </div>
+                                <div class="size1of4 lastUnit nopadding alignr"> <a class="button nomargin full-width-mobile ttn" href="/campaigns/create?type=regular" role="button">Create a Campaign</a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
 
-    <div class="btn-group">
-        <input class="btn col-md-2  btn-primary csvButton" type="submit" value="Import CSV" ng-click="importCsv()">
-        
-      </div>
-  </div>
+                <li>
+                    <div class="media">
+                        <div class="media-image">
+                            <div class="onboarding create-lists"> </div>
+                        </div>
+                        <div class="media-body">
+                            <div class="line">
+                                <div class="unit size3of4 below12">
+                                    <h4>Create a list <span class="freddicon tick-circle-color mar-lv1 mar-tb0"></span></h4>
+                                    <p>Lists are where you store your contacts (we call them subscribers). Create one master list, then use segments and groups to email select people. </p>
+                                </div>
+                                <div class="size1of4 lastUnit nopadding alignr link-underline"> <a href="/lists" onclick="ga('send', 'event', 'dashboard', 'onboarding study', '/lists');">View lists</a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li ng-click="openImportView()">
+                    <div class="media">
+                        <div class="media-image">
+                            <div class="onboarding create-lists"> </div>
+                        </div>
+                        <div class="media-body">
+                            <div class="line">
+                                <div class="unit size3of4 below12">
+                                    <h4>Import contacts directly with a CSV file<span class="freddicon tick-circle-color mar-lv1 mar-tb0"></span></h4>
+                                    <p>Lists are where you store your contacts (we call them subscribers). Create one master list, then use segments and groups to email select people. </p>
+                                </div>
+                                <div class="size1of4 lastUnit nopadding alignr link-underline"> <a href="/lists" onclick="ga('send', 'event', 'dashboard', 'onboarding study', '/lists');">View lists</a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>

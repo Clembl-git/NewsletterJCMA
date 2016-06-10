@@ -146,6 +146,7 @@ div>input[type=file]::before {
     width:100%;
     text-align: left;
     padding: 10px 30px;
+    overflow:hidden;
 }
 .mc-content ul li{
     border-top: 1px dotted #e0e0e0;

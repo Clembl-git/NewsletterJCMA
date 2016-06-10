@@ -1,0 +1,959 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+        <link href="/bundles/app/fonts/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/bundles/app/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="/bundles/app/css/bootstrap-select.min.css" type="text/css">
+    <link rel="stylesheet" href="/bundles/app/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="/bundles/app/css/jquery.nouislider.min.css" type="text/css">
+    <link rel="stylesheet" href="/bundles/app/css/leaflet.css" type="text/css">
+    <link rel="stylesheet" href="/bundles/app/css/jquery.mCustomScrollbar.css" type="text/css">
+    <link rel="stylesheet" href="/bundles/app/css/colors/green.css" type="text/css">
+    <link rel="stylesheet" href="/bundles/app/css/user.style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/../favicon.ico"/>
+</head>
+<body>
+    <!-- Navigation-->
+    <div class="header">
+        <div class="wrapper">
+            <div class="brand">
+                <a href="/sensafood.com">
+                    <img src="/bundles/app/images/logo-restaurants.png" width="150px" height="60px"
+                         alt="logo sensafood">
+                </a>
+            </div>
+            <nav class="navigation-items">
+                <div class="wrapper">
+
+                    <ul class="user-area">
+                        <!--<li><a href="signIn">Sign In</a></li>
+                        <li><a href="register"><strong>Register</strong></a></li>-->
+                        <li><a href="https://pro.sensafood.co/fr/"> Vous êtes un restaurant ?</a></li>
+                    </ul>
+                    <!--<a href="submit" class="submit-item">
+                        <div class="content"><span>Submit Your Item</span></div>
+                        <div class="icon">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </a>-
+                    <div class="toggle-navigation" style="display: inline-block;">
+                        <div class="icon">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>-->
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- end Navigation-->
+
+
+
+    <body onunload="" class="map-fullscreen page-homepage navigation-off-canvas page-fade-in" id="page-top">
+
+
+    <!-- Outer Wrapper-->
+    <div id="outer-wrapper" class="">
+        <!-- Inner Wrapper -->
+        <div id="inner-wrapper">
+            <!-- Page Canvas-->
+            <div id="page-canvas">
+                <!--Off Canvas Navigation-->
+                <nav class="off-canvas-navigation">
+                    <header style="line-height: 70px;">Navigation</header>
+                    <div class="main-navigation navigation-off-canvas">
+
+                        <ul>
+                            <li><a href="#home" class="has-child" data-toggle="collapse" aria-expanded="false" aria-controls="home">Home</a>
+                                <div class="collapse" id="home">
+                                    <ul>
+                                        <li><a href="index-directory.html">Google Maps</a></li>
+                                        <li><a href="index-osm.html">OpenStreetMaps</a></li>
+                                        <li><a href="index-here.html">Here Maps</a></li>
+                                        <li><a href="index-directory.html">Universal Directory</a></li>
+                                        <li><a href="index-cars.html">Car Dealership</a></li>
+                                        <li><a href="index-real-estate.html">Real Estate</a></li>
+                                        <li><a href="index-restaurants.html">Restaurants</a></li>
+                                        <li><a href="index-travel.html">Travel</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="listing-grid.html">Listing</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="#sub-level-1" class="has-child" data-toggle="collapse" aria-expanded="false" aria-controls="sub-level-1">Pages</a>
+                                <div class="collapse" id="sub-level-1">
+                                    <ul>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="#sub-level-2" class="has-child" data-toggle="collapse" aria-expanded="false" aria-controls="sub-level-2">Blog</a>
+                                            <div class="collapse" id="sub-level-2">
+                                                <ul>
+                                                    <li><a href="blog-listing.html">Blog Listing</a></li>
+                                                    <li><a href="blog-detail.html">Blog Detail</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="company-detail.html">Company Detail</a></li>
+                                        <li><a href="facet-search.html">Facet Search</a></li>
+                                        <li><a href="item-detail.html">Item Detail</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="pricing.html">Pricing</a></li>
+                                        <li><a href="profile.html">Profile</a></li>
+                                        <li><a href="my-items.html">My Items</a></li>
+                                        <li><a href="rtl.html">RTL</a></li>
+                                        <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+                                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="sign-in.html">Sign In</a></li>
+                            <li><a href="register.html">Register</a></li>
+                        </ul>
+
+                        <!--[if lte IE 9]>
+                        <script type="text/javascript" src="/bundles/app/js/ie-scripts.js"></script>
+                        <![endif]-->
+
+
+                    </div>
+                </nav>
+                <!--end Off Canvas Navigation-->
+                <!--Page Content-->
+                <div id="page-content">
+                    <!-- Map Canvas-->
+                    <div class="map-canvas list-solid" style="height: 631px;">
+                        <!-- Map -->
+                        <div class="map">
+                            <div class="toggle-navigation">
+                                <div class="icon">
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                    <div class="line"></div>
+                                </div>
+                            </div>
+                            <!--/.toggle-navigation-->
+                            <div id="map" class="has-parallax"></div>
+                        </div>
+                        <!-- end Map -->
+                        <!--Items List-->
+                        <div class="items-list mCustomScrollbar _mCS_1 mCS_no_scrollbar"><div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position: relative; left: 0px; top: 0px;" dir="ltr">
+                                    <div class="inner">
+                                        <div class="scroller1">
+                                            <div class="filter">
+                                                <form class="main-search" role="form" method="post" action="?">
+                                                    <header class="clearfix">
+                                                        <h3 class="pull-left">Search</h3>
+                                                        <a href="#advanced-search" class="show-more pull-right" data-toggle="collapse" aria-expanded="false" aria-controls="advanced-search">Advanced Search</a>
+                                                    </header>
+                                                    <div class="advanced-search collapse" id="advanced-search">
+                                                        <h4>Features</h4>
+                                                        <ul class="list-unstyled checkboxes">
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Free Parking</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Cards Accepted</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="3" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Wi-Fi</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="4" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Air Condition</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="5" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Reservations</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="6" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Team-buildings</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="7" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Places to seat</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="8" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Winery</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="9" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Draft Beer</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="10" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>LCD</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="11" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Saloon</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="12" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Free Access</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="13" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Terrace</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="14" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Minigolf</label></div></li>
+                                                            <li><div class="checkbox"><label><div class="icheckbox"><input type="checkbox" name="features[]" value="15" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>Night Bar</label></div></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="row">
+                                                        <!--/.col-md-3-->
+                                                        <div class="col-md-12 col-sm-12">
+                                                            <div class="form-group">
+                                                                <label for="location">Location</label>
+                                                                <div class="input-group location">
+                                                                    <input type="text" class="form-control" id="location" placeholder="Enter Location">
+                                                                    <input type="hidden" name="latitude" id="latitude">
+                                                                    <input type="hidden" name="longitude" id="longitude">
+                                                                    <input type="hidden" name="id" id="idCity">
+                                                                    <span class="input-group-addon"><i class="fa fa-map-marker geolocation" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Find my position"></i></span>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /.form-group -->
+                                                        </div>
+                                                    </div>
+                                                    <!--/.row-->
+                                                </form>
+                                                <!-- /.main-search -->
+                                            </div>
+                                            <!--end Filter-->
+                                            <header class="clearfix">
+                                                <h3 class="pull-left">Results</h3>
+                                                <div class="buttons pull-right">
+                                                    <span>Display:</span>
+                                                    <span class="icon active" id="display-grid"><i class="fa fa-th"></i></span>
+                                                    <span class="icon" id="display-list"><i class="fa fa-th-list"></i></span>
+                                                </div>
+                                            </header>
+                                            <ul class="results grid">
+
+                                            </ul>
+                                            <div class="scroller__track">
+                                                <div class="scroller__bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--results-->
+                                </div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; height: 0px; top: 0px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+                        <!--end Items List-->
+                    </div>
+                    <!-- end Map Canvas-->
+                    <!--Why Us
+                    <section id="why-us" class="block">
+                        <div class="container">
+                            <header><h2>Why Us?</h2></header>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="feature-box">
+                                        <i class="fa fa-thumbs-up"></i>
+                                        <div class="description">
+                                            <h3>Lorem ipsum dolor </h3>
+                                            <p>
+                                                Praesent tempor a erat in iaculis. Phasellus vitae libero libero. Vestibulum ante
+                                                ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!--/.feature-box-->
+                    <!--</div>-->
+                                <!--/.col-md-4-->
+                    <!--    <div class="col-md-4 col-sm-4">
+                          <div class="feature-box">
+                              <i class="fa fa-folder"></i>
+                              <div class="description">
+                                  <h3>Etiam vehicula felis a ipsum</h3>
+                                  <p>
+                                      Pellentesque nisl quam, aliquet sed velit eu, varius condimentum nunc.
+                                      Nunc vulputate turpis ut erat egestas, vitae rutrum sapien varius.
+                                  </p>
+                              </div>
+                          </div>
+                          <!--/.feature-box-->
+                    <!--      </div>
+                        <!--/.col-md-4-->
+                    <!--        <div class="col-md-4 col-sm-4">
+                              <div class="feature-box">
+                                  <i class="fa fa-money"></i>
+                                  <div class="description">
+                                      <h3>Donec dolor justo, volutpat </h3>
+                                      <p>
+                                          Maecenas quis ipsum lectus. Fusce molestie, metus ut consequat pulvinar,
+                                          ipsum quam condimentum leo, sit amet auctor lacus nulla at felis.
+                                      </p>
+                                  </div>
+                              </div>
+                              <!--/.feature-box-->
+                    <!--        </div>
+                          <!--/.col-md-4-->
+                    <!--      </div>
+                    </div>
+                </section>
+                <!--end Why Us-->
+                    <!--Featured-->
+                    <section id="featured" class="block background-color-white">
+                        <div class="container">
+                            <header><h2>Featured</h2></header>
+                            <div id="featuredResto" class="row">
+
+
+
+
+                                                                <div class="col-md-3 col-sm-3">
+                                    <div class="item featured equal-height">
+                                        <div class="image">
+                                            <div class="quick-view" id="1"><i class="fa fa-eye"></i><span>Quick View</span></div>
+                                            <a href="/detail-restaurant/438">
+                                                <div class="overlay">
+                                                    <div class="inner">
+                                                        <div class="content">
+                                                            <h4>Casa Hidalgo</h4>
+                                                            <p>Carrer de Sant Pau, 12</p>
+                                                                                                                                                                                                <p>13:00 - 14:30</p>
+                                                                                                                                                                                                                                                                <p>20:00 - 22:00</p>
+                                                                                                                            
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="item-specific">
+                                                    <span title="Bedrooms"><img src="bundles/app/images/bedrooms.png" alt="">2</span>
+                                                    <span title="Bathrooms"><img src="bundles/app/images/bathrooms.png" alt="">2</span>
+                                                    <span title="Area"><img src="bundles/app/images/area.png" alt="">240m<sup>2</sup></span>
+                                                    <span title="Garages"><img src="bundles/app/images/garages.png" alt="">1</span>
+                                                </div>-->
+                                                <div class="icon">
+                                                    <i class="fa fa-thumbs-up"></i>
+                                                </div>
+                                                <img src="https://downloads.sensafood.co/uploads/CasaHidalgo_7pfl/65f10d30f39e.jpg" alt="" width="263" height="196">
+                                            </a>
+                                        </div>
+                                        <div class="wrapper">
+                                            <a href="/detail-restaurant/438"><h3>Casa Hidalgo</h3></a>
+
+                                            <div class="info">
+                                                <!-- A METTRE LES PICTOS -->
+
+                                                                                                        <img src="https://downloads.sensafood.co/pictograms/a5b8064cf3fc.png " width="40" height="40">
+                                                                                                        <img src="https://downloads.sensafood.co/pictograms/01c253fba413.png " width="40" height="40">
+                                                                                                        <img src="https://downloads.sensafood.co/pictograms/841a529887ac.png " width="40" height="40">
+                                                                                                        <img src="https://downloads.sensafood.co/pictograms/d39134b7bc6a.png " width="40" height="40">
+                                                                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.item-->
+                                </div>
+                                                            <div class="col-md-3 col-sm-3">
+                                    <div class="item featured equal-height">
+                                        <div class="image">
+                                            <div class="quick-view" id="1"><i class="fa fa-eye"></i><span>Quick View</span></div>
+                                            <a href="/detail-restaurant/467">
+                                                <div class="overlay">
+                                                    <div class="inner">
+                                                        <div class="content">
+                                                            <h4>La Granja de Sitges, carrer parelledes</h4>
+                                                            <p>C/ PARELLADES, 4</p>
+                                                                                                                                                                                                <p>12:00 - 16:00</p>
+                                                                                                                                                                                                                                                                <p>19:00 - 23:00</p>
+                                                                                                                            
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="item-specific">
+                                                    <span title="Bedrooms"><img src="bundles/app/images/bedrooms.png" alt="">2</span>
+                                                    <span title="Bathrooms"><img src="bundles/app/images/bathrooms.png" alt="">2</span>
+                                                    <span title="Area"><img src="bundles/app/images/area.png" alt="">240m<sup>2</sup></span>
+                                                    <span title="Garages"><img src="bundles/app/images/garages.png" alt="">1</span>
+                                                </div>-->
+                                                <div class="icon">
+                                                    <i class="fa fa-thumbs-up"></i>
+                                                </div>
+                                                <img src="https://downloads.sensafood.co/uploads/carrerparellades_0o0s/78c85c9d10eb.jpg" alt="" width="263" height="196">
+                                            </a>
+                                        </div>
+                                        <div class="wrapper">
+                                            <a href="/detail-restaurant/467"><h3>La Granja de Sitges, carrer parelledes</h3></a>
+
+                                            <div class="info">
+                                                <!-- A METTRE LES PICTOS -->
+
+                                                                                                        <img src="https://downloads.sensafood.co/pictograms/a5b8064cf3fc.png " width="40" height="40">
+                                                                                                        <img src="https://downloads.sensafood.co/pictograms/01c253fba413.png " width="40" height="40">
+                                                                                                        <img src="https://downloads.sensafood.co/pictograms/e27cdd537168.png " width="40" height="40">
+                                                                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.item-->
+                                </div>
+                                                            <div class="col-md-3 col-sm-3">
+                                    <div class="item featured equal-height">
+                                        <div class="image">
+                                            <div class="quick-view" id="1"><i class="fa fa-eye"></i><span>Quick View</span></div>
+                                            <a href="/detail-restaurant/468">
+                                                <div class="overlay">
+                                                    <div class="inner">
+                                                        <div class="content">
+                                                            <h4>La Granja de Sitges (carrer major)</h4>
+                                                            <p>C/ MAJOR, 35</p>
+                                                                                                                                                                                                <p>11:00 - 23:00</p>
+                                                                                                                            
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="item-specific">
+                                                    <span title="Bedrooms"><img src="bundles/app/images/bedrooms.png" alt="">2</span>
+                                                    <span title="Bathrooms"><img src="bundles/app/images/bathrooms.png" alt="">2</span>
+                                                    <span title="Area"><img src="bundles/app/images/area.png" alt="">240m<sup>2</sup></span>
+                                                    <span title="Garages"><img src="bundles/app/images/garages.png" alt="">1</span>
+                                                </div>-->
+                                                <div class="icon">
+                                                    <i class="fa fa-thumbs-up"></i>
+                                                </div>
+                                                <img src="https://downloads.sensafood.co/uploads/carrermajor_j98q/3c6077cb9296.jpg" alt="" width="263" height="196">
+                                            </a>
+                                        </div>
+                                        <div class="wrapper">
+                                            <a href="/detail-restaurant/468"><h3>La Granja de Sitges (carrer major)</h3></a>
+
+                                            <div class="info">
+                                                <!-- A METTRE LES PICTOS -->
+
+                                                                                                        <img src="https://downloads.sensafood.co/pictograms/a5b8064cf3fc.png " width="40" height="40">
+                                                                                                        <img src="https://downloads.sensafood.co/pictograms/01c253fba413.png " width="40" height="40">
+                                                                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.item-->
+                                </div>
+                                                            <div class="col-md-3 col-sm-3">
+                                    <div class="item featured equal-height">
+                                        <div class="image">
+                                            <div class="quick-view" id="1"><i class="fa fa-eye"></i><span>Quick View</span></div>
+                                            <a href="/detail-restaurant/466">
+                                                <div class="overlay">
+                                                    <div class="inner">
+                                                        <div class="content">
+                                                            <h4>La Guineu</h4>
+                                                            <p>C/ BARCELONA, 20</p>
+                                                                                                                                                                                                <p>12:00 - 16:00</p>
+                                                                                                                                                                                                                                                                <p>19:00 - 23:00</p>
+                                                                                                                            
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="item-specific">
+                                                    <span title="Bedrooms"><img src="bundles/app/images/bedrooms.png" alt="">2</span>
+                                                    <span title="Bathrooms"><img src="bundles/app/images/bathrooms.png" alt="">2</span>
+                                                    <span title="Area"><img src="bundles/app/images/area.png" alt="">240m<sup>2</sup></span>
+                                                    <span title="Garages"><img src="bundles/app/images/garages.png" alt="">1</span>
+                                                </div>-->
+                                                <div class="icon">
+                                                    <i class="fa fa-thumbs-up"></i>
+                                                </div>
+                                                <img src="https://downloads.sensafood.co/uploads/laguineu_6dwe/5740dd3cf3e8.jpg" alt="" width="263" height="196">
+                                            </a>
+                                        </div>
+                                        <div class="wrapper">
+                                            <a href="/detail-restaurant/466"><h3>La Guineu</h3></a>
+
+                                            <div class="info">
+                                                <!-- A METTRE LES PICTOS -->
+
+                                                                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.item-->
+                                </div>
+                                                        </div>
+                        </div>
+                    </section>
+                    <!--end Featured-->
+                    <!--Recent
+                    <section id="recent" class="block">
+                        <div class="container">
+                            <header><h2>Recent</h2></header>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="item list">
+                                        <div class="image">
+                                            <div class="quick-view" id="5"><i class="fa fa-eye"></i><span>Quick View</span></div>
+                                            <a href="/detail-restaurant">
+                                                <div class="overlay">
+                                                    <div class="inner">
+                                                        <div class="content">
+                                                            <h4>Description</h4>
+                                                            <p>Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item-specific">
+                                                    <span title="Bedrooms"><img src="bundles/app/images/bedrooms.png" alt="">2</span>
+                                                    <span title="Bathrooms"><img src="bundles/app/images/bathrooms.png" alt="">2</span>
+                                                    <span title="Area"><img src="bundles/app/images/area.png" alt="">240m<sup>2</sup></span>
+                                                    <span title="Garages"><img src="bundles/app/images/garages.png" alt="">1</span>
+                                                </div>
+                                                <img src="bundles/app/images/items/real-estate/10.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="wrapper">
+                                            <a href="/detail-restaurant"><h3>431 Hardman Road</h3></a>
+                                            <figure>Brattleboro</figure>
+                                            <div class="price">$82.000</div>
+                                            <div class="info">
+                                                <div class="type">
+                                                    <i><img src="bundles/app/icons/real-estate/apartment-3.png" alt=""></i>
+                                                    <span>Apartment</span>
+                                                </div>
+                                                <div class="rating" data-rating="4"><span class="stars"><i class="fa fa-star s1 active" data-score="1"></i><i class="fa fa-star s2 active" data-score="2"></i><i class="fa fa-star s3 active" data-score="3"></i><i class="fa fa-star s4 active" data-score="4"></i><i class="fa fa-star s5" data-score="5"></i></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.item
+                                </div>
+                                <!--/.col-md-6
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="item list">
+                                        <div class="image">
+                                            <div class="quick-view" id="6"><i class="fa fa-eye"></i><span>Quick View</span></div>
+                                            <a href="/detail-restaurant">
+                                                <div class="overlay">
+                                                    <div class="inner">
+                                                        <div class="content">
+                                                            <h4>Description</h4>
+                                                            <p>Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item-specific">
+                                                    <span title="Bedrooms"><img src="bundles/app/images/bedrooms.png" alt="">2</span>
+                                                    <span title="Bathrooms"><img src="bundles/app/images/bathrooms.png" alt="">2</span>
+                                                    <span title="Area"><img src="bundles/app/images/area.png" alt="">240m<sup>2</sup></span>
+                                                    <span title="Garages"><img src="bundles/app/images/garages.png" alt="">1</span>
+                                                </div>
+                                                <img src="bundles/app/images/items/real-estate/7.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="wrapper">
+                                            <a href="/detail-restaurant"><h3>4282 River Road</h3></a>
+                                            <figure>Springfield</figure>
+                                            <div class="price">$57.000</div>
+                                            <div class="info">
+                                                <div class="type">
+                                                    <i><img src="bundles/app/icons/real-estate/apartment-3.png" alt=""></i>
+                                                    <span>Apartment</span>
+                                                </div>
+                                                <div class="rating" data-rating="4"><span class="stars"><i class="fa fa-star s1 active" data-score="1"></i><i class="fa fa-star s2 active" data-score="2"></i><i class="fa fa-star s3 active" data-score="3"></i><i class="fa fa-star s4 active" data-score="4"></i><i class="fa fa-star s5" data-score="5"></i></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.item
+                                </div>
+                                <!--/.col-md-6
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="item list">
+                                        <div class="image">
+                                            <div class="quick-view" id="7"><i class="fa fa-eye"></i><span>Quick View</span></div>
+                                            <a href="/detail-restaurant">
+                                                <div class="overlay">
+                                                    <div class="inner">
+                                                        <div class="content">
+                                                            <h4>Description</h4>
+                                                            <p>Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item-specific">
+                                                    <span title="Bedrooms"><img src="bundles/app/images/bedrooms.png" alt="">2</span>
+                                                    <span title="Bathrooms"><img src="bundles/app/images/bathrooms.png" alt="">2</span>
+                                                    <span title="Area"><img src="bundles/app/images/area.png" alt="">240m<sup>2</sup></span>
+                                                    <span title="Garages"><img src="bundles/app/images/garages.png" alt="">1</span>
+                                                </div>
+                                                <img src="bundles/app/images/items/real-estate/9.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="wrapper">
+                                            <a href="/detail-restaurant"><h3>2543 Fairfax Drive</h3></a>
+                                            <figure>Elizabeth</figure>
+                                            <div class="price">$486.000</div>
+                                            <div class="info">
+                                                <div class="type">
+                                                    <i><img src="bundles/app/icons/real-estate/apartment-3.png" alt=""></i>
+                                                    <span>Apartment</span>
+                                                </div>
+                                                <div class="rating" data-rating="4"><span class="stars"><i class="fa fa-star s1 active" data-score="1"></i><i class="fa fa-star s2 active" data-score="2"></i><i class="fa fa-star s3 active" data-score="3"></i><i class="fa fa-star s4 active" data-score="4"></i><i class="fa fa-star s5" data-score="5"></i></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.item
+                                </div>
+                                <!--/.col-md-6
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="item list">
+                                        <div class="image">
+                                            <div class="quick-view" id="8"><i class="fa fa-eye"></i><span>Quick View</span></div>
+                                            <a href="/detail-restaurant">
+                                                <div class="overlay">
+                                                    <div class="inner">
+                                                        <div class="content">
+                                                            <h4>Description</h4>
+                                                            <p>Curabitur odio nibh, luctus non pulvinar a, ultricies ac diam. Donec neque massa</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item-specific">
+                                                    <span title="Bedrooms"><img src="bundles/app/images/bedrooms.png" alt="">2</span>
+                                                    <span title="Bathrooms"><img src="bundles/app/images/bathrooms.png" alt="">2</span>
+                                                    <span title="Area"><img src="bundles/app/images/area.png" alt="">240m<sup>2</sup></span>
+                                                    <span title="Garages"><img src="bundles/app/images/garages.png" alt="">1</span>
+                                                </div>
+                                                <img src="bundles/app/images/items/real-estate/11.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="wrapper">
+                                            <a href="/detail-restaurant"><h3>3295 Valley Street</h3></a>
+                                            <figure>Collingswood</figure>
+                                            <div class="price">$42.000</div>
+                                            <div class="info">
+                                                <div class="type">
+                                                    <i><img src="bundles/app/icons/real-estate/apartment-3.png" alt=""></i>
+                                                    <span>Apartment</span>
+                                                </div>
+                                                <div class="rating" data-rating="4"><span class="stars"><i class="fa fa-star s1 active" data-score="1"></i><i class="fa fa-star s2 active" data-score="2"></i><i class="fa fa-star s3 active" data-score="3"></i><i class="fa fa-star s4 active" data-score="4"></i><i class="fa fa-star s5" data-score="5"></i></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.item
+                                </div>
+                                <!--/.col-md-6
+                            </div>
+                            <!--/.row
+                        </div>
+                        <!--/.container
+                    </section>
+                    <!--end Recent-->
+                    <!--Promotion
+                    <section class="block banner center">
+                        <div class="container">
+                            <h2 class="big">Submit Your Property Today!</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie ex vulputate, fermentum ipsum eget</p>
+                            <a href="submit.html" class="btn btn-default">Submit now</a>
+                        </div>
+                        <div class="background">
+                            <img src="bundles/app/images/real-estate-bg.png" alt="" style="width: auto; height: 100%;">
+                        </div>
+                    </section>
+                    <!--end Promotion-->
+                    <!--Our Team
+                    <section class="block" id="the-team">
+                        <div class="container">
+                            <header class="no-border"><h3>The Team</h3></header>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="member">
+                                        <img src="bundles/app/images/member-1.jpg" alt="">
+                                        <h4>Jane Daubert</h4>
+                                        <figure>Company CEO</figure>
+                                        <hr>
+                                        <div class="social">
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                                        </div>
+                                    </div>
+                                    <!--/.member
+                                </div>
+                                <!--/.col-md-3
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="member">
+                                        <img src="bundles/app/images/member-2.jpg" alt="">
+                                        <h4>Kristy Jose</h4>
+                                        <figure>Marketing Specialist</figure>
+                                        <hr>
+                                        <div class="social">
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                                        </div>
+                                    </div>
+                                    <!--/.member
+                                </div>
+                                <!--/.col-md-3
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="member">
+                                        <img src="bundles/app/images/member-3.jpg" alt="">
+                                        <h4>John Doe</h4>
+                                        <figure>PR Manager</figure>
+                                        <hr>
+                                        <div class="social">
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                                        </div>
+                                    </div>
+                                    <!--/.member
+                                </div>
+                                <!--/.col-md-3
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="member">
+                                        <img src="bundles/app/images/member-4.jpg" alt="">
+                                        <h4>Misty Bates</h4>
+                                        <figure>Support</figure>
+                                        <hr>
+                                        <div class="social">
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                                        </div>
+                                    </div>
+                                    <!--/.member
+                                </div>
+                                <!--/.col-md-3
+                            </div>
+                            <!--/.row
+                        </div>
+                        <!--/.container
+                    </section>
+                    <!--end Our Team-->
+                    <!--Partners
+                    <section id="partners" class="block">
+                        <div class="container">
+                            <header><h2>Partners</h2></header>
+                            <div class="logos">
+                                <div class="logo"><a href="#"><img src="bundles/app/images/logo-partner-01.png" alt=""></a></div>
+                                <div class="logo"><a href="#"><img src="bundles/app/images/logo-partner-02.png" alt=""></a></div>
+                                <div class="logo"><a href="#"><img src="bundles/app/images/logo-partner-03.png" alt=""></a></div>
+                                <div class="logo"><a href="#"><img src="bundles/app/images/logo-partner-04.png" alt=""></a></div>
+                                <div class="logo"><a href="#"><img src="bundles/app/images/logo-partner-05.png" alt=""></a></div>
+                            </div>
+                        </div>
+                        <!--/.container
+                    </section>
+                    <!--end Partners
+                </div> !-->
+                <!-- end Page Content-->
+            </div>
+            <!-- end Page Canvas -->
+        </div>
+        <!-- end Inner Wrapper -->
+
+    </div>
+    <!-- end Outer Wrapper-->
+
+
+    <script type="text/javascript" src="/bundles/app/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/before.load.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/leaflet.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/leaflet-providers.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/leaflet.markercluster.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/smoothscroll.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/icheck.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/jquery.hotkeys.js"></script>
+   <script type="text/javascript" src="/bundles/app/js/jquery.nouislider.all.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/custom.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/maps.js"></script>
+
+
+    <script>
+
+        var _latitude = 41.2371851;
+        var _longitude = 1.805886;
+        var jsonPath = {};
+        jsonPath['data'] = [{"id":"398","name":"la Masia","distance":null,"phoneNumber":"938941076","url":"http:\/\/lamasia.sensafood.es","direction":"41.2609286,1.8562218","latitude":"41.2609286","longitude":"1.8562218","image":"https:\/\/downloads.sensafood.co\/uploads\/lamasiag_da91\/144x144_1da317f23c","address":"Passeig de vilanova 164","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/lamasiag_da91\/cov_4f79d6324a7d.jpg","openHours":[],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/lamasiag_da91\/cov_4f79d6324a7d.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"436","name":"Alenti Hotel & Restaurant","distance":null,"phoneNumber":"938114790","url":"http:\/\/alentihotel-restaurant.sensafood.es","direction":"41.2354465,1.806949","latitude":"41.2354465","longitude":"1.806949","image":"https:\/\/downloads.sensafood.co\/uploads\/AlentiHotelRestaurant_xb5y\/144x144_icon.png","address":"Carrer Primer de Maig, 19","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/AlentiHotelRestaurant_xb5y\/450c95cb431d.jpg","openHours":["12:00 - 24:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/AlentiHotelRestaurant_xb5y\/450c95cb431d.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"437","name":"Can Vilalta","distance":null,"phoneNumber":"938943243","url":"http:\/\/canvilalta.sensafood.es","direction":"41.2386323,1.8098035","latitude":"41.2386323","longitude":"1.8098035","image":"https:\/\/downloads.sensafood.co\/uploads\/Canvilalta_ujis\/144x144_icon.png","address":"Av. Artur Carbonell, 32","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/Canvilalta_ujis\/fb5b34c373de.jpg","openHours":["09:00 - 23:30"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/Canvilalta_ujis\/fb5b34c373de.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"438","name":"Casa Hidalgo","distance":null,"phoneNumber":"938943895","url":"http:\/\/casahidalgo.sensafood.es","direction":"41.2359622,1.8090398","latitude":"41.2359622","longitude":"1.8090398","image":"https:\/\/downloads.sensafood.co\/uploads\/CasaHidalgo_7pfl\/144x144_icon.png","address":"Carrer de Sant Pau, 12","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/CasaHidalgo_7pfl\/65f10d30f39e.jpg","openHours":["13:00 - 14:30","20:00 - 22:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/CasaHidalgo_7pfl\/65f10d30f39e.jpg"],"diets":[{"id":"4","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/a5b8064cf3fc.png","name":"Gluten free","description":"","meta_value":"438"},{"id":"17","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/01c253fba413.png","name":"Home made","description":"","meta_value":"438"},{"id":"8","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/841a529887ac.png","name":"Celery free","description":"","meta_value":"438"},{"id":"20","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/d39134b7bc6a.png","name":"Locavore","description":"","meta_value":"438"}],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"439","name":"El Cable","distance":null,"phoneNumber":"931126872","url":"http:\/\/canatecaprado.sensafood.es","direction":"41.236015015444,1.8123418092728","latitude":"41.236015015444","longitude":"1.8123418092728","image":"https:\/\/downloads.sensafood.co\/uploads\/Canatecaprado_1cjl\/144x144_icon.png","address":"Carrer de Francesc Gum\u00e0","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/Canatecaprado_1cjl\/4da5baf23bd7.jpg","openHours":["12:00 - 15:00","19:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/Canatecaprado_1cjl\/4da5baf23bd7.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"440","name":"Cafe Roy","distance":null,"phoneNumber":"938110269","url":"http:\/\/caferoy.sensafood.es","direction":"41.2363502,1.8087848","latitude":"41.2363502","longitude":"1.8087848","image":"https:\/\/downloads.sensafood.co\/uploads\/CafeRoy_b3ae\/144x144_icon.png","address":"Calle Parellades 9","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/CafeRoy_b3ae\/c51e78ab7e7a.png","openHours":["13:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/CafeRoy_b3ae\/c51e78ab7e7a.png"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"441","name":"Ca\u00f1ateca Prado","distance":null,"phoneNumber":"931126872","url":"http:\/\/canatecaprado0.sensafood.es","direction":"41.2377144,1.8105058","latitude":"41.2377144","longitude":"1.8105058","image":"https:\/\/downloads.sensafood.co\/uploads\/CanatecaPrado_3us7\/144x144_icon.png","address":"carrer Francesc Gum\u00e0 6","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/CanatecaPrado_3us7\/023d93e8b189.png","openHours":["12:00 - 16:00","20:00 - 23:15"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/CanatecaPrado_3us7\/023d93e8b189.png"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"442","name":"Casa Tecla","distance":null,"phoneNumber":"938948021","url":"http:\/\/casatecla.sensafood.es","direction":"41.2370987,1.8087281","latitude":"41.2370987","longitude":"1.8087281","image":"https:\/\/downloads.sensafood.co\/uploads\/CasaTecla_s8a9\/144x144_icon.png","address":"Carrer Sant Francesc 9","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/CasaTecla_s8a9\/fa721e59a6ad.jpg","openHours":["12:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/CasaTecla_s8a9\/fa721e59a6ad.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"443","name":"Decoure","distance":null,"phoneNumber":"938947847","url":"http:\/\/decoure.sensafood.es","direction":"41.2385198,1.8100513","latitude":"41.2385198","longitude":"1.8100513","image":"https:\/\/downloads.sensafood.co\/uploads\/Decoure_8t4t\/144x144_icon.png","address":"carrer Francesc Gum\u00e0 24","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/Decoure_8t4t\/8cb3b27a1f70.jpg","openHours":["12:00 - 15:00","19:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/Decoure_8t4t\/8cb3b27a1f70.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"444","name":"Dehesa Santa Maria","distance":null,"phoneNumber":"938114447","url":"http:\/\/dehesasantamaria.sensafood.es","direction":"41.234865302159,1.8072348833084","latitude":"41.234865302159","longitude":"1.8072348833084","image":"https:\/\/downloads.sensafood.co\/uploads\/DehesaSantaMaria_wpjj\/144x144_icon.png","address":"carrer primer de maig","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/DehesaSantaMaria_wpjj\/75fd8d63a1ef.jpg","openHours":["10:00 - 24:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/DehesaSantaMaria_wpjj\/75fd8d63a1ef.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"447","name":"Vivinwine","distance":null,"phoneNumber":"93 709 81 54","url":"http:\/\/vivinwine.sensafood.es","direction":"41.2372948,1.8075652","latitude":"41.2372948","longitude":"1.8075652","image":"https:\/\/downloads.sensafood.co\/uploads\/vivinwine_vtrm\/144x144_icon.png","address":"C\/ SANT BONAVENTURA, 17","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/vivinwine_vtrm\/a2a9f750a8bf.png","openHours":["12:30 - 15:30","19:30 - 22:30"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/vivinwine_vtrm\/a2a9f750a8bf.png"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"448","name":"YUMMY","distance":null,"phoneNumber":"+34 655 90 72 69","url":"http:\/\/yummy.sensafood.es","direction":"41.235837517169,1.8079268932343","latitude":"41.235837517169","longitude":"1.8079268932343","image":"https:\/\/downloads.sensafood.co\/uploads\/yummy_5msi\/144x144_icon.png","address":"C\/ BONAIRE, 25","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/yummy_5msi\/7fe883c97b09.jpg","openHours":["18:30 - 24:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/yummy_5msi\/7fe883c97b09.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"450","name":"tres quarts","distance":null,"phoneNumber":"93 894 85 07","url":"http:\/\/tresquarts.sensafood.es","direction":"41.235111382843,1.8081682920456","latitude":"41.235111382843","longitude":"1.8081682920456","image":"https:\/\/downloads.sensafood.co\/uploads\/tresquarts_z0f4\/144x144_icon.png","address":"C\/ BONAIRE, 36","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/tresquarts_z0f4\/96dc1d058c82.jpg","openHours":["13:30 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/tresquarts_z0f4\/96dc1d058c82.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"451","name":"The American","distance":null,"phoneNumber":"93 811 18 12","url":"http:\/\/theamerican.sensafood.es","direction":"41.2343825,1.8054847","latitude":"41.2343825","longitude":"1.8054847","image":"https:\/\/downloads.sensafood.co\/uploads\/theamerican_mljc\/144x144_icon.png","address":"PSG. DE LA RIBERA, 63-64","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/theamerican_mljc\/c07863db44a6.jpg","openHours":["13:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/theamerican_mljc\/c07863db44a6.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"452","name":"Taberna Guria","distance":null,"phoneNumber":"93 516 96 85","url":"http:\/\/tabernaguria.sensafood.es","direction":"41.235200133027,1.8086618185043","latitude":"41.235200133027","longitude":"1.8086618185043","image":"https:\/\/downloads.sensafood.co\/uploads\/tabernaguria_wslo\/144x144_icon.png","address":"C\/ SANT PERE, 30","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/tabernaguria_wslo\/0086d9c1cc4c.png","openHours":["12:00 - 15:00","19:30 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/tabernaguria_wslo\/0086d9c1cc4c.png"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"453","name":"Sports bar","distance":null,"phoneNumber":"93 811 11 00","url":"http:\/\/sportsbar.sensafood.es","direction":"41.2346729,1.806532","latitude":"41.2346729","longitude":"1.806532","image":"https:\/\/downloads.sensafood.co\/uploads\/sportsbar_ciz7\/144x144_icon.png","address":"PSG. DE LA RIBERA, 48","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/sportsbar_ciz7\/d8f0eedb0b12.jpg","openHours":["12:00 - 24:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/sportsbar_ciz7\/d8f0eedb0b12.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"454","name":"SoCA RESTAURANT & BAR","distance":null,"phoneNumber":"93 894 30 46","url":"http:\/\/socarestaurant&bar.sensafood.es","direction":"41.2371615,1.8082934","latitude":"41.2371615","longitude":"1.8082934","image":"https:\/\/downloads.sensafood.co\/uploads\/socarestaurant&bar_0txy\/144x144_icon.png","address":"C\/ SANT GAUDENCI, 9","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/socarestaurant&bar_0txy\/270fa37518c3.jpg","openHours":["13:00 - 15:30","19:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/socarestaurant&bar_0txy\/270fa37518c3.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"455","name":"SIRKA","distance":null,"phoneNumber":"93 894 48 57","url":"http:\/\/sirka.sensafood.es","direction":"41.2383119,1.809191","latitude":"41.2383119","longitude":"1.809191","image":"https:\/\/downloads.sensafood.co\/uploads\/sirka_6h30\/144x144_icon.png","address":"C\/ ILLA DE CUBA, 34","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/sirka_6h30\/6d8dc1a19903.png","openHours":["12:30 - 15:30","20:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/sirka_6h30\/6d8dc1a19903.png"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"456","name":"Red Velvet","distance":null,"phoneNumber":"93 894 39 03","url":"http:\/\/redvelvet.sensafood.es","direction":"41.2350706,1.8102336","latitude":"41.2350706","longitude":"1.8102336","image":"https:\/\/downloads.sensafood.co\/uploads\/redvelvet_9bai\/144x144_icon.png","address":"PSG. DE LA RIBERA, 8","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/redvelvet_9bai\/b9e88d428056.jpg","openHours":["13:30 - 16:30"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/redvelvet_9bai\/b9e88d428056.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"457","name":"Platos rotos","distance":null,"phoneNumber":"93 811 11 37","url":"http:\/\/platosrotos.sensafood.es","direction":"41.2356889,1.8067548","latitude":"41.2356889","longitude":"1.8067548","image":"https:\/\/downloads.sensafood.co\/uploads\/platosrotos_qdqg\/144x144_icon.png","address":"C\/ MARQUE\u0300S DE MONTROIG, 1","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/platosrotos_qdqg\/1ca60ec3f979.jpg","openHours":["12:00 - 23:30"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/platosrotos_qdqg\/1ca60ec3f979.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"458","name":"Pic Nic","distance":null,"phoneNumber":"93 811 00 40","url":"http:\/\/picnic.sensafood.es","direction":"41.233445277488,1.8048477172852","latitude":"41.233445277488","longitude":"1.8048477172852","image":"https:\/\/downloads.sensafood.co\/uploads\/picnic_yayb\/144x144_b098de2673","address":"Pg. Mar\u00edtim, s\/n","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/picnic_yayb\/10554e8202ed.jpg","openHours":["13:00 - 16:30"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/picnic_yayb\/10554e8202ed.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"459","name":"Louise se va","distance":null,"phoneNumber":"93 811 04 72","url":"http:\/\/louiseseva.sensafood.es","direction":"41.2380407,1.8074557","latitude":"41.2380407","longitude":"1.8074557","image":"https:\/\/downloads.sensafood.co\/uploads\/louiseseva_mure\/144x144_icon.png","address":"PSG. VILAFRANCA, 5","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/louiseseva_mure\/6df55a03f7c0.jpg","openHours":["11:30 - 14:00","19:30 - 21:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/louiseseva_mure\/6df55a03f7c0.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"461","name":"La Terrassa de Sitges","distance":null,"phoneNumber":"+34 674 14 55 50","url":"http:\/\/laterrassadesitges.sensafood.es","direction":"41.238399093284,1.8065428733826","latitude":"41.238399093284","longitude":"1.8065428733826","image":"https:\/\/downloads.sensafood.co\/uploads\/laterrassadesitges_9b5p\/144x144_icon.png","address":"PSG. VILANOVA, S\/N","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/laterrassadesitges_9b5p\/6aac5ed2baec.jpg","openHours":["12:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/laterrassadesitges_9b5p\/6aac5ed2baec.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"462","name":"La Picara","distance":null,"phoneNumber":"93 811 02 85","url":"http:\/\/lapicara.sensafood.es","direction":"41.2361448,1.8087135","latitude":"41.2361448","longitude":"1.8087135","image":"https:\/\/downloads.sensafood.co\/uploads\/lapicara_85ur\/144x144_icon.png","address":"C\/ SANT PERE, 3","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/lapicara_85ur\/165d1911b8b6.jpg","openHours":["12:00 - 15:30","19:30 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/lapicara_85ur\/165d1911b8b6.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"463","name":"La Pepa del Mar","distance":null,"phoneNumber":"93 894 95 79","url":"http:\/\/lapepadelmar.sensafood.es","direction":"41.2364138,1.8146389","latitude":"41.2364138","longitude":"1.8146389","image":"https:\/\/downloads.sensafood.co\/uploads\/lapepadelmar_145z\/144x144_icon.png","address":"C\/ PORT ALEGRE, 53","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/lapepadelmar_145z\/1696d4e26c1f.jpg","openHours":["12:00 - 16:00","20:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/lapepadelmar_145z\/1696d4e26c1f.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"464","name":"La Mediterrania","distance":null,"phoneNumber":"93 894 66 58","url":"http:\/\/lamediterrania.sensafood.es","direction":"41.235643882137,1.808608174324","latitude":"41.235643882137","longitude":"1.808608174324","image":"https:\/\/downloads.sensafood.co\/uploads\/lamediterrania_rwsv\/144x144_icon.png","address":"C\/ SANT PERE, 4","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/lamediterrania_rwsv\/d68601c51703.png","openHours":["12:30 - 22:30"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/lamediterrania_rwsv\/d68601c51703.png"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"465","name":"La Kassoleta","distance":null,"phoneNumber":"93 894 74 23","url":"http:\/\/lakassoleta.sensafood.es","direction":"41.2379008,1.8116001","latitude":"41.2379008","longitude":"1.8116001","image":"https:\/\/downloads.sensafood.co\/uploads\/lakassoleta_7hv3\/144x144_icon.png","address":"C\/ JESU\u0301S, 55-57","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/lakassoleta_7hv3\/011d2059eb79.jpg","openHours":["13:00 - 16:00","19:30 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/lakassoleta_7hv3\/011d2059eb79.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"466","name":"La Guineu","distance":null,"phoneNumber":"+34 609 52 11 55","url":"http:\/\/laguineu.sensafood.es","direction":"41.2358066,1.8125104","latitude":"41.2358066","longitude":"1.8125104","image":"https:\/\/downloads.sensafood.co\/uploads\/laguineu_6dwe\/144x144_icon.png","address":"C\/ BARCELONA, 20","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/laguineu_6dwe\/5740dd3cf3e8.jpg","openHours":["12:00 - 16:00","19:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/laguineu_6dwe\/5740dd3cf3e8.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"467","name":"La Granja de Sitges, carrer parelledes","distance":null,"phoneNumber":"93 811 49 62","url":"http:\/\/carrerparellades.sensafood.es","direction":"41.2365185,1.8091983","latitude":"41.2365185","longitude":"1.8091983","image":"https:\/\/downloads.sensafood.co\/uploads\/carrerparellades_0o0s\/144x144_icon.png","address":"C\/ PARELLADES, 4","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/carrerparellades_0o0s\/78c85c9d10eb.jpg","openHours":["12:00 - 16:00","19:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/carrerparellades_0o0s\/78c85c9d10eb.jpg"],"diets":[{"id":"4","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/a5b8064cf3fc.png","name":"Gluten free","description":"","meta_value":"467"},{"id":"17","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/01c253fba413.png","name":"Home made","description":"","meta_value":"467"},{"id":"7","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/e27cdd537168.png","name":"Bio","description":"","meta_value":"467"}],"cuisine":[{"id":"17","name":"Bio"},{"id":"45","name":"Spanish"},{"id":"46","name":"Tapas"}],"facilities":[{"id":"1","name":"Wifi","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/04395b534138.png"},{"id":"2","name":"Handicap access","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/74d678c74464.png"},{"id":"3","name":"Animals authorized","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/97c8fb4b303a.png"}],"payment":[{"name":"CardMastercard","pictogram":"https:\/\/downloads.sensafood.co\/payments\/CardMastercard.png"},{"name":"Cash","pictogram":"https:\/\/downloads.sensafood.co\/payments\/Cash.png"},{"name":"Check","pictogram":"https:\/\/downloads.sensafood.co\/payments\/Check.png"}],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"468","name":"La Granja de Sitges (carrer major)","distance":null,"phoneNumber":"93 811 09 81","url":"http:\/\/carrermajor.sensafood.es","direction":"41.2362492,1.8101557","latitude":"41.2362492","longitude":"1.8101557","image":"https:\/\/downloads.sensafood.co\/uploads\/carrermajor_j98q\/144x144_icon.png","address":"C\/ MAJOR, 35","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/carrermajor_j98q\/3c6077cb9296.jpg","openHours":["11:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/carrermajor_j98q\/3c6077cb9296.jpg"],"diets":[{"id":"4","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/a5b8064cf3fc.png","name":"Gluten free","description":"","meta_value":"468"},{"id":"17","pictogram":"https:\/\/downloads.sensafood.co\/pictograms\/01c253fba413.png","name":"Home made","description":"","meta_value":"468"}],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"469","name":"el xampu","distance":null,"phoneNumber":"93 816 88 57","url":"http:\/\/elxampu.sensafood.es","direction":"41.238084448398,1.8057650327682","latitude":"41.238084448398","longitude":"1.8057650327682","image":"https:\/\/downloads.sensafood.co\/uploads\/elxampu_gkiw\/144x144_icon.png","address":"Passeig de Vilanova, 6","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/elxampu_gkiw\/85b304e2b97a.jpg","openHours":["12:00 - 14:00","19:00 - 21:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/elxampu_gkiw\/85b304e2b97a.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"470","name":"Izarra","distance":null,"phoneNumber":"93 894 73 70","url":"http:\/\/izara.sensafood.es","direction":"41.2358952,1.8108786","latitude":"41.2358952","longitude":"1.8108786","image":"https:\/\/downloads.sensafood.co\/uploads\/izara_hvpw\/144x144_icon.png","address":"Carrer Major, 22","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/izara_hvpw\/59e014e32b45.jpg","openHours":["13:30 - 22:30"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/izara_hvpw\/59e014e32b45.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"471","name":"L'aixeta","distance":null,"phoneNumber":"93 811 24 64","url":"http:\/\/laixeta.sensafood.es","direction":"41.2381236,1.8076047","latitude":"41.2381236","longitude":"1.8076047","image":"https:\/\/downloads.sensafood.co\/uploads\/laixeta_xv4g\/144x144_icon.png","address":"PSG. VILAFRANCA, 4","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/laixeta_xv4g\/54f4772643cc.jpg","openHours":["12:00 - 16:00","19:30 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/laixeta_xv4g\/54f4772643cc.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"472","name":"L'avinyet","distance":null,"phoneNumber":"93 816 88 56","url":"http:\/\/lavinyet.sensafood.es","direction":"41.2369393,1.8100603","latitude":"41.2369393","longitude":"1.8100603","image":"https:\/\/downloads.sensafood.co\/uploads\/lavinyet_194f\/144x144_icon.png","address":"C\/ JESU\u0301S, 12","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/lavinyet_194f\/bf65cebf1830.jpg","openHours":["19:30 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/lavinyet_194f\/bf65cebf1830.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"473","name":"La barata","distance":null,"phoneNumber":"+34 603 66 95 21","url":"http:\/\/labarata.sensafood.es","direction":"41.2372509,1.8067786","latitude":"41.2372509","longitude":"1.8067786","image":"https:\/\/downloads.sensafood.co\/uploads\/labarata_x1p3\/144x144_icon.png","address":"C\/ ESPALTER, 21","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/labarata_x1p3\/a98f4d27a60b.jpg","openHours":[],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/labarata_x1p3\/a98f4d27a60b.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"474","name":"la formatgeria de sitges","distance":null,"phoneNumber":"93 189 96 04","url":"http:\/\/laformatgeriadesitges.sensafood.es","direction":"41.2375946,1.8114566","latitude":"41.2375946","longitude":"1.8114566","image":"https:\/\/downloads.sensafood.co\/uploads\/laformatgeriadesitges_wzv9\/144x144_icon.png","address":"C\/ SANTIAGO RUSIN\u0303OL, 34","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/laformatgeriadesitges_wzv9\/49b838948a11.jpg","openHours":["12:00 - 14:45","18:00 - 23:00"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/laformatgeriadesitges_wzv9\/49b838948a11.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"477","name":"El Castell de Sitges","distance":null,"phoneNumber":"938943349","url":"http:\/\/elcastelldesitges.sensafood.es","direction":"41.2355276,1.8101351","latitude":"41.2355276","longitude":"1.8101351","image":"https:\/\/downloads.sensafood.co\/uploads\/elcastelldesitges_hvib\/144x144_icon.png","address":"Carrer Carreta, 21","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/elcastelldesitges_hvib\/5da683d730c5.png","openHours":["13:30 - 15:30","20:30 - 23:30"],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/elcastelldesitges_hvib\/5da683d730c5.png"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"479","name":"Los Vikingos","distance":null,"phoneNumber":"938949687","url":"http:\/\/losvikingos.sensafood.es","direction":"41.2358415,1.8067008","latitude":"41.2358415","longitude":"1.8067008","image":"https:\/\/downloads.sensafood.co\/uploads\/losvikingos_r4xg\/144x144_icon.png","address":"Marqu\u00e9s de Montroig, 7","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/losvikingos_r4xg\/badf2842233b.jpg","openHours":[],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/losvikingos_r4xg\/badf2842233b.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"524","name":"Monica","distance":null,"phoneNumber":"687491996","url":"http:\/\/monica_es08870.sensafood.co","direction":"41.2306819,1.7949347","latitude":"41.2306819","longitude":"1.7949347","image":"https:\/\/downloads.sensafood.co\/uploads\/monica_djhq\/144x144_icon.png","address":"Avda.mare de deu de montserrat,71","coverPicture":"","openHours":[],"items":[],"features":[],"gallery":[],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}},{"id":"538","name":"Coraz\u00f3n de Agave","distance":null,"phoneNumber":"609 370 314","url":"http:\/\/corazondeagave.sensafood.co","direction":"41.2609286,1.8562218","latitude":"41.2609286","longitude":"1.8562218","image":"https:\/\/downloads.sensafood.co\/uploads\/corazondeagae_trkb\/144x144_9bbbddfba6","address":"","coverPicture":"https:\/\/downloads.sensafood.co\/uploads\/corazondeagae_trkb\/75e5c29c8a38.jpg","openHours":[],"items":[],"features":[],"gallery":["https:\/\/downloads.sensafood.co\/uploads\/corazondeagae_trkb\/75e5c29c8a38.jpg"],"diets":[],"cuisine":[],"facilities":[],"payment":[],"isFavoriteResto":false,"city":{"id":"32","longitude":"1.805886","latitude":"41.2371851"}}];
+        //console.log(jsonPath);
+        //var parse = JSON.parse(jsonPath);
+        //var jsonPath = 'bundles/app/json/restaurant-spain.json.txt';
+
+        var mapProvider = 'Hydda.Full';
+        createHomepageOSM(_latitude,_longitude, jsonPath, mapProvider);
+
+        // Set if language is RTL and load Owl Carousel
+        $(window).load(function(){
+            var rtl = false; // Use RTL
+            initializeOwl(rtl);
+        });
+    </script>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script>
+
+
+
+           jQuery(function($) {
+                $.noConflict();
+
+               var arrCities = [{"id":"36","name":"Barcelona","label":"Barcelona (08019)","country_code":"ES","postal_code":"08019","longitude":"2.1833","latitude":"41.3833"},{"id":"5","name":"Carry-le-Rouet","label":"Carry-le-Rouet (13620)","country_code":"FR","postal_code":"13620","longitude":"5.151576","latitude":"43.330673"},{"id":"7","name":"Courbevoie","label":"Courbevoie (92400)","country_code":"FR","postal_code":"92400","longitude":"2.25929","latitude":"48.900552"},{"id":"8","name":"Gen\u00e8ve","label":"Gen\u00e8ve (1204)","country_code":"CH","postal_code":"1204","longitude":"6.1451503","latitude":"46.2035452"},{"id":"9","name":"Ghisonaccia","label":"Ghisonaccia (20240)","country_code":"FR","postal_code":"20240","longitude":"9.403981","latitude":"42.016837"},{"id":"10","name":"Guangzhou Shi","label":"Guangzhou Shi (510620)","country_code":"CN","postal_code":"510620","longitude":"113.3250301","latitude":"23.1352029"},{"id":"11","name":"Juvignac","label":"Juvignac (34990)","country_code":"FR","postal_code":"34990","longitude":"3.812357","latitude":"43.611297"},{"id":"12","name":"Lyon","label":"Lyon (69001)","country_code":"FR","postal_code":"69001","longitude":"4.8280831","latitude":"45.7712918"},{"id":"13","name":"Lyon","label":"Lyon (69005)","country_code":"FR","postal_code":"69005","longitude":"4.7990749","latitude":"45.7582622"},{"id":"14","name":"Marseille","label":"Marseille (13001)","country_code":"FR","postal_code":"13001","longitude":"5.3821768","latitude":"43.300771"},{"id":"15","name":"Marseille","label":"Marseille (13004)","country_code":"FR","postal_code":"13004","longitude":"5.4018087","latitude":"43.305868"},{"id":"16","name":"Marseille","label":"Marseille (13006)","country_code":"FR","postal_code":"13006","longitude":"5.3808683","latitude":"43.2875818"},{"id":"17","name":"Marseille","label":"Marseille (13007)","country_code":"FR","postal_code":"13007","longitude":"5.3547034","latitude":"43.2839895"},{"id":"18","name":"Marseille","label":"Marseille (13008)","country_code":"FR","postal_code":"13008","longitude":"5.3819969","latitude":"43.25424"},{"id":"19","name":"Mont-de-Lans","label":"Mont-de-Lans (38860)","country_code":"FR","postal_code":"38860","longitude":"6.131857","latitude":"45.0362"},{"id":"20","name":"Montpellier","label":"Montpellier (34000)","country_code":"FR","postal_code":"34000","longitude":"3.9011747","latitude":"43.6047275"},{"id":"22","name":"Moustiers-Sainte-Marie","label":"Moustiers-Sainte-Marie (04360)","country_code":"FR","postal_code":"04360","longitude":"6.221481","latitude":"43.8456819"},{"id":"23","name":"Nice","label":"Nice (06300)","country_code":"FR","postal_code":"06300","longitude":"7.2922646","latitude":"43.706449"},{"id":"24","name":"Paris","label":"Paris (75014)","country_code":"FR","postal_code":"75014","longitude":"2.3255684","latitude":"48.8314408"},{"id":"25","name":"P\u00e9kin","label":"P\u00e9kin (100600)","country_code":"CN","postal_code":"100600","longitude":"116.4464138","latitude":"39.9416243"},{"id":"37","name":"Roissy","label":"Roissy (95708)","country_code":"FR","postal_code":"95708","longitude":"2.5849199295044","latitude":"49.004434014642"},{"id":"26","name":"Saint Aunes","label":"Saint Aunes (34130)","country_code":"FR","postal_code":"34130","longitude":"3.966221","latitude":"43.636932"},{"id":"28","name":"Saint-Martin-de-Belleville","label":"Saint-Martin-de-Belleville (73440)","country_code":"FR","postal_code":"73440","longitude":"6.504104","latitude":"45.3804019"},{"id":"29","name":"Sant Pere de Ribes","label":"Sant Pere de Ribes (08810)","country_code":"ES","postal_code":"08810","longitude":"1.7757916","latitude":"41.2596829"},{"id":"30","name":"Sausset-les-Pins","label":"Sausset-les-Pins (13960)","country_code":"FR","postal_code":"13960","longitude":"5.11057","latitude":"43.332412"},{"id":"31","name":"Shanghai","label":"Shanghai (200002)","country_code":"CN","postal_code":"200002","longitude":"121.4871268","latitude":"31.2380573"},{"id":"32","name":"Sitges","label":"Sitges (08870)","country_code":"ES","postal_code":"08870","longitude":"1.805886","latitude":"41.2371851"},{"id":"33","name":"Vancouver","label":"Vancouver (V6B1T2)","country_code":"CA","postal_code":"V6B1T2","longitude":"-123.1189401","latitude":"49.276991"},{"id":"34","name":"Villefranche-sur-Mer","label":"Villefranche-sur-Mer (06230)","country_code":"FR","postal_code":"06230","longitude":"7.311109","latitude":"43.703976"},{"id":"35","name":"Zhuhai","label":"Zhuhai (528403)","country_code":"CN","postal_code":"528403","longitude":"113.3953764","latitude":"22.5137039"}];
+               cityMarker.push(32);
+               //console.log(arrCities);
+
+               //buildMap(_latitude, _longitude);
+
+               $( "#location" ).autocomplete({
+                   source:arrCities,
+                   select: function( event, ui ) {
+                       $( "#location" ).val( ui.item.label );
+                       $( "#latitude" ).val( ui.item.longitude );
+                       $( "#longitude" ).val( ui.item.latitude );
+                       $( "#idCity" ).val( ui.item.id );
+                       return false;
+                   },
+                   close: function(){
+                       $('#location').trigger("change");
+                   }
+               });
+
+
+               $(".image").click( function () {
+                   $(".image").removeClass("");
+               });
+
+
+
+
+       });
+
+        </script>
+    </body>
+
+    <!--Page Footer-->
+    <footer id="page-footer">
+        <div class="inner">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <!--New Items-->
+                            <section>
+                                <div class="wrapper">
+                                    <div class="image">
+                                        <img src="/bundles/app/images/signature.png" width="180" height="180"
+                                             style="padding-top: 10px;">
+                                        <a href="item-detail.html" class="item-horizontal small">
+
+                                            <div class="info">
+
+                                            </div>
+
+
+                                            <!--/.item-horizontal small-->
+                                        </a><a href="item-detail.html" class="item-horizontal small">
+
+
+                                            <div class="wrapper">
+                                            </div>
+                                            <div class="info">
+
+                                            </div>
+                                        </a></div>
+                                    <a href="item-detail.html" class="item-horizontal small">
+                                    </a>
+                                    <!--/.item-horizontal small-->
+                                </div>
+                            </section>
+                            <!--end New Items-->
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <!--Recent Reviews-->
+                            <section class="newsletter">
+                                <h2>Newsletter</h2>
+                                <p>Inscrivez vous à notre newsletter et découvrez toutes l'actualité de Sensafood</p>
+
+                                <form role="form">
+                                    <div class="input-group input-group-3d">
+                                        <a href="mailto:contact@sensafood.co"><h3
+                                                    style="text-align: center;color: #34C184;font-size: 25px;">
+                                                contact@sensafood.co</h3></a>
+                                        <?php echo lala; ?>
+                                    </div>
+                                </form>
+
+                                <!--
+                                <h2>Subscribe to newsletter</h2>
+                                <a href="#" class="review small">
+                                    <form role="form">
+                                        <div class="input-group input-group-3d">
+                                            <input type="email" class="form-control input-3d" placeholder="Enter your Email" required="">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">Subscribe now</button>
+                                </span>
+                                        </div>
+                                    </form>
+                                -
+
+                                </a><!--/.review-->
+                                <a href="item-detail.html#reviews" class="review small">
+
+                                </a>
+                                <!--/.review-->
+                            </section>
+                            <!--end Recent Reviews-->
+                        </div>
+                        <div class="col-md-4 col-sm-4" style="padding-left: 150px">
+                            <section>
+                                <h2>About Us</h2>
+                                <address>
+                                    <div>BREF4 (SAS)</div>
+                                    <div>21, Avenue des chasseurs</div>
+                                    <div>Saint-Aunès, 34130, France</div>
+                                    <figure>
+                                        <div class="info">
+                                            <i class="fa fa-phone"></i>
+                                            <span>+ 06 16 80 84 14</span>
+                                        </div>
+                                        <div class="info">
+                                            <i class="fa fa-globe"></i>
+                                            <a href="https://pro.sensafood.co/fr/">pro.sensafood.co</a>
+                                        </div>
+                                    </figure>
+                                </address>
+                                <div class="social">
+                                    <a href="https://twitter.com/sensafood1" class="social-button" target="_blank"><i
+                                                class="fa fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/sensafood/" class="social-button"><i
+                                                class="fa fa-facebook"></i></a>
+                                    <a href="https://www.linkedin.com/company/5238173?trk=tyah&amp;trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A5238173%2Cidx%3A1-1-1%2CtarId%3A1460114264785%2Ctas%3Asensafoo"
+                                       class="social-button"><i class="fa fa-linkedin"></i></a>
+                                </div>
+
+                                <!--<a href="/contact" class="btn framed icon">Contact Us<i class="fa fa-angle-right"></i></a>-->
+                            </section>
+                        </div>
+                        <!--/.col-md-4-->
+                    </div>
+                    <!--/.row-->
+                </div>
+                <!--/.container-->
+            </div>
+            <!--/.footer-top-->
+            <div class="footer-bottom">
+                <div class="container">
+                    <span class="left">SENSAFOOD 2016, All rights reserved</span>
+                            <span class="right">
+                                <a href="#page-top" class="to-top roll"><i class="fa fa-angle-up"></i></a>
+                            </span>
+                </div>
+            </div>
+            <!--/.footer-bottom-->
+        </div>
+    </footer>
+    <!--end Page Footer-->
+    </div>
+    <!-- end Inner Wrapper -->
+    </div>
+    <!-- end Outer Wrapper-->
+
+    <div class="pac-container pac-logo"
+         style="display: none; width: 404px; position: absolute; left: 15px; top: 484px;"></div>
+
+    <script type="text/javascript" src="/bundles/app/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/before.load.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script type="text/javascript" src="/bundles/app/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/css/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/smoothscroll.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/jquery.nouislider.all.min.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/custom.js"></script>
+    <script type="text/javascript" src="/bundles/app/js/maps.js"></script>
+
+    <!--[if lte IE 9]>
+    <script type="text/javascript" src="/bundles/app/js/ie-scripts.js"></script>
+    <![endif]-->
+
+
+
+
+<div id="sfwdt10158d" class="sf-toolbar" style="display: none"></div><script>/*<![CDATA[*/        Sfjs = (function() {        "use strict";        var classListIsSupported = 'classList' in document.documentElement;        if (classListIsSupported) {            var hasClass = function (el, cssClass) { return el.classList.contains(cssClass); };            var removeClass = function(el, cssClass) { el.classList.remove(cssClass); };            var addClass = function(el, cssClass) { el.classList.add(cssClass); };            var toggleClass = function(el, cssClass) { el.classList.toggle(cssClass); };        } else {            var hasClass = function (el, cssClass) { return el.className.match(new RegExp('\\b' + cssClass + '\\b')); };            var removeClass = function(el, cssClass) { el.className = el.className.replace(new RegExp('\\b' + cssClass + '\\b'), ' '); };            var addClass = function(el, cssClass) { if (!hasClass(el, cssClass)) { el.className += " " + cssClass; } };            var toggleClass = function(el, cssClass) { hasClass(el, cssClass) ? removeClass(el, cssClass) : addClass(el, cssClass); };        }        var noop = function() {},            collectionToArray = function (collection) {                var length = collection.length || 0,                    results = new Array(length);                while (length--) {                    results[length] = collection[length];                }                return results;            },            profilerStorageKey = 'sf2/profiler/',            request = function(url, onSuccess, onError, payload, options) {                var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');                options = options || {};                options.maxTries = options.maxTries || 0;                xhr.open(options.method || 'GET', url, true);                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');                xhr.onreadystatechange = function(state) {                    if (4 !== xhr.readyState) {                        return null;                    }                    if (xhr.status == 404 && options.maxTries > 1) {                        setTimeout(function(){                            options.maxTries--;                            request(url, onSuccess, onError, payload, options);                        }, 500);                        return null;                    }                    if (200 === xhr.status) {                        (onSuccess || noop)(xhr);                    } else {                        (onError || noop)(xhr);                    }                };                xhr.send(payload || '');            },            getPreference = function(name) {                if (!window.localStorage) {                    return null;                }                return localStorage.getItem(profilerStorageKey + name);            },            setPreference = function(name, value) {                if (!window.localStorage) {                    return null;                }                localStorage.setItem(profilerStorageKey + name, value);            },            requestStack = [],            renderAjaxRequests = function() {                var requestCounter = document.querySelectorAll('.sf-toolbar-ajax-requests');                if (!requestCounter.length) {                    return;                }                var ajaxToolbarPanel = document.querySelector('.sf-toolbar-block-ajax');                var tbodies = document.querySelectorAll('.sf-toolbar-ajax-request-list');                var state = 'ok';                if (tbodies.length) {                    var tbody = tbodies[0];                    var rows = document.createDocumentFragment();                    if (requestStack.length) {                        for (var i = 0; i < requestStack.length; i++) {                            var request = requestStack[i];                            var row = document.createElement('tr');                            rows.insertBefore(row, rows.firstChild);                            var methodCell = document.createElement('td');                            if (request.error) {                                methodCell.className = 'sf-ajax-request-error';                            }                            methodCell.textContent = request.method;                            row.appendChild(methodCell);                            var pathCell = document.createElement('td');                            pathCell.className = 'sf-ajax-request-url';                            if ('GET' === request.method) {                                var pathLink = document.createElement('a');                                pathLink.setAttribute('href', request.url);                                pathLink.textContent = request.url;                                pathCell.appendChild(pathLink);                            } else {                                pathCell.textContent = request.url;                            }                            pathCell.setAttribute('title', request.url);                            row.appendChild(pathCell);                            var durationCell = document.createElement('td');                            durationCell.className = 'sf-ajax-request-duration';                            if (request.duration) {                                durationCell.textContent = request.duration + "ms";                            } else {                                durationCell.textContent = '-';                            }                            row.appendChild(durationCell);                            row.appendChild(document.createTextNode(' '));                            var profilerCell = document.createElement('td');                            if (request.profilerUrl) {                                var profilerLink = document.createElement('a');                                profilerLink.setAttribute('href', request.profilerUrl);                                profilerLink.textContent = request.profile;                                profilerCell.appendChild(profilerLink);                            } else {                                profilerCell.textContent = 'n/a';                            }                            row.appendChild(profilerCell);                            var requestState = 'ok';                            if (request.error) {                                requestState = 'error';                                if (state != "loading" && i > requestStack.length - 4) {                                    state = 'error';                                }                            } else if (request.loading) {                                requestState = 'loading';                                state = 'loading';                            }                            row.className = 'sf-ajax-request sf-ajax-request-' + requestState;                        }                        var infoSpan = document.querySelectorAll(".sf-toolbar-ajax-info")[0];                        var children = collectionToArray(tbody.children);                        for (var i = 0; i < children.length; i++) {                            tbody.removeChild(children[i]);                        }                        tbody.appendChild(rows);                        if (infoSpan) {                            var text = requestStack.length + ' AJAX request' + (requestStack.length > 1 ? 's' : '');                            infoSpan.textContent = text;                        }                        ajaxToolbarPanel.style.display = 'block';                    } else {                        ajaxToolbarPanel.style.display = 'none';                    }                }                requestCounter[0].textContent = requestStack.length;                var className = 'sf-toolbar-ajax-requests sf-toolbar-value';                requestCounter[0].className = className;                if (state == 'ok') {                    Sfjs.removeClass(ajaxToolbarPanel, 'sf-ajax-request-loading');                    Sfjs.removeClass(ajaxToolbarPanel, 'sf-toolbar-status-red');                } else if (state == 'error') {                    Sfjs.addClass(ajaxToolbarPanel, 'sf-toolbar-status-red');                    Sfjs.removeClass(ajaxToolbarPanel, 'sf-ajax-request-loading');                } else {                    Sfjs.addClass(ajaxToolbarPanel, 'sf-ajax-request-loading');                }            };        var addEventListener;        var el = document.createElement('div');        if (!'addEventListener' in el) {            addEventListener = function (element, eventName, callback) {                element.attachEvent('on' + eventName, callback);            };        } else {            addEventListener = function (element, eventName, callback) {                element.addEventListener(eventName, callback, false);            };        }                    if (window.XMLHttpRequest && XMLHttpRequest.prototype.addEventListener) {                var proxied = XMLHttpRequest.prototype.open;                XMLHttpRequest.prototype.open = function(method, url, async, user, pass) {                    var self = this;                    /* prevent logging AJAX calls to static and inline files, like templates */                    var path = url;                    if (url.substr(0, 1) === '/') {                        if (0 === url.indexOf('')) {                            path = url.substr(0);                        }                    }                    else if (0 === url.indexOf('http\x3A\x2F\x2Flocalhost\x3A8000')) {                        path = url.substr(21);                    }                    if (!path.match(new RegExp("^\/(app(_[\\w]+)?\\.php\/)?_wdt"))) {                        var stackElement = {                            loading: true,                            error: false,                            url: url,                            method: method,                            start: new Date()                        };                        requestStack.push(stackElement);                        this.addEventListener('readystatechange', function() {                            if (self.readyState == 4) {                                stackElement.duration = new Date() - stackElement.start;                                stackElement.loading = false;                                stackElement.error = self.status < 200 || self.status >= 400;                                stackElement.profile = self.getResponseHeader("X-Debug-Token");                                stackElement.profilerUrl = self.getResponseHeader("X-Debug-Token-Link");                                Sfjs.renderAjaxRequests();                            }                        }, false);                        Sfjs.renderAjaxRequests();                    }                    proxied.apply(this, Array.prototype.slice.call(arguments));                };            }                return {            hasClass: hasClass,            removeClass: removeClass,            addClass: addClass,            toggleClass: toggleClass,            getPreference: getPreference,            setPreference: setPreference,            addEventListener: addEventListener,            request: request,            renderAjaxRequests: renderAjaxRequests,            load: function(selector, url, onSuccess, onError, options) {                var el = document.getElementById(selector);                if (el && el.getAttribute('data-sfurl') !== url) {                    request(                        url,                        function(xhr) {                            el.innerHTML = xhr.responseText;                            el.setAttribute('data-sfurl', url);                            removeClass(el, 'loading');                            (onSuccess || noop)(xhr, el);                        },                        function(xhr) { (onError || noop)(xhr, el); },                        '',                        options                    );                }                return this;            },            toggle: function(selector, elOn, elOff) {                var tmp = elOn.style.display,                    el = document.getElementById(selector);                elOn.style.display = elOff.style.display;                elOff.style.display = tmp;                if (el) {                    el.style.display = 'none' === tmp ? 'none' : 'block';                }                return this;            },            createTabs: function() {                var tabGroups = document.querySelectorAll('.sf-tabs');                /* create the tab navigation for each group of tabs */                for (var i = 0; i < tabGroups.length; i++) {                    var tabs = tabGroups[i].querySelectorAll('.tab');                    var tabNavigation = document.createElement('ul');                    tabNavigation.className = 'tab-navigation';                    for (var j = 0; j < tabs.length; j++) {                        var tabId = 'tab-' + i + '-' + j;                        var tabTitle = tabs[j].querySelector('.tab-title').innerHTML;                        var tabNavigationItem = document.createElement('li');                        tabNavigationItem.setAttribute('data-tab-id', tabId);                        if (j == 0) { Sfjs.addClass(tabNavigationItem, 'active'); }                        if (Sfjs.hasClass(tabs[j], 'disabled')) { Sfjs.addClass(tabNavigationItem, 'disabled'); }                        tabNavigationItem.innerHTML = tabTitle;                        tabNavigation.appendChild(tabNavigationItem);                        var tabContent = tabs[j].querySelector('.tab-content');                        tabContent.parentElement.setAttribute('id', tabId);                    }                    tabGroups[i].insertBefore(tabNavigation, tabGroups[i].firstChild);                }                /* display the active tab and add the 'click' event listeners */                for (i = 0; i < tabGroups.length; i++) {                    tabNavigation = tabGroups[i].querySelectorAll('.tab-navigation li');                    for (j = 0; j < tabNavigation.length; j++) {                        tabId = tabNavigation[j].getAttribute('data-tab-id');                        document.getElementById(tabId).querySelector('.tab-title').className = 'hidden';                        if (Sfjs.hasClass(tabNavigation[j], 'active')) {                            document.getElementById(tabId).className = 'block';                        } else {                            document.getElementById(tabId).className = 'hidden';                        }                        tabNavigation[j].addEventListener('click', function(e) {                            var activeTab = e.target || e.srcElement;                            /* needed because when the tab contains HTML contents, user can click */                            /* on any of those elements instead of their parent '<li>' element */                            while (activeTab.tagName.toLowerCase() !== 'li') {                                activeTab = activeTab.parentNode;                            }                            /* get the full list of tabs through the parent of the active tab element */                            var tabNavigation = activeTab.parentNode.children;                            for (var k = 0; k < tabNavigation.length; k++) {                                var tabId = tabNavigation[k].getAttribute('data-tab-id');                                document.getElementById(tabId).className = 'hidden';                                Sfjs.removeClass(tabNavigation[k], 'active');                            }                            Sfjs.addClass(activeTab, 'active');                            var activeTabId = activeTab.getAttribute('data-tab-id');                            document.getElementById(activeTabId).className = 'block';                        });                    }                }            },            createToggles: function() {                var toggles = document.querySelectorAll('.sf-toggle');                for (var i = 0; i < toggles.length; i++) {                    var elementSelector = toggles[i].getAttribute('data-toggle-selector');                    var element = document.querySelector(elementSelector);                    Sfjs.addClass(element, 'sf-toggle-content');                    if (toggles[i].hasAttribute('data-toggle-initial') && toggles[i].getAttribute('data-toggle-initial') == 'display') {                        Sfjs.addClass(element, 'sf-toggle-visible');                    } else {                        Sfjs.addClass(element, 'sf-toggle-hidden');                    }                    Sfjs.addEventListener(toggles[i], 'click', function(e) {                        e.preventDefault();                        var toggle = e.target || e.srcElement;                        /* needed because when the toggle contains HTML contents, user can click */                        /* on any of those elements instead of their parent '.sf-toggle' element */                        while (!Sfjs.hasClass(toggle, 'sf-toggle')) {                            toggle = toggle.parentNode;                        }                        var element = document.querySelector(toggle.getAttribute('data-toggle-selector'));                        Sfjs.toggleClass(element, 'sf-toggle-hidden');                        Sfjs.toggleClass(element, 'sf-toggle-visible');                        /* the toggle doesn't change its contents when clicking on it */                        if (!toggle.hasAttribute('data-toggle-alt-content')) {                            return;                        }                        if (!toggle.hasAttribute('data-toggle-original-content')) {                            toggle.setAttribute('data-toggle-original-content', toggle.innerHTML);                        }                        var currentContent = toggle.innerHTML;                        var originalContent = toggle.getAttribute('data-toggle-original-content');                        var altContent = toggle.getAttribute('data-toggle-alt-content');                        toggle.innerHTML = currentContent !== altContent ? altContent : originalContent;                    });                }            }        };    })();    Sfjs.addEventListener(window, 'load', function() {        Sfjs.createTabs();        Sfjs.createToggles();    });/*]]>*/</script><script>/*<![CDATA[*/    (function () {                Sfjs.load(            'sfwdt10158d',            '/_wdt/10158d',            function(xhr, el) {                el.style.display = -1 !== xhr.responseText.indexOf('sf-toolbarreset') ? 'block' : 'none';                if (el.style.display == 'none') {                    return;                }                if (Sfjs.getPreference('toolbar/displayState') == 'none') {                    document.getElementById('sfToolbarMainContent-10158d').style.display = 'none';                    document.getElementById('sfToolbarClearer-10158d').style.display = 'none';                    document.getElementById('sfMiniToolbar-10158d').style.display = 'block';                } else {                    document.getElementById('sfToolbarMainContent-10158d').style.display = 'block';                    document.getElementById('sfToolbarClearer-10158d').style.display = 'block';                    document.getElementById('sfMiniToolbar-10158d').style.display = 'none';                }                Sfjs.renderAjaxRequests();                /* Handle toolbar-info position */                var toolbarBlocks = document.querySelectorAll('.sf-toolbar-block');                for (var i = 0; i < toolbarBlocks.length; i += 1) {                    toolbarBlocks[i].onmouseover = function () {                        var toolbarInfo = this.querySelectorAll('.sf-toolbar-info')[0];                        var pageWidth = document.body.clientWidth;                        var elementWidth = toolbarInfo.offsetWidth;                        var leftValue = (elementWidth + this.offsetLeft) - pageWidth;                        var rightValue = (elementWidth + (pageWidth - this.offsetLeft)) - pageWidth;                        /* Reset right and left value, useful on window resize */                        toolbarInfo.style.right = '';                        toolbarInfo.style.left = '';                        if (elementWidth > pageWidth) {                            toolbarInfo.style.left = 0;                        }                        else if (leftValue > 0 && rightValue > 0) {                            toolbarInfo.style.right = (rightValue * -1) + 'px';                        } else if (leftValue < 0) {                            toolbarInfo.style.left = 0;                        } else {                            toolbarInfo.style.right = '0px';                        }                    };                }            },            function(xhr) {                if (xhr.status !== 0) {                    confirm('An error occurred while loading the web debug toolbar (' + xhr.status + ': ' + xhr.statusText + ').\n\nDo you want to open the profiler?') && (window.location = '/_profiler/10158d');                }            },            {'maxTries': 5}        );    })();/*]]>*/</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<div class="container" ng-controller="adminCtrl" class="fade">
+<div class="container" ng-controller="createListCtrl" class="fade">
     <h1 style="color:#fff">ADMIN</h1>
 
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -30,96 +30,34 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../navbar/">Default</a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
-                    <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
-                </ul>
             </div>
         </div>
     </nav>
 
     <div id="main-content" class="main-content mc-content selfclear">
 
-        <h1>Create List</h1>
+        <h1>Création Liste de Diffusion</h1>
         <div class="line main-section">
 
             <form id="new-list" action="/lists/create" method="POST" novalidate="novalidate">
                 <div class="lastUnit size1of2">
                     <div class="sub-section">
-                        <h3>List details</h3>
+                        <h3>Détails</h3>
                         <div class="field-wrapper">
-                            <label for="name" class="">List name</label>
+                            <label for="name" class="">Nom de la Liste</label>
                             <input type="text" name="name" class=" av-text" value="" id="name">
                         </div>
-                        <div class="field-wrapper">
-                            <label for="from_email">Default <span class="fsi">From email address</span></label>
-                            <input type="email" name="from_email" id="default-fromemail">
+                        <div class="field-wrapper" ng-if="listContact.length > 0">
+                            <label for="name" class="">Choix du groupe</label>
+                            <select>
+                            <option ng-repeat="contact in listContact" class=form-control>{{contact.nom}}</option> 
+                            </select>
                         </div>
                         <div class="field-wrapper">
-                            <label for="from_name" class="">Default <span class="fsi">From name</span></label>
-                            <input type="text" name="from_name" class=" av-text" value="" id="from_name">
-
-                        </div>
-                        <div class="remind field-wrapper">
-                            <label for="description" class="">Remind people how they signed up to your list</label>
-                            <textarea name="description" id="description" style="height: 5em;" class=""></textarea>
-                        </div>
-                        <div id="list-contact-form" style="" class="field-wrapper">
-                            <div class="field-wrapper">
-                                <label for="company" class="">Company / organization</label>
-                                <input type="text" name="company" class=" av-text" value="MANA" id="company"> </div>
-                            <div class="field-wrapper">
-                                <label for="address1" class="street ">Address</label>
-                                <input type="text" name="address1" class=" av-text" value="97 PL ALPHONSE LAVERAN" id="address1">
-                                <br>
-                                <input type="text" name="address2" class=" av-text" value="COLLINE ST PRIEST APT 202 BATG23" id="address2"> </div>
-                            <div class="field-wrapper">
-                                <label for="city" class="city ">City</label>
-                                <input type="text" name="city" class=" av-text" value="MONTPELLIER" id="city"> </div>
-                            <div class="field-wrapper">
-                                <label for="zip" class="zip ">Zip / Postal code</label>
-                                <input type="text" name="zip" class=" av-text" value="34090" id="zip">
-                            </div>
-                            <div class="field-wrapper">
-                                <label for="country" class="country ">Country</label>
-                            </div>
-                            <div class="field-wrapper" id="state-container" style="display: none;">
-                                <label for="state" class="state">State / Province / Region</label>
-                                <input type="text" name="state" id="state-field" class=" av-text" value=""> </div>
-                            <div class="field-wrapper">
-                                <label for="phone" class="">Phone <span class="float-right small-meta fwl">Optional</span></label>
-                                <input type="tel" name="phone" class=" av-tel" value="" id="phone"> </div>
-                        </div>
-                    </div>
-                    <div class="sub-section">
-                        <div>
-                            <h3> Notifications <span id="email-inline-view" class="normal-meta fwn fsn">Sent to manahiti.porlier@gmail.com · <a href="#" id="toggle-email-form">Edit</a> </span> </h3>
-                            <div id="email-inline-edit" style="display: none;" class="below18">
-                                <input type="email" name="email_address" class=" av-email" value="manahiti.porlier@gmail.com" id="email_address"> </div>
-                            <div class="checkbox-group">
-                                <label class="checkbox" for="email_daily">
-                                    <div class="dijit dijitReset dijitInline dijitCheckBox av-checkbox" role="presentation" widgetid="email_daily">
-                                        <input name="email_daily" type="checkbox" role="checkbox" aria-checked="false" class="dijitReset dijitCheckBoxInput" tabindex="0" value="subscribe" id="email_daily" style="-webkit-user-select: none;">
-                                    </div>
-                                    Daily summary
-                                    <div class="checkbox-description">Summary of subscribe/unsubscribe activity</div>
-                                </label>
-                                <label class="checkbox" for="email_subs">
-                                    <div class="dijit dijitReset dijitInline dijitCheckBox av-checkbox" role="presentation" widgetid="email_subs">
-                                        <input name="email_subs" type="checkbox" role="checkbox" aria-checked="false" class="dijitReset dijitCheckBoxInput" tabindex="0" value="subscribe" id="email_subs" style="-webkit-user-select: none;">
-                                    </div>
-                                    One-by-one
-                                    <div class="checkbox-description">Subscribe notifications as they happen</div>
-                                </label>
-                                <label class="checkbox" for="email_unsubs">
-                                    <div class="dijit dijitReset dijitInline dijitCheckBox av-checkbox" role="presentation" widgetid="email_unsubs">
-                                        <input name="email_unsubs" type="checkbox" role="checkbox" aria-checked="false" class="dijitReset dijitCheckBoxInput" tabindex="0" value="unsubscribe" id="email_unsubs" style="-webkit-user-select: none;">
-                                    </div>
-                                    One-by-one
-                                    <div class="checkbox-description">Unsubscribe notifications as they happen</div>
-                                </label>
-                            </div>
+                            <label for="name" class="">Choix de la Newsletter</label>
+                            <select class=form-control>
+                            <option value=un>GROUPE 1</option>
+                            </select>
                         </div>
                     </div>
                     <div class="sub-section">

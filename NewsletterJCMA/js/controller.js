@@ -19,6 +19,18 @@ angular.module('controllers', ['ngRoute','ngAnimate'])
     $location.path('/register', false);
   }
   })
+.controller('createListCtrl', function($scope, $location, factoRequest, $rootScope) {
+    $scope.listContact = {};
+    
+    console.log($rootScope.userId);
+    
+        factoRequest.getListContactForUser($rootScope.userId)
+        .then(function(listC){
+            console.log(listC);
+            $scope.listContact = listC.data;
+            
+        })
+})
 
 .controller('adminCtrl', function($scope, $location) {
   $scope.login = function() {
@@ -29,6 +41,9 @@ angular.module('controllers', ['ngRoute','ngAnimate'])
   }
   $scope.openImportView = function() {
     $location.path('/importCSV', false);
+  }
+  $scope.createList = function() {
+      $location.path('/createList', false);
   }
 })
 
@@ -46,6 +61,8 @@ angular.module('controllers', ['ngRoute','ngAnimate'])
     }
   }
 })
+
+
 
 .controller('importCtrl', function($scope, $parse, $rootScope, $http) {
   $scope.listHeader = [];

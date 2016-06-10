@@ -13,6 +13,9 @@ angular.module('factory', [])
     },
     importListContact: function(csvJson) {
       return httpPostRequest($http, "contacts/addListContact", csvJson);
+    },
+    getListContactForUser: function(idUser){
+      return httpGetRequest($http, "contacts/getListContactForUser/"+ idUser);
     }
   }
 });

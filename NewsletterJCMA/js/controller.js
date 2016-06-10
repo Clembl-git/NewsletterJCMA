@@ -6,7 +6,7 @@ angular.module('controllers', ['ngRoute','ngAnimate'])
   $scope.login = function(){
     factoRequest.checkUserPassword($scope.email, $scope.password)
     .then(function(idUser) {
-      if(idUser.data != "undefined") {
+      if(idUser.data.usId != undefined) {
         $rootScope.userId = idUser.data.usId;
         console.log($rootScope.userId);
         $rootScope.userEmail = $scope.email;
@@ -21,14 +21,14 @@ angular.module('controllers', ['ngRoute','ngAnimate'])
   })
 .controller('createListCtrl', function($scope, $location, factoRequest, $rootScope) {
     $scope.listContact = {};
-    
+
     console.log($rootScope.userId);
-    
+
         factoRequest.getListContactForUser($rootScope.userId)
         .then(function(listC){
             console.log(listC);
             $scope.listContact = listC.data;
-            
+
         })
 })
 
@@ -44,6 +44,9 @@ angular.module('controllers', ['ngRoute','ngAnimate'])
   }
   $scope.createList = function() {
       $location.path('/createList', false);
+  }
+  $scope.openGroupsView = function() {
+      $location.path('/createGroup', false);
   }
 })
 
@@ -62,7 +65,15 @@ angular.module('controllers', ['ngRoute','ngAnimate'])
   }
 })
 
+.controller('createGroupCtrl', function($scope, $http, factoRequest, $rootScope) {
+  $scope.listContact = {};
 
+  factoRequest.getListContactForUser(8)
+  .then(function(mListContact){
+    console.log(mListContact);
+    $scope.listContact = mListContact.data;
+  })
+})
 
 .controller('importCtrl', function($scope, $parse, $rootScope, $http) {
   $scope.listHeader = [];

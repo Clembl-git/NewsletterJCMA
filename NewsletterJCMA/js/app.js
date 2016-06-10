@@ -21,5 +21,8 @@ newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location)
     .when('/createList', {
         templateUrl: 'templates/createList.html'
     })
+    .when('/createGroup', {
+        templateUrl: 'templates/groups.html'
+    })
     .otherwise({redirectTo: '/login'});
 }]);

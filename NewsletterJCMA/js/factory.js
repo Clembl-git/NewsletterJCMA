@@ -23,11 +23,13 @@ angular.module('factory', [])
   }
 });
 
-
+var baseUrlWS = "http://localhost:4242/";
+/* GET sur la requête passé en paramètre */
+/* Return une promise HTTP, une réponse asynchrone contenant le retour de la requête  */
 function httpGetRequest($http, request) {
   var req = {
     method: 'GET',
-    url:'http://localhost:4242/'+request,
+    url: baseUrlWS + request,
     headers: {
       'Content-Type':'Accept: application/json, text/plain, * / *'
     }
@@ -35,10 +37,12 @@ function httpGetRequest($http, request) {
     return $http(req);
  }
 
+ /* POST sur la requête passé en paramètre */
+ /* Return une promise HTTP, une réponse asynchrone contenant le retour de la requête  */
  function httpPostRequest($http, request, data) {
    var req = {
      method: 'POST',
-     url:'http://localhost:4242/'+request,
+     url: baseUrlWS + request,
      headers: {
         'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
      },

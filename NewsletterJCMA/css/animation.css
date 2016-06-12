@@ -1,3 +1,8 @@
+/* Toast notification */
+#toast-container{
+  top: 45px !important;
+  font-size: 17px;
+}
 
 /* leaving animations ----------------------------------------- */
 /* rotate and fall */

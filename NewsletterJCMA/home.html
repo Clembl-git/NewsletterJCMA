@@ -32,11 +32,13 @@
     <script type="text/javascript" src="js/controller/login.js"></script>
     <script type="text/javascript" src="js/controller/news.js"></script>
     <script type="text/javascript" src="js/controller/register.js"></script>
+    <script type="text/javascript" src="js/controller/group.js"></script>
+    <script type="text/javascript" src="js/controller/list.js"></script>
 
 </head>
 
-<body ng-app="NewsLettApp">
-    <h1 class="text-center homeTitle"><a href="home.html">JCMA's Newsletter</a></h1>
+<body ng-app="NewsLettApp" ng-controller="HomeCtrl">
+    <h1 class="text-center homeTitle"><a href="" ng-click="goHome()">JCMA's Newsletter</a></h1>
 
     <div ng-view ng-class="fade"></div>
 

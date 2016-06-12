@@ -1,6 +1,6 @@
 angular.module('controllers')
-.controller('importCtrl',  ['$scope','$http', '$parse', '$rootScope','$location','factoRequest',
-function($scope, $http, $parse, $rootScope, $location, factoRequest) {
+.controller('importCtrl',  ['$scope','$http', '$parse', '$rootScope','$location','factoRequest','toastr'
+function($scope, $http, $parse, $rootScope, $location, factoRequest, toastr) {
   $scope.listHeader = [];
   $scope.csv = {
      content: null,
@@ -13,7 +13,6 @@ function($scope, $http, $parse, $rootScope, $location, factoRequest) {
      encodingVisible: true,
      stringifyCsv: null
    };
-   console.log($scope.csv.header);
 
    $scope.sendCsvDataToDB = function () {
       var user,
@@ -47,14 +46,14 @@ function($scope, $http, $parse, $rootScope, $location, factoRequest) {
          csvToDb.Contact.push(user);
        })
        factoRequest.importListContact(csvToDb).then(function(res){
-         console.log("import done");
+         toastr.success("Import correctement effectué","Succès.");
          setTimeout(function () {
            $location.path('/admin', false);
          }, 1000);
        });
 
       } else {
-        alert("Vous ne pouvez pas associer deux fois le même champ de votre fichier à un attribut !");
+        toastr.error("Vous ne pouvez pas associer deux fois le même champ de votre fichier à un attribut !","Echec");
       }
     };
 
@@ -73,7 +72,7 @@ function($scope, $http, $parse, $rootScope, $location, factoRequest) {
      try {
        obj = $parse(objStr)({});
      } catch(e){
-       console.log("Error while parsing");
+       toastr.error("Error while parsing","Erreur");
      }
      var result = JSON.stringify(obj).replace(/"+/g, '');
      $scope.csv.stringifyCsv = json.replace(/"+/g, '');

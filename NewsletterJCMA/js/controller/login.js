@@ -7,12 +7,14 @@ function($scope, $http, $location, $rootScope, toastr, factoRequest) {
     .then(function(idUser) {
       console.log(idUser);
       if(idUser.data.usId != undefined) {
+        toastr.success('Bienvenue internaute','Connecté');
         $rootScope.userId = idUser.data.usId;
-        console.log($rootScope.userId);
         $rootScope.userEmail = $scope.email;
-        $location.path('/admin', false);
+        setTimeout(function () {
+          $location.path('/admin', false);
+        }, 500);
       } else {
-       toastr.error('Echec d\'authentification', 'Utilisateur introuvable ou mot de passe incorrect');
+       toastr.error('Utilisateur introuvable ou mot de passe incorrect','Echec d\'authentification');
       }
     });
 

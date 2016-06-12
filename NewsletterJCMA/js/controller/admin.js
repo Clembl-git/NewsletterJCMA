@@ -11,5 +11,11 @@ angular.module('controllers')
   };
   $scope.createNews = function() {
     $location.path('/createNews', false);
+  };
+  $scope.createList = function() {
+        $location.path('/createList', false);
+    }
+  $scope.openGroupsView = function() {
+      $location.path('/createGroup', false);
   }
 }]);

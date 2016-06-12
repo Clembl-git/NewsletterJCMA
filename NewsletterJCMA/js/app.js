@@ -2,12 +2,23 @@
 
 // Declare app level module which depends on views, and components/dependency
 var newsLettapp = angular.module('NewsLettApp',
+//Ajout des modules JS, des factories et des librairies "globales"
  ['controllers','factory','ngRoute','ngCsvImport','ngAnimate','toastr']
 );
 
-angular.module('controllers', []);
+//Instancie une liste pour le module controllers
+angular.module('controllers', [])
+//Défini un HomeController avec des méthodes globales à toute l'app
+.controller('HomeCtrl', ['$location','$rootScope', function($location, $rootScope){
+  $rootScope.goHome = function(){
+    if($rootScope.userId == undefined)
+      $location.path('/login', false);
+    else
+      $location.path('/admin',false);
+  }
+}]);
 
-// setup editor options
+//Définition des différentes routes utilisés par l'app
 newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location) {
 
     $routeProvider.when('/login', {
@@ -31,5 +42,6 @@ newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location)
     .when('/createGroup', {
         templateUrl: 'templates/groups.html'
     })
+    //Redirection par défaut en cas d'url invalide
     .otherwise({redirectTo: '/login'});
 }]);

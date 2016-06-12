@@ -16,6 +16,9 @@ angular.module('factory', [])
     },
     createNewsletter: function(news) {
       return httpPostRequest($http, "newsletter/createNewsLetter", news);
+    },
+    getListContactForUser: function(idUser){
+      return httpGetRequest($http, "contacts/getListContactForUser/"+ idUser);
     }
   }
 });

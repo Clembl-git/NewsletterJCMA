@@ -58,7 +58,7 @@
                     </div>
                 </li>
 
-                <li>
+                <li ng-click="createList()">
                     <div class="media">
                         <div class="media-image">
                             <div class="onboarding create-lists"> </div>
@@ -70,6 +70,23 @@
                                     <p>Lists are where you store your contacts (we call them subscribers). Create one master list, then use segments and groups to email select people. </p>
                                 </div>
                                 <div class="size1of4 lastUnit nopadding alignr link-underline"> <a href="/lists" onclick="ga('send', 'event', 'dashboard', 'onboarding study', '/lists');">View lists</a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li ng-click="openGroupsView()">
+                    <div class="media">
+                        <div class="media-image">
+                            <div class="onboarding create-lists"> </div>
+                        </div>
+                        <div class="media-body">
+                            <div class="line">
+                                <div class="unit size3of4 below12">
+                                    <h4>Create a new group of contact<span class="freddicon tick-circle-color mar-lv1 mar-tb0"></span></h4>
+                                    <p>Create your groups of contacts easily. </p>
+                                </div>
+                                <div class="size1of4 lastUnit nopadding alignr link-underline"> <a href="/lists" onclick="ga('send', 'event', 'dashboard', 'onboarding study', '/lists');">Create a new group</a> </div>
                             </div>
                         </div>
                     </div>

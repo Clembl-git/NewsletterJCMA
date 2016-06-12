@@ -1,9 +1,11 @@
 'use strict';
 
 // Declare app level module which depends on views, and components/dependency
-var newsLettapp = angular.module('NewsLettApp', ['controllers','factory','ngRoute','ngCsvImport','ngAnimate', 'toastr']);
-angular.module('controllers', []);
+var newsLettapp = angular.module('NewsLettApp',
+ ['controllers','factory','ngRoute','ngCsvImport','ngAnimate','toastr']
+);
 
+angular.module('controllers', []);
 
 // setup editor options
 newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location) {
@@ -25,6 +27,9 @@ newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location)
     })
     .when('/createNews', {
         templateUrl: 'templates/createNews.html'
+    })
+    .when('/createGroup', {
+        templateUrl: 'templates/groups.html'
     })
     .otherwise({redirectTo: '/login'});
 }]);

@@ -1,5 +1,7 @@
 angular.module('controllers')
- .controller('newsCtrl', ['$scope','$http', '$rootScope','factoRequest', function($http, $scope, factoRequest, $rootScope){
+ .controller('newsCtrl', ['$scope','$http', '$rootScope','factoRequest', 'toastr'
+  function($http, $scope, $rootScope, factoRequest, toastr){
+
       //HTML Text Editor initialisation
     var textEditor = CKEDITOR.replace( 'editor' );
     //Quick live modif sur l'éditeur
@@ -19,10 +21,6 @@ angular.module('controllers')
     }, 1000);
 
 
-    textEditor.on('change', function( evt ) {
-      console.log("textchanged : "+evt.editor.getData());
-    });
-
 
     $scope.btnSaveNews = function(){
       var news = {};
@@ -34,7 +32,7 @@ angular.module('controllers')
       news.neUrlImage = "";
 
       factoRequest.createNewsletter(news).then(function(resp){
-        console.log("created");
+        toastr.success("Votre newsLetter a été créé","Succès");
         console.log(resp);
       });
    };

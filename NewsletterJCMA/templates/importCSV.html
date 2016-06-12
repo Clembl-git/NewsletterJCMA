@@ -1,8 +1,8 @@
 <div class="container importView" ng-controller="importCtrl" class="fade">
-    <h1 >ADMIN</h1>
+    <h1 >Import de contacts depuis fichier CSV</h1>
     <center>
-      <div class="checkbox ">
-        <label class="lead"><input type="checkbox" ng-model="boolHeader">Header inclus dans le fichier</label>
+      <div class="checkbox " ng-show="!csv.result">
+        <label class="lead"><input type="checkbox" ng-model="boolHeader" >Header inclus dans le fichier</label>
       </div>
       <div class="importBtn">
         <ng-csv-import ng-if="!csv.result" content="csv.content"

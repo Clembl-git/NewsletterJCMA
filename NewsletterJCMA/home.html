@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="utf-8">
     <title>Newsletter JCMA</title>
+
+    <!-- Fichiers CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/animation.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="lib/toaster/angular-toaster.min.css" media="screen" charset="utf-8">
+
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    <link rel="icon" href="favicon.ico" />
-    <script type="text/javascript" src="lib/jquery.min.js"></script>
+
+    <!-- Librairies JS   -->
+
     <script type="text/javascript" src="lib/angular.min.js"></script>
     <script type="text/javascript" src="lib/angular-route.min.js"></script>
     <script type="text/javascript" src="lib/angular-csv-import.min.js"></script>
     <script type="text/javascript" src="lib/angular-animate.min.js"></script>
+    <script type="text/javascript" src="lib/toaster/angular-toaster.min.js"></script>
+
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/ckeditor/ckeditor.js"></script>
+
+    <!-- Fichiers de l'app   -->
     <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/controller.js"></script>
     <script type="text/javascript" src="js/factory.js"></script>
+    <!-- Controllers -->
+    <script type="text/javascript" src="js/controller/admin.js"></script>
+    <script type="text/javascript" src="js/controller/importCSV.js"></script>
+    <script type="text/javascript" src="js/controller/login.js"></script>
+    <script type="text/javascript" src="js/controller/news.js"></script>
+    <script type="text/javascript" src="js/controller/register.js"></script>
+
 </head>
 
 <body ng-app="NewsLettApp">

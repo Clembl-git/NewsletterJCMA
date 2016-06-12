@@ -1,0 +1,27 @@
+<div class="container createNews" ng-controller="newsCtrl" class="fade">
+  <center>
+    <h1>Création d'une newsletter</h1>
+    <div class="row">
+
+      <label><h3>Titre</h3></label>
+      <div class="field-group">
+        <input type="text" size="25" id="newsTitle" value="">
+      </div>
+
+      <label><h3>Url à diffuser dans le mailing</h3></label>
+      <div class="field-group">
+        <input type="text" size="25" id="newsUrl" value="">
+      </div>
+
+    </div>
+    <textarea name="editor" class"ckEditor" ng-model="textNews"></textarea>
+
+    <div class="control-group">
+      <label class="control-label" for="singlebutton"></label>
+      <div class="controls">
+        <button ng-click="btnSaveNews()" class="btn btn-primary btn-lg">Sauvegarder</button>
+      </div>
+    </div>
+  </div>
+</center>
+</div>

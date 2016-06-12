@@ -1,5 +1,5 @@
 angular.module('controllers')
-.controller('createGroupCtrl', [ '$scope', '$http', '$rootScope', 'factoRequest','toastr'
+.controller('createGroupCtrl', [ '$scope', '$http', '$rootScope', 'factoRequest','toastr',
 function($scope, $http, $rootScope, factoRequest, toastr) {
 
   $scope.listContact = {};

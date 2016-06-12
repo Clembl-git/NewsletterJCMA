@@ -8,7 +8,7 @@ angular.module('controllers')
       factoRequest.addUser($scope.nom, $scope.prenom, $scope.email, $scope.password)
       .then(function(res) {
         toastr.success('Bravo ! ','Votre compte à bien été créé');
-        setTimeout(function () { $location.path('/admin',false);   }, 1000);
+        setTimeout(function () { $location.path('/admin',false);   }, 2000);
       });
     }
     else {

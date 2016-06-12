@@ -1,5 +1,5 @@
 angular.module('controllers')
- .controller('newsCtrl', ['$scope','$http', '$rootScope','factoRequest', 'toastr'
+ .controller('newsCtrl', ['$scope','$http', '$rootScope','factoRequest', 'toastr',
   function($http, $scope, $rootScope, factoRequest, toastr){
 
       //HTML Text Editor initialisation

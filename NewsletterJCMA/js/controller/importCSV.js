@@ -1,5 +1,5 @@
 angular.module('controllers')
-.controller('importCtrl',  ['$scope','$http', '$parse', '$rootScope','$location','factoRequest','toastr'
+.controller('importCtrl',  ['$scope','$http', '$parse', '$rootScope','$location','factoRequest','toastr',
 function($scope, $http, $parse, $rootScope, $location, factoRequest, toastr) {
   $scope.listHeader = [];
   $scope.csv = {

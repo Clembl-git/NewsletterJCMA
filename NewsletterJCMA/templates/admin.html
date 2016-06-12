@@ -41,6 +41,25 @@
         <h1>ADMIN: Dashboard</h1>
         <div class="size1of1 lastUnit">
             <ul class="media-list rows sub-section">
+
+              <li ng-click="showListNews()">
+                  <div class="media">
+                      <div class="media-image">
+                          <div class="onboarding create-campaigns"> </div>
+                      </div>
+                      <div class="media-body">
+                          <div class="line">
+                              <div class="unit size3of4 below12">
+                                  <h4>Display and manage your existing Newsletters </h4>
+                                  <p>Edit and update your previously created newsletters</p>
+                              </div>
+                              <div class="size1of4 lastUnit nopadding alignr"> <a class="button nomargin full-width-mobile ttn" href="/campaigns/create?type=regular" role="button">Create a Campaign</a> </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+
+
                 <li ng-click="createNews()">
                     <div class="media">
                         <div class="media-image">
@@ -49,8 +68,8 @@
                         <div class="media-body">
                             <div class="line">
                                 <div class="unit size3of4 below12">
-                                    <h4>Create and send a campaign </h4>
-                                    <p>Campaigns are emails sent to subscribers in a list. Try your hand at email design by creating and sending a test campaign. </p>
+                                    <h4>Write a Newsletters </h4>
+                                    <p>Start to write a brand new newsletter with image, html content, ... </p>
                                 </div>
                                 <div class="size1of4 lastUnit nopadding alignr"> <a class="button nomargin full-width-mobile ttn" href="/campaigns/create?type=regular" role="button">Create a Campaign</a> </div>
                             </div>
@@ -66,8 +85,8 @@
                         <div class="media-body">
                             <div class="line">
                                 <div class="unit size3of4 below12">
-                                    <h4>Create a list <span class="freddicon tick-circle-color mar-lv1 mar-tb0"></span></h4>
-                                    <p>Lists are where you store your contacts (we call them subscribers). Create one master list, then use segments and groups to email select people. </p>
+                                  <h4>Create a diffusion list <span class="freddicon tick-circle-color mar-lv1 mar-tb0"></span></h4>
+                                    <p>From this section you can associate your groups of contact with your existing newsletter </p>
                                 </div>
                                 <div class="size1of4 lastUnit nopadding alignr link-underline"> <a href="/lists" onclick="ga('send', 'event', 'dashboard', 'onboarding study', '/lists');">View lists</a> </div>
                             </div>

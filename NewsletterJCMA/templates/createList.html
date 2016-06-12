@@ -1,4 +1,4 @@
-<div class="container" ng-controller="createListCtrl" class="fade">
+<div class="container" ng-controller="listCtrl" class="fade">
     <h1 style="color:#fff">ADMIN</h1>
 
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -50,7 +50,7 @@
                         <div class="field-wrapper" ng-if="listContact.length > 0">
                             <label for="name" class="">Choix du groupe</label>
                             <select>
-                            <option ng-repeat="contact in listContact" class=form-control>{{contact.nom}}</option> 
+                            <option ng-repeat="contact in listContact" class=form-control>{{contact.nom}}</option>
                             </select>
                         </div>
                         <div class="field-wrapper">

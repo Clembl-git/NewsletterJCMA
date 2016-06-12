@@ -19,6 +19,9 @@ angular.module('factory', [])
     },
     getListContactForUser: function(idUser){
       return httpGetRequest($http, "contacts/getListContactForUser/"+ idUser);
+    },
+    getListNewsLetterByUserId: function(idUser) {
+      return httpGetRequest($http, "users/getListNewsLetterByUserId/" +idUser);
     }
   }
 });
@@ -37,7 +40,8 @@ function httpGetRequest($http, request) {
     return $http(req);
  }
 
- /* POST sur la requête passé en paramètre */
+ /* POST sur l'url passé en paramètre
+    @param data : le body de la requête */
  /* Return une promise HTTP, une réponse asynchrone contenant le retour de la requête  */
  function httpPostRequest($http, request, data) {
    var req = {

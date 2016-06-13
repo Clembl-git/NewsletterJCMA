@@ -8,18 +8,6 @@ var newsLettapp = angular.module('NewsLettApp',
 
 //Instancie une liste pour le module controllers
 angular.module('controllers', [])
-//Défini un HomeController avec des méthodes globales à toute l'app
-.controller('HomeCtrl', ['$location','$rootScope', function($location, $rootScope) {
-
-  $rootScope.goHome = function() {
-    if( $rootScope.userId == undefined )
-      $location.path('/login', false);
-    else
-      $location.path('/admin',false);
-  }
-
-}]);
-
 //Définition des différentes routes utilisés par l'app
 newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location) {
 

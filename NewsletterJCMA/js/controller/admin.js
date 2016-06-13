@@ -1,5 +1,14 @@
 angular.module('controllers')
 .controller('adminCtrl', ['$scope','$location',  function($scope, $location) {
+
+
+     $('.navbar').removeClass('hide');
+     $('.navbar').addClass('showMenu');
+
+      setTimeout(function () {
+        $('.miniLogo').addClass('showLogo');
+      }, 1000);
+
   $scope.login = function() {
       $location.path('/login', false);
   };

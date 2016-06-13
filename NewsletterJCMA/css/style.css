@@ -2,7 +2,8 @@
 body {
 	padding: 0;
 	height: 100%;
-	width: 100%;
+	/* 101% hide scrollbar */
+	width: 101%;
 	text-align: center;
   overflow-x: hidden;
 	font-family: 'Poiret One', cursive;
@@ -11,18 +12,11 @@ body {
 	background-repeat: 	no-repeat;
 	background-color: 	#31343B;
 	font-weight: bold;
+	overflow: hidden;
 }
 
 h1,h2,h3 {
 font-weight: bold;
-}
-h1 a{
-    text-indent: -9999px;
-    background: url("../img/logo.png") center no-repeat;
-    display: block;
-    width: 250px;
-    height: 255px;
-    margin: 0 auto;
 }
 .homeTitle {
 	color: #31343B;
@@ -40,20 +34,80 @@ h2 {
 }
 
 label {
-    color: #484848;
-    font-weight: 600;
-    display: block;
-    padding-bottom: .8em;
-    width: 100%;
+  color: #484848;
+  font-weight: 600;
+  display: block;
+  padding-bottom: .8em;
+  width: 100%;
 	float: left;
 }
+
 .miniLogo{
-    text-indent: -9999px;
-    background: url("../img/miniLogo.png") no-repeat center center;
-    width: 50px;
-    height:50px;
+	background: url("../img/miniLogo.png") no-repeat center center;
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+}
+.miniLogo:hover{
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.11) !important;
+}
+.imgLogo{
+	 	top: 45px;
+    position: absolute;
+    height: auto;
+    width: auto;
+    left: 50%;
+    right: 50%;
+    margin-left: -90px;
+    margin-right: -90px;
+    height: 200px;
+    max-width: 180px;
+    max-height: 180px;
+    width: 300px;
+		display: none;
+}
+body {
+	height: 100%;
+	background-color: black;
 }
 
+.mainView {
+    height: 800px;
+    margin-top: 130px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.slogant{
+	color: #000;
+	font-size: 26px;
+	font-family: monospace;
+	letter-spacing: -3px;
+	min-height: 49px;
+	padding: 0;
+	margin-top: 0;
+	font-weight: bold;
+	background-color: rgb(255, 255, 255);
+	position: absolute;
+	width: 101%;
+	margin: 0;
+}
+#navbar ul, .navbar-nav {
+	width: 96% !important;
+}
+#navbar li:hover {
+	background-color: rgba(0,0,0,0.5);
+}
+#navbar li:hover a{
+	color: white;
+}
+
+#navbar a {
+	font-size: 18px;
+}
+#navbar li:last-child {
+	float: right !important;
+}
 .importView{
 	background-color: rgba(255,255,255,0.7);
 	height: 600px;
@@ -157,6 +211,9 @@ div>input[type=file]::before {
 .form-group {
 	font-weight: 800;
 }
+.form-control, .form-control input{
+	 font-size:20px;
+}
 .panel-title{
 	font-size: 23px;
 }
@@ -168,7 +225,7 @@ div>input[type=file]::before {
     width:100%;
     text-align: left;
     padding: 10px 30px;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 .mc-content ul li{
     border-top: 1px dotted #e0e0e0;

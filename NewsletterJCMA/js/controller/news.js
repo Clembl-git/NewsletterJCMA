@@ -28,7 +28,7 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
       }
       else {
         news.neTextContent = textEditor.getData()
-        $scope.listNews =  listN.data.replace(/"+/g, '\'');;
+        news.neTextContent =  news.neTextContent.replace(/"+/g, '\'');;
         news.neUserId = $rootScope.userId;
         news.neTitre = $('#newsTitle').val();
         news.UrlLink = $('#newsUrl').val();

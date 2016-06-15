@@ -1,10 +1,10 @@
 angular.module('controllers')
-.controller('createGroupCtrl', [ '$scope', '$http', '$rootScope', 'factoRequest','toastr',
-function($scope, $http, $rootScope, factoRequest, toastr) {
+.controller('createGroupCtrl', [ '$scope', '$http', '$rootScope', 'Get','toastr',
+function($scope, $http, $rootScope, Get, toastr) {
 
   $scope.listContact = {};
 
-  factoRequest.getListContactForUser(8)
+  Get.listContactForUser(8)
   .then(function(mListContact){
      console.log(mListContact);
      $scope.listContact = mListContact.data;

@@ -1,8 +1,10 @@
 angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
- .controller('createNewsCtrl', ['$scope','$http', '$rootScope','$location','factoRequest', 'toastr',
-  function($scope, $http, $rootScope, $location, factoRequest, toastr){
+ .controller('createNewsCtrl', ['$scope','$http', '$rootScope','$location','Get', 'toastr',
+  function($scope, $http, $rootScope, $location, Get, toastr){
 
     var textEditor = CKEDITOR.replace( 'editor' );  //HTML Text Editor initialisation
+    textEditor.config.htmlEncodeOutput = false;
+    textEditor.config.entities = false;
     setTimeout(function () {
       $('.cke_button__save').removeClass('cke_button_disabled');  //réactive le bouton sauvegarder
       $('.cke_button__image').on('click',function() {
@@ -35,11 +37,12 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
         news.neUrlImage = "";
 
         if( news.neTextContent != "" && news.neTitre != "" ) {
-          factoRequest.createNewsletter(news)
-          .then(function(resp){
-            toastr.success("Votre newsLetter a été créé","Succès");
-            console.log(resp);
-          });
+          console.log(news.neTextContent);
+          // Get.createNewsletter(news)
+          // .then(function(resp){
+          //   toastr.success("Votre newsLetter a été créé","Succès");
+          //   console.log(resp);
+          // });
 
         } else {
           toastr.error("Vous devez saisir du texte et un titre", "Erreur");
@@ -50,13 +53,14 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
 
  }])
 
-.controller('listNewsCtrl', ['$scope','$http', '$rootScope','$location', '$sce', 'factoRequest', 'toastr',
-function($scope, $http, $rootScope, $location, $sce, factoRequest, toastr){
+.controller('listNewsCtrl', ['$scope','$http', '$rootScope','$location', '$sce', 'Get', 'toastr',
+function($scope, $http, $rootScope, $location, $sce, Get, toastr){
 console.log("listN");
 
+  if($rootScope.userId == undefined)
+    $location.path('/login');
    $scope.listNews = {};
-
-   factoRequest.getListNewsLetterByUserId($rootScope.userId)
+   Get.listNewsLetterByUserId($rootScope.userId)
    .then(function(listN){
      console.log(listN);
      $scope.listNews =  listN.data;

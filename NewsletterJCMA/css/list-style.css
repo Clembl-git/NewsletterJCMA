@@ -1,6 +1,6 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
     @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
- 
+
 
     .event-list {
 		list-style: none;
@@ -32,7 +32,7 @@
 	}
 	.event-list > li > time > .day {
 		display: block;
-		font-size: 56pt;
+		font-size: 35pt;
 		font-weight: 100;
 		line-height: 1;
 	}
@@ -128,7 +128,8 @@
 			position: relative;
 			display: block;
 			width: 100%;
-			height: 120px;
+			height: auto;
+      min-height: 300px;
 			padding: 0px;
 		}
 		.event-list > li > time,
@@ -146,16 +147,15 @@
 		}
 		.event-list > li > time,
 		.event-list > li > img {
-			width: 120px;
-			height: 120px;
+			width: 100%;
+			height: 80px;
 			padding: 0px;
 			margin: 0px;
 		}
 		.event-list > li > .info {
 			position: relative;
-			height: 120px;
+			height: auto;
 			text-align: left;
-			padding-right: 40px;
 		}
 		.event-list > li > .info > .title,
 		.event-list > li > .info > .desc {

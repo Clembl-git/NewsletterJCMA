@@ -1,0 +1,67 @@
+<div class="container statView" ng-controller="StatCtrl"  class="fade">
+        <div class="centerDiv" style="visibility: visible; text-align:center;">
+           <h2 class="centerText menuSubText">L'analyse de vos mailings refletent la pertinence de vos campagnes</h2>
+        </div>
+
+
+        <div class="col-md-8 col-md-offset-2">
+      				<div class="panel panel-default">
+      					<div class="panel-body">
+      						<div class="table-container" ng-repeat="stat in stats track by $index">
+      							<table class="table table-filter">
+      								<tbody>
+      									<tr data-status="pagado" >
+      										<td>
+      											<div class="ckbox">
+      												<input type="checkbox" id="checkbox1">
+      												<label for="checkbox1"></label>
+      											</div>
+      										</td>
+      										<td>
+      											<a href="javascript:;" class="star">
+      												<i class="glyphicon glyphicon-star"></i>
+      											</a>
+      										</td>
+      										<td>
+      											<div class="media">
+      												<a href="#" class="pull-left">
+      													<img width="200" height="200" src="img/newsletter.svg" class="media-photo">
+      												</a>
+      												<div class="media-body">
+                    						<div class="pull-right" style="bottom:0;position: relative;">
+                    								<button type="button" class="btn btn-success btn-filter" data-target="pagado">Mailer</button>
+                    								<button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Editer</button>
+                    								<button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Supprimer</button>
+                    						</div>
+      													<span class="media-meta pull-right">Febrero 13, 2016</span>
+      													<h4 class="title" style="padding:8%">
+                                  Newsletter : {{stat.title}}
+      														<span class="pull-right pagado">{{stat.idNews}}</span>
+      													</h4>
+      													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+      												</div>
+      											</div>
+      										</td>
+      									</tr>
+                        <tr>
+                          <h4 class="title">
+                            Nombre de mail envoye : {{stat.NbEnvoye}}
+                          </h4>
+                          <h4 class="title">
+                          Nombre de lien cliqué : {{stat.nbLien}}
+                          </h4>
+                          <h4 class="title">
+                          Nombre de mail ouvert : {{stat.nbOuvert}}
+                          </h4>
+                        </tr>
+                        <tr>
+                          <canvas id="bar" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' height="100%"></canvas>
+                        </tr>
+      								</tbody>
+      							</table>
+      						</div>
+      					</div>
+                <h3 class="centerText menuSubText">Graph 1 </h3>
+      				</div>
+      			</div>
+</div>

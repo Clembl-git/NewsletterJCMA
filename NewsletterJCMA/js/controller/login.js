@@ -1,35 +1,40 @@
 angular.module('controllers')
-.controller('loginCtrl',  ['$scope','$http', '$location', '$rootScope','toastr','factoRequest',
-function($scope, $http, $location, $rootScope, toastr, factoRequest) {
-
-
+.controller('loginCtrl',  ['$scope','$http', '$location', '$rootScope','toastr','Get',
+function($scope, $http, $location, $rootScope, toastr, Get) {
      $('.navbar').removeClass('showMenu');
      $('.navbar').addClass('hide');
 
-      $('.mainView').css('margin-top','350px');
-      $('body').css('overflow','hidden');
-      $('.imgLogo').fadeIn("slow");
+    //Info stocké en session
+    $rootScope.userId    = window.localStorage.getItem("userId") ;
+    $rootScope.userEmail = window.localStorage.getItem("userMail");
 
+    console.log("id + mail:"+ $rootScope.userId  + " " +   JSON.stringify($rootScope.userEmail));
 
-  $scope.login = function(){
-    $('.imgLogo').fadeOut();
-    factoRequest.checkUserPassword($scope.email, $scope.password)
-    .then(function(idUser) {
-      console.log(idUser);
-      if(idUser.data.usId != undefined) {
-        toastr.success('Bienvenue internaute','Connecté');
-        $rootScope.userId = idUser.data.usId;
-        $rootScope.userEmail = $scope.email;
+    if($rootScope.userId != undefined && $rootScope.userEmail != undefined ) {
+      setInfoFromLogin($rootScope.userId, $rootScope.userEmail);
+    }
 
-          $location.path('/admin', false);
-      } else {
-       toastr.error('Utilisateur introuvable ou mot de passe incorrect','Echec d\'authentification');
-      }
-    });
+    $scope.login = function() {
+      Get.bCheckUserPassword($scope.email, $scope.password)
+      .then(function(idUser) {
+        if( idUser.data.usId != undefined )
+          setInfoFromLogin(idUser.data.usId , $scope.email);
+        else
+         toastr.error('Mot de passe ou login incorrect','Echec d\'authentification');
+       });
 
   }
-  $scope.register = function(){
+  $scope.register = function() {
     $location.path('/register', false);
   }
 
+  function setInfoFromLogin(idUser, email) {
+        $('.imgLogo').addClass('rotateLogo');
+        window.localStorage.setItem("userId",  idUser);
+        window.localStorage.setItem("userMail", email);
+        $rootScope.userId = idUser;
+        $rootScope.userEmail = email;
+        toastr.success('Welcome back internaute n°'+idUser,'Connecté');
+        $location.path('/admin');
+      }
 }]);

@@ -5,29 +5,32 @@ angular.module('controllers')
      $('.navbar').removeClass('hide');
      $('.navbar').addClass('showMenu');
 
-      setTimeout(function () {
-        $('.miniLogo').addClass('showLogo');
-      }, 1000);
+    setTimeout(function () {
+      $('.miniLogo').addClass('showLogo');
+    }, 2000);
 
   $scope.login = function() {
-      $location.path('/login', false);
+      $location.path('/login');
   };
   $scope.register = function() {
-      $location.path('/admin', false);
+      $location.path('/admin');
   };
   $scope.openImportView = function() {
-    $location.path('/importCSV', false);
+    $location.path('/importCSV');
   };
   $scope.createNews = function() {
-    $location.path('/createNews', false);
+    $location.path('/createNews');
   };
   $scope.createList = function() {
-      $location.path('/createList', false);
+      $location.path('/createList');
   };
   $scope.openGroupsView = function() {
-      $location.path('/createGroup', false);
+      $location.path('/createGroup');
   };
   $scope.showListNews = function() {
-      $location.path('/listNews', false);
+      $location.path('/listNews');
+  };
+  $scope.goToStat = function() {
+      $location.path('/stats');
   };
 }]);

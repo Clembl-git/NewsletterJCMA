@@ -1,27 +1,36 @@
 angular.module('factory', [])
 
-.factory('factoRequest', function($http) {
+.factory('Get', function($http) {
   return {
     collabs: {
       list: {},
     },
-    checkUserPassword: function(email, mdp){
+    bCheckUserPassword: function(email, mdp){
         return httpGetRequest($http, 'users/checkUserPassword/'+email+"/"+mdp);
     },
     addUser: function(nom, prenom, email, pwd) {
       return httpGetRequest($http, "users/addUser/" + nom + "/" + prenom + "/" + email + "/" + pwd);
     },
-    importListContact: function(csvJson) {
+    saveListContact: function(csvJson) {
       return httpPostRequest($http, "contacts/addListContact", csvJson);
     },
     createNewsletter: function(news) {
       return httpPostRequest($http, "newsletter/createNewsLetter", news);
     },
-    getListContactForUser: function(idUser){
+    listContactForUser: function(idUser){
       return httpGetRequest($http, "contacts/getListContactForUser/"+ idUser);
     },
-    getListNewsLetterByUserId: function(idUser) {
-      return httpGetRequest($http, "users/getListNewsLetterByUserId/" +idUser);
+    listNewsLetterByUserId: function(idUser) {
+      return httpGetRequest($http, "users/getListNewsLetterByUserId/" + idUser);
+    },
+    nombreMailOuvert: function(idNews) {
+      return httpGetRequest($http, "newsletter/getNombreMailOuvert/" + idNews);
+    },
+    nombreMailEnvoye: function(idNews) {
+      return httpGetRequest($http, "newsletter/getNombreMailEnvoye/" + idNews);
+    },
+    statLienClique: function(idNews) {
+      return httpGetRequest($http, "newsletter/getStatLienClique/" + idNews);
     }
   }
 });

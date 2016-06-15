@@ -3,15 +3,21 @@ angular.module('controllers')
 
   $rootScope.goHome = function() {
     if( $rootScope.userId == undefined )
-      $location.path('/login', false);
+      $location.path('/login');
     else
-      $location.path('/admin',false);
+      $location.path('/admin');
   }
-  $rootScope.newsFeed = function() {
+  $rootScope.listNews = function() {
     $location.path('/listNews');
   }
   $rootScope.deconnexion = function() {
     $location.path('/login');
+      $('.imgLogo').removeClass('rotateLogo');
+      window.localStorage.removeItem("userId");
+      window.localStorage.removeItem("userEmail");
+  }
+  $rootScope.createNews = function(){
+    $location.path('/createNews');
   }
 
 }]);

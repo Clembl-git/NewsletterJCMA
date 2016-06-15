@@ -1,6 +1,6 @@
 angular.module('controllers')
-.controller('importCtrl',  ['$scope','$http', '$parse', '$rootScope','$location','factoRequest','toastr',
-function($scope, $http, $parse, $rootScope, $location, factoRequest, toastr) {
+.controller('importCtrl',  ['$scope','$http', '$parse', '$rootScope','$location','Get','toastr',
+function($scope, $http, $parse, $rootScope, $location, Get, toastr) {
   $scope.listHeader = [];
   $scope.csv = {
      content: null,
@@ -45,7 +45,7 @@ function($scope, $http, $parse, $rootScope, $location, factoRequest, toastr) {
          })
          csvToDb.Contact.push(user);
        })
-       factoRequest.importListContact(csvToDb).then(function(res){
+       Get.saveListContact(csvToDb).then(function(res){
          toastr.success("Import correctement effectué","Succès.");
          setTimeout(function () {
            $location.path('/admin', false);

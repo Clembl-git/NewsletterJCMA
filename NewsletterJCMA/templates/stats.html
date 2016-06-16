@@ -7,6 +7,11 @@
         <div class="col-md-8 col-md-offset-2">
       				<div class="panel panel-default">
       					<div class="panel-body">
+                  <div class="statGlobal">
+                    <canvas id="bar" class="chart chart-bar"
+      chart-data="data" chart-labels="labels" chart-series="series" style="position:relative;">
+    </canvas>
+                  </div>
       						<div class="table-container statTable" ng-repeat="stat in stats track by $index">
       							<table class="table table-filter">
       								<tbody>
@@ -30,7 +35,7 @@
       												<div class="media-body">
       													<span class="media-meta pull-right"></span>
       													<p class="summary">{{graphNews[0].graph}}</p>
-                                <canvas id="bar" class="chart chart-doughnut" chart-legend="true" data="stat.graph" labels="graph.labels" series='graph.series' height="150%" style="position:absolute;"></canvas>
+                                <canvas id="{{'bar' + $index}}" class="chart chart-doughnut" chart-legend="true" data="stat.graph" labels="graph.labels" series='graph.series' height="150%" style="position:absolute;"></canvas>
 
       												</div>
       											</div>

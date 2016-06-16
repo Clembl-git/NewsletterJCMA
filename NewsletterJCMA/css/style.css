@@ -66,6 +66,28 @@ label {
 .ulListNews h2 {
 	background-color: rgba(49, 52, 59, 0.37);
 }
+.groupBtnListNews{
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.groupBtnListNews button{
+	height: 35px;
+}
+.groupBtnListNews .btnEdit{
+	width: 70%;
+}
+.groupBtnListNews .btnDelete{
+	width: 30%;
+}
+.groupBtnListNews img{   position: absolute;
+    width: 15px;
+    height: 17px;
+    right: 13px;
+    top: 8px;
+}
 .imgLogo{
 	 	top: 60px;
     position: absolute;
@@ -241,6 +263,10 @@ div>input[type=file]::before {
 	font-size: 20px;
 	font-weight: 900;
 }
+.statGlobal{
+	width: 100%;
+	height: 400px;
+}
 .mc-content {
     margin: 0 auto;
     width: 1300px;
@@ -388,7 +414,7 @@ font-size:20px;
 	background-color:rgba(155, 155, 155, 0.75);
 }
 .statTable .newsTitle {
-    padding: 8%;
+    padding: 11%;
     margin-top: -20px;
     display: inline-block;
     text-overflow: ellipsis;

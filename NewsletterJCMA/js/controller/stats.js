@@ -3,13 +3,19 @@ angular.module('controllers')
     function($scope, $http, $rootScope, $location, Get, toastr) {
 
       $scope.graph = {};
-      $scope.graph.data = [0,0,0,0];
+      $scope.graph.data = [0,0,0];
 
       $scope.graph.series = ['Statistiques de vos '+$scope.nbNews+" newsletters"];
       $scope.graph.labels = ['Mail envoyé', 'Mail ouvert', 'Lien cliqué'];
       $scope.stats = [];
       $scope.nbNews = 0;
+      $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+      $scope.series = ['Series A', 'Series B'];
 
+      $scope.data = [
+        [65, 59, 80, 81, 56, 55, 40],
+        [28, 48, 40, 19, 86, 27, 90]
+      ];
       if ($rootScope.userId == undefined)
         $location.path('/login');
 
@@ -43,7 +49,7 @@ angular.module('controllers')
                   $scope.graph.data[0] += nbMailEnvoye;
                   $scope.graph.data[1] += nbMailOuvert;
                   $scope.graph.data[2] += nbLienClique;
-
+                  console.log($scope.graph.data);
                 });
               });
             });

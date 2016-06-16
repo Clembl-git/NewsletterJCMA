@@ -11,15 +11,17 @@
   						</time>
   						<div class="info">
   							<h2 class="title">{{news.neTitre}}</h2>
-                <textarea name="{{'txtEditor' + $index}}" class"ckEditor" ng-bind-html="sanitizeHtml(news.neTextContent)"></textarea>
+                <textarea class"ckEditor textNews"  name="{{'txtEditor' + $index}}" id="{{'txtEditor' + $index}}" ng-bind-html="sanitizeHtml(news.neTextContent)"></textarea>
   						</div>
               <div class="btn-group groupBtnListNews">
-                   <button ng-click="editNews($index)" type="button" class="btn btn-default btnEdit"><img src="img/edit.png" alt="" />Edit</button>
-                   <button ng-click="editNews($index)" type="button" class="btn btn-default btnDelete"><img src="img/trash.png" alt="" />Delete</button>
+                   <button ng-if="!inEdition" ng-click="editNews($index)" type="button" class="btn btn-default btnEdit"><img src="img/edit.png" alt="" />Edit</button>
+                   <button ng-if="!inEdition" ng-click="editNews($index)" type="button" class="btn btn-default btnDelete"><img src="img/trash.png" alt="" />Delete</button>
+                   <button ng-if="inEdition" ng-click="editNews($index)" type="button" class="btn btn-default btnSave"><img src="img/save.png" alt="" />Save</button>
                 </div>
 
   					</li>
   				</ul>
+          max-width: 635px;
   			</div>
   		</div>
 </div>

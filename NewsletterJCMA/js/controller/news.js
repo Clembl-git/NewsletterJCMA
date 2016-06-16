@@ -56,6 +56,7 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
   .controller('listNewsCtrl', ['$scope', '$http', '$rootScope', '$location', '$sce', 'Get', 'toastr',
     function($scope, $http, $rootScope, $location, $sce, Get, toastr) {
       console.log("listN");
+      $scope.inEdition = false;
 
       if ($rootScope.userId == undefined)
         $location.path('/login');
@@ -71,6 +72,7 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
       }
 
             $scope.editNews = function(index){
+            $scope.inEdition = true;
               console.log("edit"+index);
               var editorName = "txtEditor"+index;
               var textEditor = CKEDITOR.replace(editorName);

@@ -46,7 +46,7 @@ label {
 	background: url("../img/miniLogo.png") no-repeat center center;
 	width: 50px;
 	height: 50px;
-	opacity: 0;
+	opacity: 1;
 }
 .line h4{
 	font-weight: 900;
@@ -62,6 +62,16 @@ label {
 .ulListNews h2, .ulListNews p {
 	text-align: center;
 	width: 100%;
+}
+.textnews{
+	height: auto;
+    margin: 4px 41px 21px;
+    height: 313px;
+    width: 702px;
+    font-size: 16px;
+    position: relative;
+    right: 0;
+    float: right;
 }
 .ulListNews h2 {
 	background-color: rgba(49, 52, 59, 0.37);
@@ -82,11 +92,17 @@ label {
 .groupBtnListNews .btnDelete{
 	width: 30%;
 }
+.groupBtnListNews .btnSave{
+	width: 100% !important;
+}
 .groupBtnListNews img{   position: absolute;
     width: 15px;
     height: 17px;
     right: 13px;
     top: 8px;
+}
+textarea[name^=txtEditor] {
+	height: 300px !important;
 }
 .imgLogo{
 	 	top: 60px;
@@ -326,21 +342,19 @@ div>input[type=file]::before {
 .createNews {
 	background-color: #fff;
 }
-textarea,input[type="text"],input[type="password"],input[type="file"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input,.faux-file {
+textarea,input[type="text"],input[type="password"],input[type="file"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"] {
     display: inline-block;
     padding: 0 .4em 0 .4em;
     margin-bottom: 2em;
     vertical-align: middle;
     border-radius: 3px;
     min-width: 50px;
-    max-width: 635px;
     width: 100%;
     min-height: 32px;
     background-color: #fff;
     border: 2px solid #c9c9c9;
     margin: 0 0 24px 0;
 }
-
 .checkbox-group label {
     padding-top: 3px;
     padding-bottom: 0;

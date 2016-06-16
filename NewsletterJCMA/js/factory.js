@@ -31,6 +31,9 @@ angular.module('factory', [])
     },
     statLienClique: function(idNews) {
       return httpGetRequest($http, "newsletter/getStatLienClique/" + idNews);
+    },
+    createNewGroup : function() {
+      
     }
   }
 });

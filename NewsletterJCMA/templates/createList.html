@@ -1,4 +1,4 @@
-<div class="container" ng-controller="listCtrl" class="fade">
+   <div class="container" ng-controller="listCtrl" class="fade">
     <h1 style="color:#fff">ADMIN</h1>
 
     <div id="main-content" class="main-content mc-content selfclear">
@@ -6,7 +6,6 @@
         <h1>Création Liste de Diffusion</h1>
         <div class="line main-section">
 
-            <form id="new-list" action="/lists/create" method="POST" novalidate="novalidate">
                 <div class="lastUnit size1of2">
                     <div class="sub-section">
                         <h3>Détails</h3>
@@ -14,24 +13,22 @@
                             <label for="name" class="">Nom de la Liste</label>
                             <input type="text" name="name" class=" av-text" value="" id="name">
                         </div>
-                        <div class="field-wrapper" ng-if="listContact.length > 0">
+                        <div class="field-wrapper">
                             <label for="name" class="">Choix du groupe</label>
-                            <select>
-                            <option ng-repeat="contact in listContact" class=form-control>{{contact.nom}}</option>
+                            <select ng-options="groupe.grNom for groupe in listGroupe" ng-model="groupeSelected" class="selectpicker" multiple="true">
                             </select>
                         </div>
+
                         <div class="field-wrapper">
                             <label for="name" class="">Choix de la Newsletter</label>
-                            <select class=form-control>
-                            <option value=un>GROUPE 1</option>
+                            <select ng-options="news.neTitre for news in listNews" ng-model="newsSelected" class="selectpicker" multiple="true">
                             </select>
                         </div>
                     </div>
                     <div class="sub-section">
-                        <button class="button p0" type="submit" id="new-list-save">Save</button> <a href="javascript:;" id="new-list-cancel" class="small-meta fwb">Cancel</a> </div>
+                        <button class="button p0" ng-click="saveListDiffusion()">Save</button> 
+
                 </div>
-                <input type="hidden" name="__csrf_token" id="" value="d8acbd26c3fea8c63ea8e394500782a0153cac54" class="av-hidden">
-            </form>
         </div>
         <div class="line alignc section hide-print">
             <p class="small-meta dim-el full-width"> ©2001–2016 <span>JCMA Mail<sup>®</sup> All rights reserved.</span> <span class="nowrap link-underline"> <a class="textcolor" href="#" target="_blank" tabindex="-1" >Privacy</a> and <a class="textcolor" href="#" target="_blank" tabindex="-1">Terms</a> </span>                </p>

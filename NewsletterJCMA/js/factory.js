@@ -31,7 +31,14 @@ angular.module('factory', [])
     },
     statLienClique: function(idNews) {
       return httpGetRequest($http, "newsletter/getStatLienClique/" + idNews);
+    },
+    listGroupesForUser: function(idUser) {
+      return httpGetRequest($http, "groupes/getListGroupesForUser/" + idUser);
+    },
+    addGroupeToNewsLetter: function(idGroupe,idNewsLetter) {
+      return httpGetRequest($http, "newsletter/addGroupeToNewsLetter/" + idGroupe+"/"+idNewsLetter);
     }
+
   }
 });
 

@@ -37,11 +37,11 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
 
           if (news.neTextContent != "" && news.neTitre != "") {
             console.log(news.neTextContent);
-            // Get.createNewsletter(news)
-            // .then(function(resp){
-            //   toastr.success("Votre newsLetter a été créé","Succès");
-            //   console.log(resp);
-            // });
+             Get.createNewsletter(news)
+             .then(function(resp){
+               toastr.success("Votre newsLetter a été créé","Succès");
+               console.log(resp);
+             });
 
           } else {
             toastr.error("Vous devez saisir du texte et un titre", "Erreur");

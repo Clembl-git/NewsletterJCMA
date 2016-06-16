@@ -1,0 +1,23 @@
+<div class="container" ng-controller="createGroupCtrl" class="fade">
+
+  <h1>Création d'un groupe de contact</h1>
+
+  <div class="row containerLists">
+    <div class="col-xs-5 listContact">
+        <!--<select class="selectpicker" multiple>
+            <option ng-click"onclickcontact(contact)" ng-repeat="contact in listContact" class=form-control>{{contact.coNom + " " + contact.coPrenom}}</option>
+        </select>-->
+        <select class="selectpicker" ng-options="contact.coNom for contact in listContact" ng-model="selected" ng-click="contactSelected()" multiple="true">
+
+        </select>
+
+    </div>
+    <div class="col-xs-2">
+    </div>
+    <div class="col-xs-5 listContact">
+        <select class="selectpicker" ng-options="contact.coNom for contact in selectedContact" ng-model="selected2" ng-click="contactUnselected()" multiple="true">
+
+        </select>
+    </div>
+  </div>
+</div>

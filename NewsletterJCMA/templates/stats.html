@@ -7,56 +7,35 @@
         <div class="col-md-8 col-md-offset-2">
       				<div class="panel panel-default">
       					<div class="panel-body">
-      						<div class="table-container" ng-repeat="stat in stats track by $index">
+      						<div class="table-container statTable" ng-repeat="stat in stats track by $index">
       							<table class="table table-filter">
       								<tbody>
       									<tr data-status="pagado" >
       										<td>
-      											<div class="ckbox">
-      												<input type="checkbox" id="checkbox1">
-      												<label for="checkbox1"></label>
-      											</div>
-      										</td>
-      										<td>
-      											<a href="javascript:;" class="star">
-      												<i class="glyphicon glyphicon-star"></i>
-      											</a>
-      										</td>
-      										<td>
       											<div class="media">
-      												<a href="#" class="pull-left">
-      													<img width="200" height="200" src="img/newsletter.svg" class="media-photo">
-      												</a>
+      												<span class="pull-left">
+                                  <h2 class="title newsTitle">
+                                    <span class="idNews">Newsletter {{$index + 1}} :</span> {{stat.title}}
+                                  </h2>
+                                  <h5 class="title">
+                                    Nombre de mail envoye : {{stat.nbEnvoye != "Nan" ? stat.nbEnvoye : 0}}
+                                  </h5>
+                                  <h5 class="title">
+                                  Nombre de lien cliqué : {{stat.nbLien}}
+                                </h5>
+                                  <h5 class="title">
+                                  Nombre de mail ouvert : {{stat.nbOuvert}}
+                                </h5>
+      												</span>
       												<div class="media-body">
-                    						<div class="pull-right" style="bottom:0;position: relative;">
-                    								<button type="button" class="btn btn-success btn-filter" data-target="pagado">Mailer</button>
-                    								<button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Editer</button>
-                    								<button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Supprimer</button>
-                    						</div>
-      													<span class="media-meta pull-right">Febrero 13, 2016</span>
-      													<h4 class="title" style="padding:8%">
-                                  Newsletter : {{stat.title}}
-      														<span class="pull-right pagado">{{stat.idNews}}</span>
-      													</h4>
-      													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+      													<span class="media-meta pull-right"></span>
+      													<p class="summary">{{graphNews[0].graph}}</p>
+                                <canvas id="bar" class="chart chart-doughnut" chart-legend="true" data="stat.graph" labels="graph.labels" series='graph.series' height="150%" style="position:absolute;"></canvas>
+
       												</div>
       											</div>
       										</td>
-      									</tr>
-                        <tr>
-                          <h4 class="title">
-                            Nombre de mail envoye : {{stat.NbEnvoye}}
-                          </h4>
-                          <h4 class="title">
-                          Nombre de lien cliqué : {{stat.nbLien}}
-                          </h4>
-                          <h4 class="title">
-                          Nombre de mail ouvert : {{stat.nbOuvert}}
-                          </h4>
-                        </tr>
-                        <tr>
-                          <canvas id="bar" class="chart chart-line" data="graph.data" labels="graph.labels" series='graph.series' height="100%"></canvas>
-                        </tr>
+                          </tr>
       								</tbody>
       							</table>
       						</div>

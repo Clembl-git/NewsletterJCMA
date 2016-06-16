@@ -1,36 +1,36 @@
 angular.module('controllers')
-.controller('adminCtrl', ['$scope','$location',  function($scope, $location) {
+  .controller('adminCtrl', ['$rootScope', '$location', function($rootScope, $location) {
 
 
-     $('.navbar').removeClass('hide');
-     $('.navbar').addClass('showMenu');
+    $('.navbar').removeClass('hide');
+    $('.navbar').addClass('showMenu');
 
-    setTimeout(function () {
+    setTimeout(function() {
       $('.miniLogo').addClass('showLogo');
-    }, 2000);
+    }, 500);
 
-  $scope.login = function() {
+    $rootScope.login = function() {
       $location.path('/login');
-  };
-  $scope.register = function() {
+    };
+    $rootScope.register = function() {
       $location.path('/admin');
-  };
-  $scope.openImportView = function() {
-    $location.path('/importCSV');
-  };
-  $scope.createNews = function() {
-    $location.path('/createNews');
-  };
-  $scope.createList = function() {
+    };
+    $rootScope.openImportView = function() {
+      $location.path('/importCSV');
+    };
+    $rootScope.createNews = function() {
+      $location.path('/createNews');
+    };
+    $rootScope.createList = function() {
       $location.path('/createList');
-  };
-  $scope.openGroupsView = function() {
+    };
+    $rootScope.openGroupsView = function() {
       $location.path('/createGroup');
-  };
-  $scope.showListNews = function() {
+    };
+    $rootScope.showListNews = function() {
       $location.path('/listNews');
-  };
-  $scope.goToStat = function() {
+    };
+    $rootScope.goToStat = function() {
       $location.path('/stats');
-  };
-}]);
+    };
+  }]);

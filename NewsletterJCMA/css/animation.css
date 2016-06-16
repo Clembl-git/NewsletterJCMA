@@ -8,10 +8,10 @@
 /* rotate and fall */
 @keyframes rotateFall {
     0%      { transform: rotateZ(0deg); }
-    20%     { transform: rotateZ(10deg); animation-timing-function: ease-out; }
-    40%     { transform: rotateZ(17deg); }
-    60%     { transform: rotateZ(16deg); }
-    100%    { transform: translateY(100%) rotateZ(17deg); }
+    20%     { transform: rotateZ(30deg); animation-timing-function: ease-out; }
+    40%     { transform: rotateZ(40deg); }
+    60%     { transform: rotateZ(-30deg); }
+    100%     { transform: rotateZ(0deg); }
 }
 
 /* slide in from the bottom */
@@ -58,6 +58,10 @@
     from  { opacity: 0;  }
     to    { opacity: 1; }
 }
+@keyframes rotate {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+}
 .showMenu{
    animation: showMenu 1s both ease-in;
 }
@@ -66,14 +70,34 @@
    animation: hideLogo 0.5s both ease-in;
 }
 .showLogo{
-   animation: showLogo 2s both ease-in;
+   animation: showLogo 2s both ease-in
 }
-
-#navbar, #navbar ul, #navbar li, .imgLogo, .miniLogo{
+#navbar, #navbar ul, #navbar li, .imgLogo, .miniLogo, .adminListItem{
     transition:0.4s linear all;
 }
+.imgLogo{
+  transition-property: transform;
+  transition-duration: 0.5s;
+  width:180px;
+  height: 180px;
+}
+.imgLogo:hover{
+  cursor: pointer;
+}
+#navbar li:hover {
+	background-color: rgba(0,0,0,0.5);
+	letter-spacing: 1px;
+}
+.adminListItem:hover {
+	background-color: rgba(0,0,0,0.3);
+  	cursor: pointer;
+}
+#navbar li:hover a{
+	color: white;
+}
+
 .rotateLogo {
-  transform: rotateY(1080deg);
+  transform: rotateY(360deg);
 }
 /* The finishing CSS styles for the enter animation */
 .fade.ng-enter.ng-enter-active {

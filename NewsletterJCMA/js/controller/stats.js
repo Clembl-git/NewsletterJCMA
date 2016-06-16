@@ -1,52 +1,60 @@
 angular.module('controllers')
-.controller('StatCtrl', ['$scope','$http', '$rootScope', '$location', 'Get', 'toastr',
- function($scope, $http, $rootScope, $location, Get, toastr) {
+  .controller('StatCtrl', ['$scope', '$http', '$rootScope', '$location', 'Get', 'toastr',
+    function($scope, $http, $rootScope, $location, Get, toastr) {
 
+      $scope.graph = {};
+      $scope.graph.data = [0,0,0,0];
 
-  $scope.graph = {};
-  $scope.stats = [];
-  var byNews = {
-    idNews: null,
-    nbLien: null,
-    nbOuvert: null,
-    nbEnvoye: null,
-    title: null,
-  };
+      $scope.graph.series = ['Statistiques de vos '+$scope.nbNews+" newsletters"];
+      $scope.graph.labels = ['Mail envoyé', 'Mail ouvert', 'Lien cliqué'];
+      $scope.stats = [];
+      $scope.nbNews = 0;
 
-  if($rootScope.userId == undefined)
-    $location.path('/login');
+      if ($rootScope.userId == undefined)
+        $location.path('/login');
 
-    Get.listNewsLetterByUserId($rootScope.userId).then(function(listNews){
-      if(listNews.data != undefined) {
-        angular.forEach(listNews.data, function(news) {
-          console.log(news);
-          byNews.idNews = news.neId;
-          byNews.title = news.neTitre;
-          Get.statLienClique(news.neId).then(function(nbLienClique) {
-              byNews.nbLien = nbLienClique.data;
+      Get.listNewsLetterByUserId($rootScope.userId).then(function(listNews) {
+        if (listNews.data != undefined) {
+          angular.forEach(listNews.data, function(news, index) {
+              $scope.nbNews++;
+            Get.statLienClique(news.neId).then(function(nbLienClique) {
+
+              Get.nombreMailOuvert(news.neId).then(function(nbMailOuvert) {
+
+                Get.nombreMailEnvoye(news.neId).then(function(nbMailEnvoye) {
+                  nbLienClique = isNaN(parseInt(nbLienClique.data)) ? 0 : parseInt(nbLienClique.data);
+                  nbMailEnvoye = isNaN(parseInt(nbMailEnvoye.data)) ? 0 : parseInt(nbMailEnvoye.data);
+                  nbMailOuvert = isNaN(parseInt(nbMailOuvert.data)) ? 0 : parseInt(nbMailOuvert.data);
+
+                  var newsData = {};
+                  newsData.graph = [];
+                  newsData.idNews = news.neId;
+                  newsData.title = news.neTitre;
+                  newsData.text = news.neTextContent;
+
+                  newsData.nbEnvoye = nbMailEnvoye;
+                  newsData.nbOuvert = nbMailOuvert;
+                  newsData.nbLien   = nbLienClique;
+
+                  newsData.graph = [nbMailEnvoye,nbMailOuvert,nbLienClique];
+
+                  $scope.stats.push(newsData);
+
+                  $scope.graph.data[0] += nbMailEnvoye;
+                  $scope.graph.data[1] += nbMailOuvert;
+                  $scope.graph.data[2] += nbLienClique;
+
+                });
+              });
+            });
+
           });
-          Get.nombreMailOuvert(news.neId).then(function(nbMailOuvert) {
-              byNews.nbOuvert = nbMailOuvert.data;
 
-          });
-          Get.nombreMailEnvoye(news.neId).then(function(nbMailEnvoye) {
-              byNews.nbEnvoye = nbMailEnvoye.data;
-          });
-          $scope.stats.push(byNews);
-        });
-        console.log($scope.stats);
-      } else {
-        toastr.error("Vous n'avez aucune newsletter.. Ecrivez en une !",'Désolé')
-      }
-    });
+        } else {
+          toastr.error("Vous n'avez aucune newsletter.. Ecrivez en une !", 'Désolé')
+        }
 
-   $scope.graph.data = [
-     [16, 15, 20, 12, 16, 12, 8],
-     [16, 15, 20, 12, 16, 12, 8],
-     [16, 15, 20, 12, 16, 12, 8],
-     [8, 9, 4, 12, 8, 12, 14]
-   ];
-   $scope.graph.labels = ['Mon', 'Tue', 'Sun'];
-   $scope.graph.series = ['Awake', 'Asleep','3','4'];
+      });
 
-   }]);
+
+    }]);

@@ -2,7 +2,7 @@
   <div class="row">
   			<div class="ulListNews">
   				<ul class="event-list">
-  					<li ng-repeat="news in listNews" class="listNewsItem">
+  					<li ng-repeat="news in listNews track by $index" class="listNewsItem">
   						<time datetime="2014-07-31 1600">
   							<span class="day">31</span>
   							<span class="month">Jan</span>
@@ -11,11 +11,11 @@
   						</time>
   						<div class="info">
   							<h2 class="title">{{news.neTitre}}</h2>
-  							<p class="desc" ng-bind-html="sanitizeHtml(news.neTextContent)"></p>
+                <textarea name="{{'txtEditor' + $index}}" class"ckEditor" ng-bind-html="sanitizeHtml(news.neTextContent)"></textarea>
   						</div>
-              <div class="btn-group">
-                  <button type="button" style="background: url(img/trash.png); width:25px;height:32px" class="btn btn-primary"></button>
-                  <button type="button" style="background: url(img/edit.png); width:25px;height:32px" class="btn btn-primary"></button>
+              <div class="btn-group groupBtnListNews">
+                   <button ng-click="editNews($index)" type="button" class="btn btn-default btnEdit"><img src="img/edit.png" alt="" />Edit</button>
+                   <button ng-click="editNews($index)" type="button" class="btn btn-default btnDelete"><img src="img/trash.png" alt="" />Delete</button>
                 </div>
 
   					</li>

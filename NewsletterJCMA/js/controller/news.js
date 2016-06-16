@@ -50,6 +50,7 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
       };
 
 
+
     }])
 
   .controller('listNewsCtrl', ['$scope', '$http', '$rootScope', '$location', '$sce', 'Get', 'toastr',
@@ -68,4 +69,10 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
       $scope.sanitizeHtml = function(string) {
         return $sce.trustAsHtml(string);
       }
+
+            $scope.editNews = function(index){
+              console.log("edit"+index);
+              var editorName = "txtEditor"+index;
+              var textEditor = CKEDITOR.replace(editorName);
+            }
     }]);

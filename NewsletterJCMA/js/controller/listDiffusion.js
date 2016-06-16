@@ -23,8 +23,8 @@ angular.module('controllers')
       $scope.saveListDiffusion = function(){
           Get.addGroupeToNewsLetter($scope.groupeSelected[0].grId,$scope.newsSelected[0].neId)
         .then(function(listC) {
-          console.log("listC");
-          console.log(listC);
+
+          toastr.success("succes","Groupe Créer")
           //$scope.listNews = listC.data;
         })
       };

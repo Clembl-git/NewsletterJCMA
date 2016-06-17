@@ -224,6 +224,11 @@ div>input[type=file]::before {
 	width: 100%;
 	height: 500px;
 }
+.btnCreateGroup
+{
+	margin-top: 60px;
+
+}
  .listContact, .listGroup
  {
 	 padding:0;

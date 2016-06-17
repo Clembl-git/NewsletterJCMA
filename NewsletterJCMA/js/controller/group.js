@@ -3,6 +3,7 @@ angular.module('controllers')
     function($scope, $http, $rootScope, Get, toastr)
     {
       $scope.listContact = {};
+      $scope.selectedContact = [];
 
       Get.listContactForUser(8)
         .then(function(mListContact) {
@@ -12,7 +13,6 @@ angular.module('controllers')
         });
 
     $scope.selected = $scope.listContact[0];
-    $scope.selectedContact = [];
 
     $scope.contactSelected = function(contact)
     {
@@ -50,6 +50,20 @@ angular.module('controllers')
               $scope.selectedContact.splice($scope.selectedContact.indexOf(contact), 1);
           }
         })
+    };
+
+    $scope.groupName;
+
+    $scope.createGroup = function()
+    {
+        console.log($scope.groupName);
+
+        if ($scope.groupName != undefined) {
+            
+        }
+        else {
+          toastr.error("Veuillez rentrer un nom de groupe.", "Manque d'information");
+        }
     };
   }
   ]);

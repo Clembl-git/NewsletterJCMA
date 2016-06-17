@@ -10,6 +10,7 @@
                 <input type="hidden" value="{{news.neId}}" id="{{'newsId' + $index}}"/>
   							<h2 class="title" id="{{'newsTitle' + $index}}">{{news.neTitre}}</h2>
                 <div  ng-if="!isInEdition"  class="textNews" ng-bind-html="sanitizeHtml(news.neTextContent)"
+                  >
               </div>
                 <textarea  ng-if="isInEdition" class"ckEditor textNews shadowEffect"  name="{{'txtEditor' + $index}}" id="{{'txtEditor' + $index}}" ng-bind-html="sanitizeHtml(news.neTextContent)">
                 </textarea>

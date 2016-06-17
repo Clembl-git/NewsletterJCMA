@@ -9,8 +9,11 @@
       					<div class="panel-body">
                   <div class="statGlobal">
                     <h2>Global statistics about your mailing campains</h2>
+                    <canvas class="chart chart-bar"
+                      chart-data="graph.globalData" chart-labels="graph.labels" chart-series="series" chart-legend="true" style="position:relative;">
                     </canvas>
                     <h2>Amount of newsletters wrote by month</h2>
+                    <canvas class="chart chart-line"
                       chart-data="newsByDate" chart-labels="monthLabel" chart-series="series" chart-legend="true" style="position:relative;">
                     </canvas>
                   </div>

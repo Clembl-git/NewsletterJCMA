@@ -11,17 +11,23 @@ angular.module('factory', [])
     addUser: function(nom, prenom, email, pwd) {
       return httpGetRequest($http, "users/addUser/" + nom + "/" + prenom + "/" + email + "/" + pwd);
     },
+    listNewsLetterByUserId: function(idUser) {
+      return httpGetRequest($http, "users/getListNewsLetterByUserId/" + idUser);
+    },
     saveListContact: function(csvJson) {
       return httpPostRequest($http, "contacts/addListContact", csvJson);
-    },
-    createNewsletter: function(news) {
-      return httpPostRequest($http, "newsletter/createNewsLetter", news);
     },
     listContactForUser: function(idUser){
       return httpGetRequest($http, "contacts/getListContactForUser/"+ idUser);
     },
-    listNewsLetterByUserId: function(idUser) {
-      return httpGetRequest($http, "users/getListNewsLetterByUserId/" + idUser);
+    createNewsletter: function(news) {
+      return httpPostRequest($http, "newsletter/createNewsLetter", news);
+    },
+    updateNewsLetter: function(news) {
+      return httpPostRequest($http, "newsletter/updateNewsLetter", news);
+    },
+    deleteNewsletter: function(idNews) {
+      return httpGetRequest($http, "newsletter/deleteNewsLetter/"+idNews);
     },
     nombreMailOuvert: function(idNews) {
       return httpGetRequest($http, "newsletter/getNombreMailOuvert/" + idNews);
@@ -36,6 +42,13 @@ angular.module('factory', [])
         return httpGetRequest($http, "groups/createGroupe/" + nom + "/" + description + "/" + idUser);
     }
   }
+    addGroupeToNewsLetter: function(idGroupe,idNewsLetter) {
+      return httpGetRequest($http, "newsletter/addGroupeToNewsLetter/" + idGroupe+"/"+idNewsLetter);
+    },
+    listGroupesForUser: function(idUser) {
+      return httpGetRequest($http, "groupes/getListGroupesForUser/" + idUser);
+    },
+}
 });
 
 var baseUrlWS = "http://localhost:4242/";

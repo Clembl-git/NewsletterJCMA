@@ -4,18 +4,30 @@
   				<ul class="event-list">
   					<li ng-repeat="news in listNews track by $index" class="listNewsItem">
   						<time datetime="2014-07-31 1600">
-  							<span class="day">31</span>
-  							<span class="month">Jan</span>
-  							<span class="year">2014</span>
-  							<span class="time">4:00 PM</span>
+  							<span class="day">{{toDate(news.neDateCreation) | date:'d MMM yyyy' : 'UTC'}}</span>
   						</time>
   						<div class="info">
-  							<h2 class="title">{{news.neTitre}}</h2>
-                <textarea name="{{'txtEditor' + $index}}" class"ckEditor" ng-bind-html="sanitizeHtml(news.neTextContent)"></textarea>
+                <input type="hidden" value="{{news.neId}}" id="{{'newsId' + $index}}"/>
+  							<h2 class="title" id="{{'newsTitle' + $index}}">{{news.neTitre}}</h2>
+                <div  ng-if="!isInEdition"  class="textNews" ng-bind-html="sanitizeHtml(news.neTextContent)"
+                  >
+              </div>
+                <textarea  ng-if="isInEdition" class"ckEditor textNews shadowEffect"  name="{{'txtEditor' + $index}}" id="{{'txtEditor' + $index}}" ng-bind-html="sanitizeHtml(news.neTextContent)">
+                </textarea>
   						</div>
               <div class="btn-group groupBtnListNews">
-                   <button ng-click="editNews($index)" type="button" class="btn btn-default btnEdit"><img src="img/edit.png" alt="" />Edit</button>
-                   <button ng-click="editNews($index)" type="button" class="btn btn-default btnDelete"><img src="img/trash.png" alt="" />Delete</button>
+                   <button ng-click="editNews($index)" id="{{'btnEdit' + $index}}" type="button" class="btn btn-default btnEdit">
+                     <img src="img/edit.png" alt="Edit" />Edit
+                   </button>
+                   <button ng-click="delNews($index)" id="{{'btnDel' + $index}}" type="button" class="btn btn-default btnDelete">
+                     <img src="img/trash.png" alt="Delete" />Delete
+                   </button>
+                   <button ng-click="saveNews($index)" id="{{'btnSave' + $index}}" type="button" class="btn btn-default btnSave" style="display:none;">
+                     <img src="img/save.png" style="right:30%;"alt="Save" />Save
+                   </button>
+                   <button ng-click="cancelEdition($index)" id="{{'btnCancel' + $index}}" type="button" class="btn btn-default btnCancel" style="display:none;">
+                     <img src="img/cancel.png" style="right:5px;"alt="Cancel" />Cancel
+                   </button>
                 </div>
 
   					</li>

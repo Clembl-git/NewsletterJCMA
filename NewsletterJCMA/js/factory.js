@@ -39,15 +39,17 @@ angular.module('factory', [])
       return httpGetRequest($http, "newsletter/getStatLienClique/" + idNews);
     },
     createNewGroup : function(nom, description, idUser) {
-        return httpGetRequest($http, "groups/createGroupe/" + nom + "/" + description + "/" + idUser);
-    }
-  }
+        return httpGetRequest($http, "groupes/createGroupe/" + nom + "/" + description + "/" + idUser);
+    },
+    addContactsToGroup : function (idGroup, listContactId) {
+        return httpGetRequest($http, "groupes/addContactToGroupe/" + idGroup + "/" + listContactId);
+    },
     addGroupeToNewsLetter: function(idGroupe,idNewsLetter) {
       return httpGetRequest($http, "newsletter/addGroupeToNewsLetter/" + idGroupe+"/"+idNewsLetter);
     },
     listGroupesForUser: function(idUser) {
       return httpGetRequest($http, "groupes/getListGroupesForUser/" + idUser);
-    },
+    }
 }
 });
 

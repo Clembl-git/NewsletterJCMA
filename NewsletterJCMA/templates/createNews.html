@@ -1,12 +1,15 @@
 <div class="container createNews" ng-controller="createNewsCtrl" class="fade">
   <center>
-    <h1>Creation of a new Newsletter</h1>
+    <h1>Newsletter creation :</h1>
     <div class="row">
 
       <label><h3>Title</h3></label>
       <div class="field-group">
         <input type="text" size="25" id="newsTitle" value="">
-      <label><h3>Url to diffuse in the mailing</h3></label>
+      </div>
+
+      <label><h3>Url to include with the mail</h3></label>
+      <div class="field-group">
         <input type="text" size="25" id="newsUrl" value="">
       </div>
 
@@ -14,8 +17,8 @@
     <textarea name="editor" class"ckEditor" ng-model="textNews"></textarea>
 
     <div class="control-group">
-        <label class="control-label" for="singlebutton"></label>
-        <div class="controls">
+      <label class="control-label" for="singlebutton"></label>
+      <div class="controls">
         <button ng-click="btnSaveNews()" class="btn btn-primary btn-lg">Save</button>
       </div>
     </div>

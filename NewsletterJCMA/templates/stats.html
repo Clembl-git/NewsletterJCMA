@@ -8,8 +8,10 @@
       				<div class="panel panel-default">
       					<div class="panel-body">
                   <div class="statGlobal">
-                    <canvas id="bar" class="chart chart-bar"
-                      chart-data="data" chart-labels="labels" chart-series="series" chart-legend="true" style="position:relative;">
+                    <h2>Global statistics about your mailing campains</h2>
+                    </canvas>
+                    <h2>Amount of newsletters wrote by month</h2>
+                      chart-data="newsByDate" chart-labels="monthLabel" chart-series="series" chart-legend="true" style="position:relative;">
                     </canvas>
                   </div>
       						<div class="table-container statTable" ng-repeat="stat in stats track by $index">

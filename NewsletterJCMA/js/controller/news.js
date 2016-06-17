@@ -29,7 +29,7 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
           $location.path('/login');
         } else {
           news.neTextContent = textEditor.getData()
-          news.neTextContent = news.neTextContent.replace(/"+/g, '\'');;
+          news.neTextContent = news.neTextContent.replace(/"+/g, '\'');
           news.neUserId = $rootScope.userId;
           news.neTitre = $('#newsTitle').val();
           news.UrlLink = $('#newsUrl').val();
@@ -37,11 +37,11 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
 
           if (news.neTextContent != "" && news.neTitre != "") {
             console.log(news.neTextContent);
-             Get.createNewsletter(news)
-             .then(function(resp){
-               toastr.success("Votre newsLetter a été créé","Succès");
-               console.log(resp);
-             });
+            Get.createNewsletter(news)
+              .then(function(resp) {
+                toastr.success("Votre newsLetter a été créé", "Succès");
+                console.log(resp);
+              });
 
           } else {
             toastr.error("Vous devez saisir du texte et un titre", "Erreur");
@@ -69,12 +69,97 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
 
       $scope.sanitizeHtml = function(string) {
         return $sce.trustAsHtml(string);
+      };
+      $scope.toDate = function(string){
+        return new Date(string);
       }
 
-            $scope.editNews = function(index){
-            $scope.inEdition = true;
-              console.log("edit"+index);
-              var editorName = "txtEditor"+index;
-              var textEditor = CKEDITOR.replace(editorName);
-            }
+      //garde l'instance en cours d'édition du ckeDitor
+      var textEditor =null;
+      $scope.isInEdition = false;
+
+      $scope.editNews = function(index) {
+        console.log($scope.isInEdition);
+        if($scope.isInEdition) {
+          toastr.error("Une autre newsletter est déja en édition",'Action non autorisé');
+        } else {
+          $scope.isInEdition = true;
+          $('#btnEdit'+index).css('display','none');
+          $('#btnDel'+index).css('display','none');
+          $('#btnSave'+index).css('display','block');
+          $('#btnCancel'+index).css('display','block');
+
+          console.log($('#newsTitle'+index));
+          var titleValue =  $('#newsTitle'+index).text();
+          //JS GOUROU MASTER TRICKS
+          console.log(titleValue);
+          $( "#newsTitle" + index).replaceWith( "<input type='text' class='title' id='newsTitle"+index+"'value='"+titleValue+"'/>" );
+
+          setTimeout(function () {
+            textEditor = CKEDITOR.replace("txtEditor" + index);
+          }, 0);
+        };
+
+        $scope.delNews = function(index) {
+          if($scope.isInEdition) {
+            toastr.error("Une autre newsletter est déja en édition",'Action non autorisé');
+          }
+          //récupère l'id de la news dans l'input hidden
+          Get.deleteNewsletter($('#newsId'+index).val()).then(function(res) {
+            console.log(res);
+            console.log(  $scope.listNews);
+            $scope.listNews.slice(index,1);
+            console.log(  $scope.listNews);
+            toastr.success("Suppression effectué","Succès");
+
+          });
+        }
+      };
+      $scope.cancelEdition = function(index){
+
+          $('#btnSave'+ index).css('display','none');
+          $('#btnCancel'+ index).css('display','none');
+          $('#btnEdit'+ index).css('display','block');
+          $('#btnDel' + index).css('display','block');
+
+          $("textarea[name='txtEditor" + index + "']")[0].value= $scope.listNews[index].neTextContent;
+           $( "#newsTitle" + index  ).replaceWith( "<h2 type='text' class='title' id='newsTitle"+index+"'>"+ $scope.listNews[index].neTitre+"</h2>" );
+
+
+          //Supprime l'instance de l'éditeur
+          textEditor = null;
+          $scope.isInEdition = false;
+          CKEDITOR.instances["txtEditor" + index].destroy(true);
+      }
+      $scope.saveNews = function(index) {
+          $scope.listNews[index].neTextContent =textEditor.getData();
+          //Replace double quote by single for json
+          $scope.listNews[index].neTextContent = escapeSpecialChars($scope.listNews[index].neTextContent);
+          $scope.sNewsText = $scope.listNews[index].neTextContent;
+
+          $scope.listNews[index].neId = $('#newsId'+index).val();
+          $scope.listNews[index].neTitre = $('#newsTitle'+index).val();
+
+          var titleValue =  $('#newsTitle'+index).val();
+          $( "#newsTitle" + index  ).replaceWith( "<h2 type='text' class='title' id='newsTitle"+index+"'>"+titleValue+"</h2>" );
+
+          console.log($scope.listNews[index].neTextContent);
+          Get.updateNewsLetter($scope.listNews[index])
+            .then(function(resp) {
+              toastr.success("Votre newsLetter a été mise à jour", "Succès");
+              $scope.cancelEdition(index);
+
+            });
+      };
     }]);
+
+function escapeSpecialChars(string) {
+    return string.replace(/\\n/g, "\\n")
+               .replace(/\\'/g, "\\'")
+               .replace(/\\"/g, '\\"')
+               .replace(/\\&/g, "\\&")
+               .replace(/\\r/g, "\\r")
+               .replace(/\\t/g, "\\t")
+               .replace(/\\b/g, "\\b")
+               .replace(/\\f/g, "\\f");
+};

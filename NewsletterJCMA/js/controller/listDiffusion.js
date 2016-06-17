@@ -21,7 +21,7 @@ angular.module('controllers')
         })
 
       $scope.saveListDiffusion = function(){
-          Get.addGroupeToNewsLetter($scope.groupeSelected[0].grId,$scope.newsSelected[0].neId)
+        Get.addGroupeToNewsLetter($scope.groupeSelected[0].grId,$scope.newsSelected[0].neId)
         .then(function(listC) {
 
           toastr.success("succes","Groupe Créer")

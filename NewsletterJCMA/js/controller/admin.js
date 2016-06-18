@@ -27,6 +27,9 @@ angular.module('controllers')
     $rootScope.openGroupsView = function() {
       $location.path('/createGroup');
     };
+    $rootScope.openModifyGroupsView = function() {
+      $location.path('/modifyGroup');
+    };
     $rootScope.showListNews = function() {
       $location.path('/listNews');
     };

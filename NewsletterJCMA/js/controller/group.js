@@ -8,7 +8,7 @@ angular.module('controllers')
       $scope.listContact = {};
       $scope.selectedContact = [];
 
-      Get.listContactForUser(8)
+      Get.listContactForUser($rootScope.userId)
         .then(function(mListContact) {
           console.log(mListContact);
           $scope.listContact = mListContact.data;

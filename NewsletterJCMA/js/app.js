@@ -32,6 +32,9 @@ newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location)
     .when('/createGroup', {
         templateUrl: 'templates/groups.html'
     })
+    .when('/modifyGroup', {
+        templateUrl: 'templates/modifyGroup.html'
+    })
     .when('/listNews', {
         templateUrl: 'templates/listNews.html'
     })

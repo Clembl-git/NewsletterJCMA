@@ -44,11 +44,20 @@ angular.module('factory', [])
     addContactsToGroup : function (idGroup, listContactId) {
         return httpGetRequest($http, "groupes/addContactToGroupe/" + idGroup + "/" + listContactId);
     },
+    getListContactForGroupe : function (idGroup) {
+        return httpGetRequest($http, "groupes/getListContactForGroupe/" + idGroup);
+    },
     addGroupeToNewsLetter: function(idGroupe,idNewsLetter) {
       return httpGetRequest($http, "newsletter/addGroupeToNewsLetter/" + idGroupe+"/"+idNewsLetter);
     },
     listGroupesForUser: function(idUser) {
       return httpGetRequest($http, "groupes/getListGroupesForUser/" + idUser);
+    },
+    deleteGroup : function(idGroup) {
+      return httpGetRequest($http, "groupes/deleteGroupe/" + idGroup);
+    },
+    deleteContactToGroupe : function(idGroup, idContact) {
+      return httpGetRequest($http, "groupes/deleteContactToGroupe/" + idGroup + "/" + idContact);
     }
 }
 });

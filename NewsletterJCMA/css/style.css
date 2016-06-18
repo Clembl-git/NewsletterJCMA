@@ -269,6 +269,10 @@ div>input[type=file]::before {
 	margin-top: 60px;
 
 }
+.btnDeleteGroup
+{
+	margin-top: 20px;
+}
  .listContact, .listGroup
  {
 	 padding:0;

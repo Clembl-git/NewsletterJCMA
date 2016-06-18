@@ -41,9 +41,13 @@ angular.module('factory', [])
     addGroupeToNewsLetter: function(idGroupe,idNewsLetter) {
       return httpGetRequest($http, "newsletter/addGroupeToNewsLetter/" + idGroupe+"/"+idNewsLetter);
     },
+    sendNewsLetter: function(idNews) {
+      return httpGetRequest($http, "newsletter/sendNewsLetter/"+idNews);
+    },
     listGroupesForUser: function(idUser) {
       return httpGetRequest($http, "groupes/getListGroupesForUser/" + idUser);
-    },
+    }
+
 
 }
 });

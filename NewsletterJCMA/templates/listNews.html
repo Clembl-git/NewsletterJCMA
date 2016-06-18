@@ -17,7 +17,7 @@
   						</div>
               <div class="btn-group groupBtnListNews">
                    <button ng-click="editNews($index)" id="{{'btnEdit' + $index}}" type="button" class="btn btn-default btnEdit">
-                     <img src="img/edit.png" alt="Edit" />Edit
+                     <img src="img/edit.png"  style="right:35%;" alt="Edit" />Edit
                    </button>
                    <button ng-click="delNews($index)" id="{{'btnDel' + $index}}" type="button" class="btn btn-default btnDelete">
                      <img src="img/trash.png" alt="Delete" />Delete
@@ -27,6 +27,12 @@
                    </button>
                    <button ng-click="cancelEdition($index)" id="{{'btnCancel' + $index}}" type="button" class="btn btn-default btnCancel" style="display:none;">
                      <img src="img/cancel.png" style="right:5px;"alt="Cancel" />Cancel
+                   </button>
+                   <button ng-if="!isInEdition" ng-click="sendNewsletter(news.neId)" id="{{'btnSend' + $index}}" type="button" class="btn btn-default btnSend">
+                     <img src="img/send.png" style="right:40%;"alt="Send" />Send
+                   </button>
+                   <button ng-if="isInEdition" ng-click="duplicateNews(news.neId)" id="{{'btnDup' + $index}}" type="button" class="btn btn-default btnDup">
+                     <img src="img/duplicate.png" style="right:40%;"alt="Duplicate this news" />Duplicate this news
                    </button>
                 </div>
 

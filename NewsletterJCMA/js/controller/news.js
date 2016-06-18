@@ -151,6 +151,30 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
 
             });
       };
+      $scope.sendNewsletter = function(idNews) {
+        Get.sendNewsLetter(idNews).then(function(resp){
+          console.log(resp);
+          toastr.success("Mail envoyé","Succès");
+        });
+      };
+      $scope.duplicateNews = function(idNews) {
+        Get.createNewsletter(idNews).then(function(resp){
+          news.neTextContent = textEditor.getData()
+          news.neTextContent = news.neTextContent.replace(/"+/g, '\'');
+          news.neUserId = $rootScope.userId;
+          news.neTitre = $('#newsTitle').val();
+          news.UrlLink = $('#newsUrl').val();
+          news.neUrlImage = "";
+
+          console.log(news.neTextContent);
+          Get.createNewsletter(news)
+            .then(function(resp) {
+              toastr.success("Votre newsLetter a été créé", "Succès");
+              console.log(resp);
+            });
+        });
+      };
+
     }]);
 
 function escapeSpecialChars(string) {

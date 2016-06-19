@@ -3,7 +3,7 @@
 // Declare app level module which depends on views, and components/dependency
 var newsLettapp = angular.module('NewsLettApp',
 //Ajout des modules JS, des factories et des librairies "globales"
- ['controllers','factory','ngRoute','ngCsvImport','ngAnimate','ngCordova','toastr','chart.js']
+ ['controllers','factory','ngRoute','ngCsvImport','ngAnimate','ngCordova','toastr','chart.js', 'ngMaterial']
 );
 
 //Instancie une liste pour le module controllers
@@ -40,6 +40,9 @@ newsLettapp.config(['$routeProvider', function($routeProvider, $http, $location)
     })
     .when('/stats', {
         templateUrl: 'templates/stats.html'
+    })
+    .when ('/modifyGroupDialog', {
+        templateUrl: 'templates/modifyGroup.tmpl.html'
     })
     //Redirection par défaut en cas d'url invalide
     .otherwise({redirectTo: '/login'});

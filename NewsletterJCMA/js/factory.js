@@ -38,6 +38,15 @@ angular.module('factory', [])
     statLienClique: function(idNews) {
       return httpGetRequest($http, "newsletter/getStatLienClique/" + idNews);
     },
+    createNewGroup : function(nom, description, idUser) {
+        return httpGetRequest($http, "groupes/createGroupe/" + nom + "/" + description + "/" + idUser);
+    },
+    addContactsToGroup : function (idGroup, listContactId) {
+        return httpGetRequest($http, "groupes/addContactToGroupe/" + idGroup + "/" + listContactId);
+    },
+    getListContactForGroupe : function (idGroup) {
+        return httpGetRequest($http, "groupes/getListContactForGroupe/" + idGroup);
+    },
     addGroupeToNewsLetter: function(idGroupe,idNewsLetter) {
       return httpGetRequest($http, "newsletter/addGroupeToNewsLetter/" + idGroupe+"/"+idNewsLetter);
     },
@@ -46,9 +55,13 @@ angular.module('factory', [])
     },
     listGroupesForUser: function(idUser) {
       return httpGetRequest($http, "groupes/getListGroupesForUser/" + idUser);
+    },
+    deleteGroup : function(idGroup) {
+      return httpGetRequest($http, "groupes/deleteGroupe/" + idGroup);
+    },
+    deleteContactToGroupe : function(idGroup, idContact) {
+      return httpGetRequest($http, "groupes/deleteContactToGroupe/" + idGroup + "/" + idContact);
     }
-
-
 }
 });
 

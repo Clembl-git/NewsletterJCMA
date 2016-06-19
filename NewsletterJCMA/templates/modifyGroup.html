@@ -1,0 +1,54 @@
+<div class="container" ng-controller="modifyGroupCtrl" class="fade">
+
+  <h1>Modification d'un groupe de contact</h1>
+
+  <div class="row containerLists">
+    <div class="col-xs-3 listContact">
+      <select class="selectpicker" ng-options="group.grNom for group in listGroups" ng-model="selected" ng-click="groupSelected()" multiple="true">
+
+      </select>
+    </div>
+
+    <div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-3 listContact">
+      <select class="selectpicker" ng-options="contact.coNom for contact in listContactUser" ng-model="selectedContact" ng-click="contactSelected()" multiple="true">
+
+      </select>
+    </div>
+
+    <div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-3 listContact">
+      <select class="selectpicker" ng-options="contact.coNom for contact in listContactFromGroupSelected" ng-model="selectedContactFromGroup" multiple="true">
+      </select>
+    </div>
+
+    <div class="col-xs-3 center-block">
+      <button id="deleteGroupBtn" ng-click="deleteGroupSelected()" name="deleteGroupBtn" class="btn btn-primary btn-block btnDeleteGroup">
+          Supprimer le groupe
+      </button>
+    </div>
+
+    <div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-3 center-block">
+      <button id="addContactToGroupBtn" ng-click="addContactToGroupSelected()" name="addContactToGroupBtn" class="btn btn-primary btn-block btnDeleteGroup">
+          Ajouter le contact
+      </button>
+    </div>
+
+    <div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-3 center-block">
+      <button id="deleteContactToGroupBtn" ng-click="deleteContactToGroupSelected()" name="deleteContactToGroupBtn" class="btn btn-primary btn-block btnDeleteGroup">
+          Supprimer le contact
+      </button>
+    </div>
+
+</div>
+</div>

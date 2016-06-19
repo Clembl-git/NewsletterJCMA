@@ -1,6 +1,6 @@
 angular.module('controllers')
-  .controller('listCtrl', ['$scope', '$http', '$rootScope', 'Get', 'toastr',
-    function($scope, $http, $rootScope, Get, toastr) {
+  .controller('listCtrl', ['$scope', '$http', '$rootScope', 'Get', 'toastr', 'ngDialog',
+    function($scope, $http, $rootScope, Get, toastr, ngDialog) {
 
       $scope.listContact = {};
       $scope.listNews = {};
@@ -29,6 +29,9 @@ angular.module('controllers')
         })
       };
 
-
+      $scope.openDialog = function()
+      {
+          ngDialog.open({ template: 'templates/modifyGroup.tmpl.html', className: 'ngdialog-theme-default' });
+        };
 
     }]);

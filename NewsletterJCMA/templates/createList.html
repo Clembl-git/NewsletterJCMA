@@ -1,8 +1,5 @@
    <div class="container" ng-controller="listCtrl" class="fade">
-    <h1 style="color:#fff">ADMIN</h1>
-
     <div id="main-content" class="main-content mc-content selfclear">
-
         <h1>Création Liste de Diffusion</h1>
         <div class="line main-section">
 
@@ -25,10 +22,14 @@
                             </select>
                         </div>
                     </div>
+
+                      <button ng-click="openDialog()">Open</button>
+
                     <div class="sub-section">
                         <button class="button p0" ng-click="saveListDiffusion()">Save</button>
                     </div>
-        </div>
+                  </div>
+                </div>
         <div class="line alignc section hide-print">
             <p class="small-meta dim-el full-width"> ©2001–2016 <span>JCMA Mail<sup>®</sup> All rights reserved.</span> <span class="nowrap link-underline"> <a class="textcolor" href="#" target="_blank" tabindex="-1" >Privacy</a> and <a class="textcolor" href="#" target="_blank" tabindex="-1">Terms</a> </span>                </p>
         </div>

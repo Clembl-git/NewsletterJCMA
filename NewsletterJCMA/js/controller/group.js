@@ -1,10 +1,14 @@
 angular.module('controllers')
-  .controller('createGroupCtrl', ['$scope', '$http', '$rootScope', 'Get', 'toastr',
-    function($scope, $http, $rootScope, Get, toastr)
+  .controller('createGroupCtrl', ['$scope', '$http', '$rootScope', '$location', 'Get', 'toastr',
+    function($scope, $http, $rootScope, $location, Get, toastr)
     {
-      $scope.listContact = {};
+      if ($rootScope.userId == undefined)
+        $location.path('/login');
 
-      Get.listContactForUser(8)
+      $scope.listContact = {};
+      $scope.selectedContact = [];
+
+      Get.listContactForUser($rootScope.userId)
         .then(function(mListContact) {
           console.log(mListContact);
           $scope.listContact = mListContact.data;
@@ -12,7 +16,6 @@ angular.module('controllers')
         });
 
     $scope.selected = $scope.listContact[0];
-    $scope.selectedContact = [];
 
     $scope.contactSelected = function(contact)
     {
@@ -50,6 +53,48 @@ angular.module('controllers')
               $scope.selectedContact.splice($scope.selectedContact.indexOf(contact), 1);
           }
         })
+    };
+
+    $scope.groupName;
+
+    $scope.createGroup = function()
+    {
+        console.log($scope.groupName);
+
+        if ($scope.groupName != undefined) {
+            Get.createNewGroup($scope.groupName, "Description", $rootScope.userId)
+            .then(function(idGroup) {
+              console.log(idGroup);
+
+              var listContactId = "";
+
+              angular.forEach($scope.selectedContact, function(contact, i)
+              {
+                  listContactId += contact.coId + ",";
+              })
+
+              listContactId = listContactId.substring(0, listContactId.length - 1);
+
+              console.log($scope.selectedContact);
+              Get.addContactsToGroup(idGroup.data, listContactId)
+              .then (function() {
+
+                angular.forEach($scope.selectedContact, function(contact, i)
+                {
+                  $scope.listContact.push(contact);
+                })
+
+                $scope.selectedContact = [];
+
+                toastr.success("Le groupe " + $scope.groupName + " a été crée avec succès.", "Création de groupe");
+
+                $scope.groupName = "";
+              })
+            })
+        }
+        else {
+          toastr.error("Veuillez rentrer un nom de groupe.", "Manque d'information");
+        }
     };
   }
   ]);

@@ -53,13 +53,14 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
 
     }])
 
-  .controller('listNewsCtrl', ['$scope', '$http', '$rootScope', '$location', '$sce', 'Get', 'toastr',
-    function($scope, $http, $rootScope, $location, $sce, Get, toastr) {
+  .controller('listNewsCtrl', ['$scope', '$http', '$rootScope', '$location', '$sce', 'ngDialog', 'Get', 'toastr',
+    function($scope, $http, $rootScope, $location, $sce, ngDialog, Get, toastr) {
       console.log("listN");
+    if ($rootScope.userId == undefined)
+      $location.path('/login');
+
       $scope.inEdition = false;
 
-      if ($rootScope.userId == undefined)
-        $location.path('/login');
       $scope.listNews = {};
       Get.listNewsLetterByUserId($rootScope.userId)
         .then(function(listN) {
@@ -77,6 +78,13 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
       //garde l'instance en cours d'édition du ckeDitor
       var textEditor =null;
       $scope.isInEdition = false;
+
+
+      $scope.manageGroupe = function(idGroup)
+      {
+        $rootScope.dialog =   ngDialog.open({ template: 'templates/modifyGroup.tmpl.html', className: 'ngdialog-theme-default' });
+      };
+
 
       $scope.editNews = function(index) {
         console.log($scope.isInEdition);

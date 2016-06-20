@@ -99,6 +99,12 @@ angular.module('controllers')
           toastr.error("Veuillez sélectionner un contact à supprimer", "Erreur de sélection");
         }
     };
+    $scope.createGroup = function()
+    {
+
+        $location.path('/createGroup');
+        $rootScope.dialog.close();
+    }
 
   }
 ]);

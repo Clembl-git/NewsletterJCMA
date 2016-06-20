@@ -29,9 +29,5 @@ angular.module('controllers')
         })
       };
 
-      $scope.openDialog = function()
-      {
-          ngDialog.open({ template: 'templates/modifyGroup.tmpl.html', className: 'ngdialog-theme-default' });
-        };
 
     }]);

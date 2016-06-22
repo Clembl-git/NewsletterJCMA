@@ -123,7 +123,6 @@ textarea[name^=txtEditor] {
   height: 300px !important;
   margin: 0;
   font-size: 18px;
-  text-align: center;
   padding: 2%;
   font-weight: 500;
 }
@@ -379,14 +378,14 @@ div>input[type=file]::before {
 .createNews {
 	background-color: #fff;
 }
-textarea,input[type="text"],input[type="password"],input[type="file"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"] {
+textarea,input[type="text"],input[type="email"],input[type="password"],input[type="file"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"] {
     display: inline-block;
     padding: 0 .4em 0 .4em;
     margin-bottom: 2em;
     vertical-align: middle;
     border-radius: 3px;
     min-width: 50px;
-    width: 100%;
+    width: 80%;
     min-height: 32px;
     background-color: #fff;
     border: 2px solid #c9c9c9;
@@ -473,6 +472,12 @@ font-size:20px;
 }
 input[id^=newsTitle] {
 	text-align: center;
+}
+.createNews input {
+	width: 70%;
+}
+.createNews #cke_editor{
+	width: 80%;
 }
 .statView .summary{
     text-overflow: clip;

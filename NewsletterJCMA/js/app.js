@@ -4,6 +4,7 @@
 var newsLettapp = angular.module('NewsLettApp',
 //Ajout des modules JS, des factories et des librairies "globales"
  ['controllers','factory','ngRoute','ngCsvImport','ngAnimate','ngCordova','toastr','chart.js', 'ngDialog']
+
 );
 
 //Instancie une liste pour le module controllers

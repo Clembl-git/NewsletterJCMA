@@ -29,7 +29,10 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
           $location.path('/login');
         } else {
           news.neTextContent = textEditor.getData()
-          news.neTextContent = news.neTextContent.replace(/"+/g, '\'');
+          news.neTextContent = news.neTextContent.replace(/"/g, '111111');
+          news.neTextContent = news.neTextContent.replace(/:/g, '222222');
+          news.neTextContent = news.neTextContent.replace(/\r?\n|\r/g, '333333');
+          news.neTextContent = news.neTextContent.replace(/=/g, '555555');
           news.neUserId = $rootScope.userId;
           news.neTitre = $('#newsTitle').val();
           news.UrlLink = $('#newsUrl').val();
@@ -65,7 +68,14 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
       Get.listNewsLetterByUserId($rootScope.userId)
         .then(function(listN) {
           console.log(listN);
+          for(var i = 0 ; i < listN.data.length ; i++) {
+            listN.data[i].neTextContent = listN.data[i].neTextContent.replace(/111111/g,'"');
+            listN.data[i].neTextContent = listN.data[i].neTextContent.replace(/222222/g, ':');
+            listN.data[i].neTextContent = listN.data[i].neTextContent.replace(/444444/g, "'");
+            listN.data[i].neTextContent = listN.data[i].neTextContent.replace(/555555/g, '=');
+          }
           $scope.listNews = listN.data;
+
         });
 
       $scope.sanitizeHtml = function(string) {
@@ -142,7 +152,11 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
       $scope.saveNews = function(index) {
           $scope.listNews[index].neTextContent =textEditor.getData();
           //Replace double quote by single for json
-          $scope.listNews[index].neTextContent = escapeSpecialChars($scope.listNews[index].neTextContent);
+          $scope.listNews[index].neTextContent = $scope.listNews[index].neTextContent.replace(/"/g,"111111");
+          $scope.listNews[index].neTextContent = $scope.listNews[index].neTextContent.replace(/:/g,'222222');
+          $scope.listNews[index].neTextContent = $scope.listNews[index].neTextContent.replace(/'/g,"444444");
+          $scope.listNews[index].neTextContent = $scope.listNews[index].neTextContent.replace(/=/g,'555555');
+          $scope.listNews[index].neTextContent = $scope.listNews[index].neTextContent.replace(/\r?\n|\r/g,'');
           $scope.sNewsText = $scope.listNews[index].neTextContent;
 
           $scope.listNews[index].neId = $('#newsId'+index).val();
@@ -167,8 +181,7 @@ angular.module('controllers') // CONTROLEURS LIST NEWS && CREATE NEWS
       };
       $scope.duplicateNews = function(idNews) {
         Get.createNewsletter(idNews).then(function(resp){
-          news.neTextContent = textEditor.getData()
-          news.neTextContent = news.neTextContent.replace(/"+/g, '\'');
+          news.neTextContent = textEditor.getData();
           news.neUserId = $rootScope.userId;
           news.neTitre = $('#newsTitle').val();
           news.UrlLink = $('#newsUrl').val();

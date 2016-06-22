@@ -2,9 +2,6 @@ angular.module('factory', [])
 
 .factory('Get', function($http) {
   return {
-    collabs: {
-      list: {},
-    },
     bCheckUserPassword: function(email, mdp){
         return httpGetRequest($http, 'users/checkUserPassword/'+email+"/"+mdp);
     },
